@@ -1,0 +1,23 @@
+# Project information
+site_name: IoT Workshop
+
+site_description: 'Internet of Things Workshop voor C.S.V. Alpha'
+site_author: 'C.S.V. Alpha'
+
+# Copyright
+copyright: Copyright &copy; 2021 C.S.V. Alpha
+
+# Repo
+repo_url: https://github.com/csvalpha/iot-workshop
+
+# Congiguration
+theme:
+  name: material
+  features:
+    - navigation.tabs
+  palette:
+    scheme: preference
+  language: nl
+plugins:
+  - search:
+      lang: nl
