@@ -21,3 +21,15 @@ theme:
 plugins:
   - search:
       lang: nl
+
+# Navigation
+nav:
+  - IoT Workshop: 'index.md'
+  - Hardware: 'hardware.md'
+  - Behuizing: 'behuizing.md'
+  - Software: 'software.md'
+  - Projecten:
+    - Nachtlampje: 'nachtlampje.md'
+    - Wakeuplight: 'wakeuplight.md'
+    - Klok: 'klok.md'
+    - Agenda: 'agenda.md'

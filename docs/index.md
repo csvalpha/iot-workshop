@@ -1,2 +1,5 @@
-# IoT Workshop
-Hier komt alle documentatie
+# IoT Workshop - Solderen en programmeren
+
+## Projecten
+
+## Benodigdheden
