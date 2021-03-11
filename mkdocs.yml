@@ -16,6 +16,7 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - navigation.instant
   palette:
     scheme: preference
   language: nl
