@@ -17,8 +17,8 @@ theme:
   features:
     - navigation.tabs
   palette:
-    scheme: default
-    primary: alpha
+    scheme: preference
+    primary: yellow
   language: nl
 plugins:
   - search:

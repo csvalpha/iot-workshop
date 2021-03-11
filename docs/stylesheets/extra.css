@@ -1,4 +1,4 @@
-[data-md-color-scheme="alpha"] {
+:root {
     --md-primary-fg-color: #FFD218;
     --md-primary-fg-color--light: #FFE063;
     --md-primary-fg-color--dark: #807032;
