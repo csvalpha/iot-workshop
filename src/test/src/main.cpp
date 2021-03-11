@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 
-#define POT_PIN    1
-#define BTN_PIN    2
-#define LED_PIN    3
+#define POT_PIN    A0
+#define BTN_PIN    D8
+#define LED_PIN    D4
 #define LED_COUNT 60
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
