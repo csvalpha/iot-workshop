@@ -18,7 +18,6 @@ theme:
     - navigation.tabs
   palette:
     scheme: preference
-    primary: yellow
   language: nl
 plugins:
   - search:
