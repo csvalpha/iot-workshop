@@ -30,11 +30,8 @@ nav:
   - Behuizing: 'behuizing.md'
   - Software: 'software.md'
   - Projecten:
-    - Nachtlampje: 'nachtlampje.md'
-    - Wakeuplight: 'wakeuplight.md'
-    - Klok: 'klok.md'
-    - Agenda: 'agenda.md'
-
-# Styling
-extra_css:
-  - stylesheets/extra.css
+    - Projecten: 'projecten/index.md'
+    - Nachtlampje: 'projecten/nachtlampje.md'
+    - Wakeuplight: 'projecten/wakeuplight.md'
+    - Klok: 'projecten/klok.md'
+    - Agenda: 'projecten/agenda.md'
