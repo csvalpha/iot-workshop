@@ -9,6 +9,7 @@ copyright: Copyright &copy; 2021 C.S.V. Alpha
 
 # Repo
 repo_url: https://github.com/csvalpha/iot-workshop
+repo_name: csvalpha/iot-workshop
 
 # Congiguration
 theme:
@@ -16,7 +17,8 @@ theme:
   features:
     - navigation.tabs
   palette:
-    scheme: preference
+    scheme: default
+    primary: alpha
   language: nl
 plugins:
   - search:
@@ -24,7 +26,7 @@ plugins:
 
 # Navigation
 nav:
-  - IoT Workshop: 'index.md'
+  - Voorbereiding: 'index.md'
   - Hardware: 'hardware.md'
   - Behuizing: 'behuizing.md'
   - Software: 'software.md'
@@ -33,3 +35,7 @@ nav:
     - Wakeuplight: 'wakeuplight.md'
     - Klok: 'klok.md'
     - Agenda: 'agenda.md'
+
+# Styling
+extra_css:
+  - stylesheets/extra.css
