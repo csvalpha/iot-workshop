@@ -7,6 +7,8 @@
 #define LED_COUNT 60
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
+// gewoon iets randoms
+
 void setup() {
   strip.begin();
   strip.show();
