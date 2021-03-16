@@ -32,11 +32,17 @@ markdown_extensions:
 # Navigation
 nav:
   - Voorbereiding: 'index.md'
-  - Hardware: 'hardware.md'
+  - Hardware:
+    - Hardware overzicht: 'hardware/index.md'
+    - Ledring: 'hardware/ledring.md'
+    - Voltage divider: 'hardware/voltage-divider.md'
+    - Potentiometer: 'hardware/potentiometer.md'
+    - Pull-down resistor: 'hardware/pull-down-resistor.md'
+    - Knopje: 'hardware/knopje.md'
   - Behuizing: 'behuizing.md'
   - Software: 
     - Arduino IDE: 'software/index.md'
-    - Intruductie: 'software/introductie.md'
+    - Introductie: 'software/introductie.md'
     - Digitale I/O: 'software/digitale-io.md'
     - Analoge input: 'software/analoge-input.md'
     - Ledring: 'software/ledring.md'

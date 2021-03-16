@@ -1,7 +1,7 @@
 # Software
 Arduino is een opensource-computerplatform bedoeld om microcontrollers eenvoudig te maken. Dit platform is bedoeld voor iedereen die geïnteresseerd is in het maken en ontwerpen van slimme en creatieve objecten. Als basis hiervoor is de Arduino IDE waarmee aan de hand van de Arduino library voor C++ programma's geschreven kunnen worden voor de diverse Arduino microcontrollers.
 
-Door de grote populariteit van Adruino is het ondertussen ook mogelijk om de Arduino IDE en de bijbehorende programmeertaal vergelijkbare microcontrollert te programmeren, zoals de microcontroller die we voor dit project gebruikt hebben.
+Door de grote populariteit van Adruino is het ondertussen ook mogelijk om met de Arduino IDE en de bijbehorende programmeertaal vergelijkbare microcontrollers te programmeren, zoals de microcontroller die we voor dit project gebruikt hebben.
 
 Allereerst zullen we je laten zien hoe je de Arduino IDE installeerd en code upload naar de microcontroller. Vervolgens zullen we een korte introductie geven in het programmeren in C++ en aansluitend de verschillende facetten van embedded programmeren doorlopen.
 
