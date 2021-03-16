@@ -14,7 +14,7 @@ Gebruik de volgende code om te testen of je hardware goed werkt. Als alles corre
 > **Help! Er is wat mis!**  
 > Blijf kalm en kijk in de [probleemoplosser](./probleemoplosser.md).
 
-```arduino
+```c++
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 
