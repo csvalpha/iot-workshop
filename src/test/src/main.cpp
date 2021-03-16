@@ -23,6 +23,8 @@ void rainbow(int wait) {
   }
 }
 
+// gewoon iets randoms
+
 void setup() {
   strip.begin();
   strip.show();
