@@ -36,6 +36,7 @@ nav:
   - Behuizing: 'behuizing.md'
   - Software: 
     - Arduino IDE: 'software/index.md'
+    - Intruductie: 'software/introductie.md'
     - Digitale I/O: 'software/digitale-io.md'
     - Analoge input: 'software/analoge-input.md'
     - Ledring: 'software/ledring.md'
