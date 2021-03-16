@@ -12,7 +12,7 @@
 Gebruik de volgende code om te testen of je hardware goed werkt. Als alles correct aangesloten is zal er een regenboog over de ledring cirkelen. Door aan de draaiknop te draaien moet deze sneller of langzamer gaan draaien. Als je het knopje indrukt moet deze stoppen met draaien.
 
 > **Help! Er is wat mis!**  
-> Blijf kalm en kijk in de [probleemoplosser](./probleemoplosser.md).
+> Blijf kalm en kijk in de [probleemoplosser](../probleemoplosser.md).
 
 ```c++
 #include <Arduino.h>
