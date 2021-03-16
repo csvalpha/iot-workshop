@@ -39,3 +39,4 @@ Voor deze workshop zijn een aantal benodigdheden. Het gros hiervan wordt bij de 
 | Tape                                                           |
 | Lijm                                                           |
 | Boor (of ander gereedschap om een gat in een frisbee te maken) |
+| Computer of laptop                                             |
