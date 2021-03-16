@@ -23,6 +23,11 @@ theme:
 plugins:
   - search:
       lang: nl
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      linenums: true
 
 # Navigation
 nav:
