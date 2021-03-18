@@ -50,6 +50,8 @@ variable = 10;
 | Floating point        | `float`  | Kommagetallen                      |             |            |
 | Double floating point | `double` | Kommagetallen met dubbele precisie |             |            |
 
+#### Casten
+
 ### Operators
 
 #### Wiskundig
