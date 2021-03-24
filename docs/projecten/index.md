@@ -15,3 +15,12 @@ Via de internetverbinding is het ook mogelijk om contact te leggen met andere we
 
 ## Doe je eigen project
 We zijn uiteraard heel benieuwd welke leuke andere ideeën je hebt met deze ledring. Misschien maak je wel een statusbalk waarmee je kunt zien hoelang het nog duurt totdat de frituur klaar is. Of koop je een luchtkwaliteitssensor en weergeef je de luchtkwaliteit in je studeerkamer. Laat het ons vooral weten en dan zullen we je project aan deze pagina toevoegen.
+
+## Voorbeelden
+Deze ideeën en voorbeelden zijn al ingestuurd.
+
+### Weerbericht
+Door een koppeling met buienradar wordt weergeven wat de weersverwachting van vandaag is.
+
+### Pixel chaser
+Probeer op het juiste moment op het knopje te drukken in dit spel waarmee je je reactietijd kunt meten. Is optioneel ook als drankspel te spelen.
