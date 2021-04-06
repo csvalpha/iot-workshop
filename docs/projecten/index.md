@@ -24,3 +24,6 @@ Door een koppeling met buienradar wordt weergeven wat de weersverwachting van va
 
 ### Pixel chaser
 Probeer op het juiste moment op het knopje te drukken in dit spel waarmee je je reactietijd kunt meten. Is optioneel ook als drankspel te spelen.
+
+### Spotify discolicht
+Hoe vet is het als je een discolamp hebt die automatisch mee knippert op het tempo van je huidige Spotify liedje. Via de spotify api kun je het tempo, de dansbaarheid en het energielevel van het huidige liedje ophalen en daar de ledring op aanpassen.
