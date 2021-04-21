@@ -74,6 +74,7 @@ nav:
   - Voorbereiding: 'index.md'
   - Hardware:
     - Hardware overzicht: 'hardware/index.md'
+    - Solderen: 'hardware/solderen.md'
     - Ledring: 'hardware/ledring.md'
     - Voltage divider: 'hardware/voltage-divider.md'
     - Potentiometer: 'hardware/potentiometer.md'
