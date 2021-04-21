@@ -29,7 +29,7 @@ Soldeer is een metaallegering met een laag smeldpunt. Het bestaat in zowel loodh
 De optimale soldeertemperatuur bij loodhoudende soldeer is rond de 330°C. Voor loodvrije soldeer is dit 350°C.
 
 !!! danger "Let op bij het gebruik van loodhoudende soldeer"
-    Zorg voor goede ventilatie en was je handen naderhand.
+    Zorg voor goede ventilatie en was je handen naderhand. De dampen kunnen schadelijk zijn voor je gezondheid.
     
 ### Overig
 
