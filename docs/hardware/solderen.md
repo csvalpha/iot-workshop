@@ -19,7 +19,7 @@ De soldeerbout gebruik je om het soldeer mee te verhitten zodat het aan de elekt
 
 Het is belangrijk om de punt van je soldeerbout schoon en vrij van oxidatie te houden. Daarvoor kan een spons gebruikt worden. Punten met oxidatie worden zwart en accepteren geen soldeer meer. Je kunt hiervoor een vochtige conventionele spons gebruiken, maar dit verkort wel de levensduur van je punt. Een alternatief is gebruik te maken van een messing spons.
 
-!!! warning "Gebruik geen schuurspons maar een cellulose spons¨
+!!! warning "Gebruik geen schuurspons maar een cellulose spons"
     Schuursponzen zijn gemaakt van plastic en dat smelt bij de hoge temperaturen van de soldeerbout. Gebruik in plaats daarvan een natuurspons of een speciale cellulose soldeerbout spons.
 
 ### Soldeer
