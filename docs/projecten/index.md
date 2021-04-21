@@ -27,3 +27,9 @@ Probeer op het juiste moment op het knopje te drukken in dit spel waarmee je je 
 
 ### Spotify discolicht
 Hoe vet is het als je een discolamp hebt die automatisch mee knippert op het tempo van je huidige Spotify liedje. Via de spotify api kun je het tempo, de dansbaarheid en het energielevel van het huidige liedje ophalen en daar de ledring op aanpassen.
+
+### Aansturen met app
+Het is mogelijk om de ledring aan te sturen door middel van een app. Hiervoor kun je de WLED library installeren op de microcontroller. Hoe je dat doet vind je hier [https://github.com/Aircoookie/WLED/wiki](https://github.com/Aircoookie/WLED/wiki). Vervolgens kun je de [Android](https://play.google.com/store/apps/details?id=com.aircoookie.WLED) of [iOS](https://apps.apple.com/us/app/wled/id1475695033) app gebruiken om de kleur van de ledring aan te passen en animaties op de ring te weergeven. Via WLED is het mogelijk om de ledring aan veel andere diensten te koppelen zoals Philips Hue en Amazon Alexa.
+
+### Koppelen met Google Home
+Met wat extra stappen is het mogelijk om de ledring aan te sturen via Google Home. Door de beperkingen in Google Home is de functionaliteit wat minimaal en is het redelijk wat werk om op te zetten. Hoe je dit precies doet lees je in de handleiding [WLED met IFTTT en Google Home](https://www.instructables.com/WLED-on-ESP8266-IFTTT-Google-Assistant/).
