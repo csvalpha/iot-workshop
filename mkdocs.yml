@@ -2,7 +2,7 @@
 site_name: IoT Workshop
 
 site_description: 'Internet of Things Workshop voor C.S.V. Alpha'
-site_author: 'C.S.V. Alpha'
+site_author: 'Ruben Smit en Hilke van den Born'
 
 # Copyright
 copyright: Copyright &copy; 2021 C.S.V. Alpha
@@ -29,7 +29,7 @@ plugins:
       #
       #cover: false
       # back_cover: true
-      cover_title: IoT Workshop
+      cover_title: Internet of Things Workshop
       cover_subtitle: Solderen en Programmeren
       cover_logo: assets/images/finished-ledring.jpg
       #custom_template_path: TEMPLATES PATH
@@ -55,7 +55,7 @@ plugins:
       #render_js: true
       #headless_chrome_path: headless-chromium
       #
-      output_path: pdf/handleiding.pdf
+      output_path: pdf/IoT-Workshop-Handleiding.pdf
       #enabled_if_env: ENABLE_PDF_EXPORT
       #
       #debug_html: true
