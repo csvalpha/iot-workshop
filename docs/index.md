@@ -29,7 +29,7 @@ Voor deze workshop zijn een aantal benodigdheden. Het gros hiervan wordt bij de 
 |-------------------------------------|--------|
 | 5V 1,5A USB voeding (telefoonlader) | 1      |
 | Micro USB kabel                     | 1      |
-| vel A4 papier                       | 1      |
+| Vel A4 papier                       | 1      |
 
 ### Gereedschap
 | Artikel                                                        |
