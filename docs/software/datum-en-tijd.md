@@ -4,12 +4,13 @@ Om de huidige datum en tijd te gebruiken binnen je applicatie kun je gebruik mak
 
 ## Functies
 De library heeft de volgende functies.
-- `getDay()` geeft een nummer dat overeenkomt met de dagen van de week waarbij 0 zondag is.
-- `getHours()` geeft een nummber met het huidige uur in 24 uurs formaat.
-- `getMinutes()` geeft een nummer met de huidige minuut.
-- `getSeconds()` geeft een nummer met de huidige seconde.
-- `getEpochTime()` geeft een unsigned long met de huidige epoch tijd in seconden. Dat is het aantal seconden sinds middernacht 1 januari 1970 in GMT.
-- `getFormattedTime()` geeft een String met de tijd in HH:MM:SS format.
+
+  - `getDay()` geeft een nummer dat overeenkomt met de dagen van de week waarbij 0 zondag is.
+  - `getHours()` geeft een nummber met het huidige uur in 24 uurs formaat.
+  - `getMinutes()` geeft een nummer met de huidige minuut.
+  - `getSeconds()` geeft een nummer met de huidige seconde.
+  - `getEpochTime()` geeft een unsigned long met de huidige epoch tijd in seconden. Dat is het aantal seconden sinds middernacht 1 januari 1970 in GMT.
+  - `getFormattedTime()` geeft een String met de tijd in HH:MM:SS format.
 
 Er is geen functie om de datum te berekenen maar dit is wel af te leiden uit de epoch.
 
