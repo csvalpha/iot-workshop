@@ -7,14 +7,15 @@ De library heeft de volgende functies.
 
   - `begin()` initialiseert het ledring object waarna het gebruikt kan worden.
   - `show()` schrijft de wijzigingen aan de pixel kleuren naar de ledring voor weergave.
-  - `setPixelColor()` zet de kleur van de pixel.
-  - `fill()` zet de kleur van meerdere achtereenvolgende pixels.
-  - `Color()` converteerd losse waarden voor rood, groen en blauw naar een enkele kleurwaarde.
-  - `ColorHSV()` converteerd losse waarden voor hue, saturation en value naar een enkele kleurwaarde.
-  - `getPixelColor()` geeft de kleur van een pixel.
-  - `setBrightness()` zet de helderheid van de ledring met een waarde tussen de 0 en de 255.
+  - `setPixelColor(n, red, green, blue)` zet de kleur van de pixel.
+  - `fill(color, first, count)` zet de kleur van meerdere achtereenvolgende pixels.
+  - `Color(red, green, blue)` converteerd losse waarden voor rood, groen en blauw naar een enkele kleurwaarde.
+  - `ColorHSV(hue, saturation, value)` converteerd losse waarden voor hue, saturation en value naar een enkele kleurwaarde.
+  - `getPixelColor(n)` geeft de kleur van een pixel.
+  - `setBrightness(brightness)` zet de helderheid van de ledring met een waarde tussen de 0 en de 255.
   - `getBrightness()` geeft de helderheid van de ledring.
   - `clear()` verwijdert alle ingestelde kleuren van elke pixel.
+  - `numPixels()` geeft het aantal pixels in de ledring.
 
 ## Voorbeeld
 ```c++
@@ -158,12 +159,40 @@ void setup() {
 ```
 
 ### Pixels een kleur geven
+De kleur van een pixel kan ingesteld worden door middel van de `setPixelColor(n, red, green, blue)`. Daar bij is n het nummer van de pixel in de ring en zijn de kleuren gegeven als een getal tussen de 0 en 255. Het volgende voorbeeld zet de kleur van de 12e pixel naar magenta.
+```c++
+strip.setPixelColor(11, 255, 0, 255);
+```
+
+Een alternatief is om de kleur van de pixel in te stellen met een kleurwaarde met de `setPixelColor(n, color)` functie. Daarvoor kun je de waarde van een kleur in een 32 bit getal opslaan zodat je hem later kunt hergebruiken. Hiervoor kun je de `Color(red, green, blue)` functie gebruiken. Het volgende voorbeeld slaat de kleur magenta op in een variabele en zet vervolgens de kleur van de 12e pixel naar magenta.
+```c++
+uint32_t magenta = strip.Color(255, 0, 255);
+strip.setPixelColor(11, magenta);
+```
+
+!!! caution "Let op! `setPixelColor()` heeft niet meteen effect op de leds"
+    De ingestelde kleuren moeten eerst naar de ledring verstuurd worden. Daarvoor kun je de `show()` functie gebruiken.
+
+De `show()` functie zorgt ervoor dat de voor de pixels ingestelde kleuren weergeven op de ledring.
+```c++
+strip.show();
+```
 
 ### Meerdere pixels een kleur geven
+Je kunt meerdere pixels dezelfde kleur geven met de `fill(color, first, count)` functie. Daarbij is `color` een 32-bit kleur waarde, is `first` de eerste pixel die de kleur moet krijgen en is `count` het aantal pixels dat de kleur moeten krijgen. In het volgende voorbeeld worden de pixels 4 tot en met 8 de kleur magenta gegeven.
+```c++
+uint32_t magenta = strip.Color(255, 0, 255);
+strip.fill(magenta, 3, 5);
+```
+
+De `clear()` functie kan gebruikt worden om alle pixels uit te zetten.
+```c++
+strip.clear();
+```
 
 ### Helderheid
 
 ### HSV kleuren
 
 ## Meer informatie
-Voor meer informatie kun je kijken in de [github repo](https://github.com/adafruit/Adafruit_NeoPixel) van de library of de [Neopixel Uberguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use).
+Voor meer informatie kun je naar de [github repo](https://github.com/adafruit/Adafruit_NeoPixel) van de library of vind je in de [Neopixel Uberguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use).
