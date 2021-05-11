@@ -87,9 +87,9 @@ nav:
     - Digitale I/O: 'software/digitale-io.md'
     - Analoge input: 'software/analoge-input.md'
     - Ledring: 'software/ledring.md'
-    - Wifi: 'software/wifi.md'
     - Datum en Tijd: 'software/datum-en-tijd.md'
     - Webservices: 'software/webservices.md'
+    - Meer informatie: 'software/meer-informatie.md'
   - Projecten:
     - Projectoverzicht: 'projecten/index.md'
     - Nachtlampje: 'projecten/nachtlampje.md'
