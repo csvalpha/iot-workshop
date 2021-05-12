@@ -23,7 +23,7 @@ We zijn uiteraard heel benieuwd welke leuke andere ideeën je hebt met deze ledr
 Door een koppeling met buienradar wordt weergeven wat de weersverwachting van vandaag is.
 
 ### Pixel chaser
-Probeer op het juiste moment op het knopje te drukken in dit spel waarmee je je reactietijd kunt meten. Is optioneel ook als drankspel te spelen.
+Probeer op het juiste moment op het knopje te drukken in dit spel waarmee je je reactietijd kunt meten. Is optioneel ook als drankspel te spelen. Een beschrijving hoe je dit doet vind je in deze video: [https://www.youtube.com/watch?v=hjqtJA7gVQ0](https://www.youtube.com/watch?v=hjqtJA7gVQ0).
 
 ### Spotify discolicht
 Hoe vet is het als je een discolamp hebt die automatisch mee knippert op het tempo van je huidige Spotify liedje. Via de spotify api kun je het tempo, de dansbaarheid en het energielevel van het huidige liedje ophalen en daar de ledring op aanpassen.
