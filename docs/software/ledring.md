@@ -16,9 +16,10 @@ De library heeft de volgende functies.
   - `getBrightness()` geeft de helderheid van de ledring.
   - `clear()` verwijdert alle ingestelde kleuren van elke pixel.
   - `numPixels()` geeft het aantal pixels in de ledring.
+  - `gamma32(color)` geeft een gamma gecorigeerde kleurwaarde terug.
 
 ## Voorbeeld
-```c++
+```arduino
 #include <Adafruit_NeoPixel.h>
 
 // Which pin on the ESP is connected to the NeoPixels?
@@ -138,12 +139,12 @@ void theaterChaseRainbow(int wait) {
 
 ## Werking
 Allereerst moet de library toegevoegd worden aan de applicatie.
-```c++
+```arduino
 #include <Adafruit_NeoPixel.h>
 ```
 
 Vervolgens slaan we op aan welke pin de ledring verbonden is en hoeveel pixels er op de ring zitten, in ons geval pin `D4` en 60 pixels. Daarna maken we een Neopixel strip object aan.
-```c++
+```arduino
 #define LED_PIN D4
 #define LED_COUNT 60
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
@@ -151,7 +152,7 @@ Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 ### setup()
 In de `setup()` initializeren we het strip object door de `begin()` functie aan te roepen en zetten we alle pixels uit door de `show()` functie aan te roepen.
-```c++
+```arduino
 void setup() {
   strip.begin();
   strip.show();
@@ -160,12 +161,12 @@ void setup() {
 
 ### Pixels een kleur geven
 De kleur van een pixel kan ingesteld worden door middel van de `setPixelColor(n, red, green, blue)`. Daar bij is n het nummer van de pixel in de ring en zijn de kleuren gegeven als een getal tussen de 0 en 255. Het volgende voorbeeld zet de kleur van de 12e pixel naar magenta.
-```c++
+```arduino
 strip.setPixelColor(11, 255, 0, 255);
 ```
 
 Een alternatief is om de kleur van de pixel in te stellen met een kleurwaarde met de `setPixelColor(n, color)` functie. Daarvoor kun je de waarde van een kleur in een 32 bit getal opslaan zodat je hem later kunt hergebruiken. Hiervoor kun je de `Color(red, green, blue)` functie gebruiken. Het volgende voorbeeld slaat de kleur magenta op in een variabele en zet vervolgens de kleur van de 12e pixel naar magenta.
-```c++
+```arduino
 uint32_t magenta = strip.Color(255, 0, 255);
 strip.setPixelColor(11, magenta);
 ```
@@ -174,25 +175,71 @@ strip.setPixelColor(11, magenta);
     De ingestelde kleuren moeten eerst naar de ledring verstuurd worden. Daarvoor kun je de `show()` functie gebruiken.
 
 De `show()` functie zorgt ervoor dat de voor de pixels ingestelde kleuren weergeven op de ledring.
-```c++
+```arduino
 strip.show();
 ```
 
 ### Meerdere pixels een kleur geven
 Je kunt meerdere pixels dezelfde kleur geven met de `fill(color, first, count)` functie. Daarbij is `color` een 32-bit kleur waarde, is `first` de eerste pixel die de kleur moet krijgen en is `count` het aantal pixels dat de kleur moeten krijgen. In het volgende voorbeeld worden de pixels 4 tot en met 8 de kleur magenta gegeven.
-```c++
+```arduino
 uint32_t magenta = strip.Color(255, 0, 255);
 strip.fill(magenta, 3, 5);
 ```
 
 De `clear()` functie kan gebruikt worden om alle pixels uit te zetten.
-```c++
+```arduino
 strip.clear();
 ```
 
+Met `numPixels()` kun je het aantal pixels in de ring opvragen. Dit kun je gebruiken in een for loop om alle pixels een kleur te geven. Het volgende voorbeeld maakt een kleurverloop van rood naar blauw over de hele ring.
+```arduino
+for (int i = 0; i < strip.numPixels(); i++) {
+  int offset = (int) (255 / strip.numPixels()) * i;
+  strip.setPixelColor(i, 255 - offset, 0, offset);
+}
+```
+
 ### Helderheid
+De helderheid van de hele ledring kan met `setBrightness(value)` ingesteld worden. Daarbij is `value` een waarde tussen de 0 voor uit en 255 voor maximale helderheid. Om de ledring op een kwart helderheid te zetten kun je dus de volgende code gebruiken:
+```arduino
+strip.setBrightness(64);
+```
+
+!!! caution "Let op! `setBrightness()` heeft niet meteen effect op de leds"
+    De ingestelde helderheid moeten eerst naar de ledring verstuurd worden. Daarvoor kun je de `show()` functie gebruiken.
+    
+!!! info "`setBrightness()` is eigenlijk bedoeld om maar één keer aangeroepen te worden in de `setup()`"
+    Het is dus eigenlijk niet de bedoeling om hem voor animaties te gebruiken. Het is beter om met eigen logica de helderheid van je pixels aan te passen als je hier animaties mee wilt maken. Dit komt omdat de functie de waarden van je pixel data in het RAM aanpast en daarmee informatie verloren gaat, het is een "lossy" operatie.
 
 ### HSV kleuren
+De Neopixel library ondersteunt ook het gebruik van kleuren in de "HSV" (hue-saturation-value) kleurruimte als alternatief voor de gebruikelijke RGB (red-green-blue). Voor sommige effecten is dit veel gebruiksvriendelijker, bijvoorbeeld voor het regenboog effect (zeer populair onder creaters). Een HSV kleur kan met de `ColorHSV()` opgeslagen worden als RGB waarde.
+```arduino
+uint32_t rgbcolor = strip.ColorHSV(hue, saturation, value);
+```
+Daarbij zijn de volgende parameters van belang:
+  - `hue` is een 16-bit nummer dat start bij 0 voor rood en de kleurcirkel via geel (65536/6), groen (65536/3), cyaan (65536/2), blauw (65536*2/3) en magenta (65536*5/6) weer bij rood aan komt (65536).
+  - `saturation` is een 8-bit nummer dat de verzadiging van de kleur aangeeft waarbij 0 onverzadigd is en 255 maximale verzadiging.
+  - `value` is een 8-bit nummer dat de helderheid van de kleur aangeeft waarbij 0 zwart is en 255 maximale helderheid.
+
+Als je alleen een pure kleur wilt met maximale verzadiging en helderheid dan kun je de functie ook aanroepen met allen de hue:
+```arduino
+uint32_t rgbcolor = strip.ColorHSV(hue);
+```
+#### Gamma correctie
+Als je veel met kleuren werkt zul je merken dat wanneer je faded tussen kleuren het soms lijkt alsof ze overmatig helder of flets er uit zien. Dit komt omdat nummeriek de kleurwaarden goed zijn maar de perceptie van onze ogen iets anders is. Daarvoor kun je zogenaamde gamma correctie gebruiken, hoe dat precies werkt wordt [hier uitgelegd](https://learn.adafruit.com/led-tricks-gamma-correction). De `gamma32(color)` functie neemt een RGB waarde en corrigeert deze zodat hij optisch correct is.
+```arduino
+uint32_t rgbcolor = strip.gamma32(strip.ColorHSV(hue, sat, val));
+```
+
+#### Een regenboog maken
+Stel je wilt je ledstrip voorzien van een regenboogeffect (zeer belangrijk, dit wil je weten) dan doe je dat als volgt:
+```arduino
+for(int i = 0; i < strip.numPixels(); i++) {
+  int hue = i * 65536L / strip.numPixels();
+  uint32_t color = strip.gamma32(strip.ColorHSV(hue));
+  strip.setPixelColor(c, color); // Set pixel 'c' to value 'color'
+}
+```
 
 ## Meer informatie
 Voor meer informatie kun je naar de [github repo](https://github.com/adafruit/Adafruit_NeoPixel) van de library of vind je in de [Neopixel Uberguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use).
