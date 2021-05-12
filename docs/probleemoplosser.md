@@ -4,7 +4,7 @@ Help, alles gaat mis! Gelukkig hebben we hier een aantal tips om je problemen op
 ## Als ik mijn ledring felle kleuren of veel wit laat weergeven gaat hij uit
 Hoe feller en witter de kleuren, hoe meer stroom de ledring gebruikt. Als de ledring volledig wit is op volle helderheid gebruikt hij ongeveer 2A. Het kan zijn dat de voeding die je gebruikt dit niet aan kan, kijk of je de kleuren minder fel kunt maken of zet je brightness iets lager.
 
-## Ik pas de kleur van de pixels aan maak ik zie de ledring niet veranderen
+## Ik pas de kleur van de pixels aan maar ik zie de ledring niet veranderen
 Als je de `setPixelColor()` functie of de `setBrightness()` gebruikt in de Neopixel library zul je eerst de `show()` functie aan moeten roepen voordat je wijzigingen op de ledring getoond worden.
 
 ## Er komt rook uit mijn microcontroller!
