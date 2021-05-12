@@ -216,15 +216,19 @@ De Neopixel library ondersteunt ook het gebruik van kleuren in de "HSV" (hue-sat
 ```arduino
 uint32_t rgbcolor = strip.ColorHSV(hue, saturation, value);
 ```
+
+![het HSV kleurenwiel](../assets/images/hue-saturation-value.png){ align=left }
+
 Daarbij zijn de volgende parameters van belang:
   - `hue` is een 16-bit nummer dat start bij 0 voor rood en de kleurcirkel via geel (65536/6), groen (65536/3), cyaan (65536/2), blauw (65536*2/3) en magenta (65536*5/6) weer bij rood aan komt (65536).
   - `saturation` is een 8-bit nummer dat de verzadiging van de kleur aangeeft waarbij 0 onverzadigd is en 255 maximale verzadiging.
   - `value` is een 8-bit nummer dat de helderheid van de kleur aangeeft waarbij 0 zwart is en 255 maximale helderheid.
 
-Als je alleen een pure kleur wilt met maximale verzadiging en helderheid dan kun je de functie ook aanroepen met allen de hue:
+Als je alleen een pure kleur wilt met maximale verzadiging en helderheid dan kun je de functie ook aanroepen met alleen de hue:
 ```arduino
 uint32_t rgbcolor = strip.ColorHSV(hue);
 ```
+
 #### Gamma correctie
 Als je veel met kleuren werkt zul je merken dat wanneer je faded tussen kleuren het soms lijkt alsof ze overmatig helder of flets er uit zien. Dit komt omdat nummeriek de kleurwaarden goed zijn maar de perceptie van onze ogen iets anders is. Daarvoor kun je zogenaamde gamma correctie gebruiken, hoe dat precies werkt wordt [hier uitgelegd](https://learn.adafruit.com/led-tricks-gamma-correction). De `gamma32(color)` functie neemt een RGB waarde en corrigeert deze zodat hij optisch correct is.
 ```arduino
