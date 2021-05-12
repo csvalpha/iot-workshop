@@ -220,6 +220,7 @@ uint32_t rgbcolor = strip.ColorHSV(hue, saturation, value);
 ![het HSV kleurenwiel](../assets/images/hue-saturation-value.png){ align=left }
 
 Daarbij zijn de volgende parameters van belang:
+
   - `hue` is een 16-bit nummer dat start bij 0 voor rood en de kleurcirkel via geel (65536/6), groen (65536/3), cyaan (65536/2), blauw (65536*2/3) en magenta (65536*5/6) weer bij rood aan komt (65536).
   - `saturation` is een 8-bit nummer dat de verzadiging van de kleur aangeeft waarbij 0 onverzadigd is en 255 maximale verzadiging.
   - `value` is een 8-bit nummer dat de helderheid van de kleur aangeeft waarbij 0 zwart is en 255 maximale helderheid.
