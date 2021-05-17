@@ -84,8 +84,7 @@ nav:
   - Software: 
     - Arduino IDE: 'software/index.md'
     - Introductie: 'software/introductie.md'
-    - Digitale I/O: 'software/digitale-io.md'
-    - Analoge input: 'software/analoge-input.md'
+    - Input & Output: 'software/digitale-io.md'
     - Ledring: 'software/ledring.md'
     - Datum en Tijd: 'software/datum-en-tijd.md'
     - Webservices: 'software/webservices.md'
