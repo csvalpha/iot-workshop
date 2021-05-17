@@ -13,7 +13,7 @@ pinMode(D1, INPUT);
 ```
 
 ```arduino
-boolean high = digitalRead(D1);
+boolean value = digitalRead(D1);
 ```
 
 ## Digitale Output
