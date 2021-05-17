@@ -1,1 +1,0 @@
-# Analoge input
