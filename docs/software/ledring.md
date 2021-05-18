@@ -1,6 +1,6 @@
 # Ledring
 
-Om de kleuren en helderheid van de leds op de ledring aan te passen kun je gebruik maken van de Adafruit Neopixel library. Om deze te installeren ga je naar **Sketch > Library > Manage Libraries** en zoek je naar Adafruit Neopixel. Deze library geeft handige functies waarmee de leds aangestuurd kunnen worden.
+Om de kleuren en helderheid van de leds op de ledring aan te passen kun je gebruik maken van de Adafruit Neopixel library. Om deze te installeren ga je naar **Sketch > Library > Manage Libraries** en zoek je naar Adafruit Neopixel. Deze library geeft handige functies waarmee de leds aangestuurd kunnen worden op led ringen maar ook ledstrips.
 
 ## Functies
 De library heeft de volgende functies.
