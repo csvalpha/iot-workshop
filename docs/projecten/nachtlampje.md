@@ -41,13 +41,74 @@ void setup() {
 }
 ```
 
-## Indrukken knopje
+## Loop
+In de `loop()` staat alle code die herhaald uitgevoerd moet worden. Hierin zullen we bepalen of het knopje ingedrukt wordt en of de ledring aan moet en hoe helder.
 
-## Weergeven ledring
+### Indrukken knopje
+Met de `digitalRead()` functie kunnen we bepalen of het knopje ingedrukt wordt of niet. Vervolgens kunnen we in `lightOn` opslaan of de ring aan of uit moet staan. Als hij aan staat moet hij uit en vice-versa. Dus dan komen we tot de volgende code.
+
+```arduino
+// Als het knopje ingedrukt wordt moet het lampje aan of uit gaan
+if (digitalRead(BTN_PIN)) {
+  // We veranderen de waarde naar het tegenovergestelde van zijn vorige waarde, aan wordt dus uit en uit wordt aan
+  lightOn = !lightOn;
+}
+```
+
+#### Debouncen
+Als je bovenstaande code zou gebruiken zul je merken dat de ledring willekeurig zal knipperen en zodra je het knopje loslaat hij ofwel aan ofwel uit staat. Dat komt doordat er twee problemen zijn. Allereerst bouncing, dat is dat wanneer je het knopje indrukt hij niet meteen volledig contact maakt maar een beetje "stuitert". Vanuit de code gezien heeft dat het effect alsof je heel snel achter elkaar het knopje indrukt. De makkelijkste oplossing is om even te wachten voordat we verder gaan om de bounce periode voorbij te gaan. Daarvoor kun je de `delay()` functie gebruiken. Persoonlijk gebruik ik vaak een delay van 300 miliseconden, dan weet je zeker dat het bouncen wel voorbij is.
+
+Het andere probleem is dat het zo kan zijn dat iemand het knopje ingedrukt houd. In dat geval zal de ring gaan knipperen, en dat is ook een beetje raar. Dus na het debouncen is het slim om te wachten totdat de gebruiker het knopje losgelaten heeft.
+
+Om deze twee punten op te lossen komen we tot de volgende code.
+```arduino
+// Als het knopje ingedrukt wordt moet het lampje aan of uit gaan
+if (digitalRead(BTN_PIN)) {
+  // We veranderen de waarde naar het tegenovergestelde van zijn vorige waarde, aan wordt dus uit en uit wordt aan
+  lightOn = !lightOn;
+
+  // We wachten heel even om rekening te houden met bouncen
+  delay(300);
+
+  // Om te voorkomen dat de ledring gaat knipperen wachten we tot het knopje losgelaten is
+  while(digitalRead(BTN_PIN)) {
+    delay(100);
+  }
+}
+```
+
+### Weergeven ledring
+Omdat het een nachtlampje is willen we hem een iets gelig licht geven. Dat kan door de waarde van het blauwe licht iets lager te maken dan de recht. Die kleur kunnen we voor elke pixel als volgt instellen.
+```arduino
+for (int i = 0; i < strip.numPixels(); i++) {
+  strip.setPixelColor(i, 255, 255, 75);
+}
+```
+
+Vervolgens willen we de helderheid van de ring aanpassen aan de stand van de potentiometer. Dus moeten we de waarde daarvan eerst uitlezen met de `analogRead()` funcie en opslaan. De helderheid van de ledring moet ingesteld worden met een waarde tussen de 0 en de 255 maar de maximale waarde die uit de `analogRead()` functie komt is 1023, dus delen we die door 4. Daarna stellen we de helderheid van de strip ermee in.
+```arduino
+int brightness = analogRead(POT_PIN) / 4;
+strip.setBrightness(brightness);
+```
+
+Dit alles moet natuurlijk alleen gebeuren als de ledring aan moet staan. Als hij uit moet staan dan moet de helderheid 0 zijn. Dit kan met een if statement als volgt.
+```arduino
+if (lightOn) {  
+  // Alles om het lampje aan te zetten en de helderheid in te stellen
+} else {
+  // Als hij uit moet staan zetten we de felheid op 0
+  strip.setBrightness(0);
+}
+```
+
+Tot slot moeten we niet vergeten om de wijzingen aan de pixels naar de ledring te versturen.
+```arduino
+strip.show();
+```
 
 ## Volledig script
+Als je alle stappen gevolgd hebt moet je op de volgende code uitkomen.
 ```arduino
-#include <Arduino.h>
 // We voegen de Neopixel library toe waarmee we de ledring kunnen aansturen
 #include <Adafruit_NeoPixel.h>
 
