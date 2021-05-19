@@ -7,4 +7,7 @@ Een potentiometer is een verstelbare weestand die bestaat uit weerstandsmateriaa
 
 Wanneer je dit circuit aansluit om stroom dan ga je twee van deze pootjes verbinden, dus je verbindt of pootje A en B of je verbindt B en C. Wanneer dit gebeurd moet de stroom door het weerstandsmateriaal. Hoe langer de weg van het ene pootje naar het andere pootje hoe groter de weerstand.
 
+## Solderen
+Soldeer de middelste pin van de potentiometer met een draad aan `A0`. Een van de buitenste pinnen soldeer je met een draad aan `3V3` en de andere buitenste pin aan `GND`. Omdat de `GND` pin van de ESP al in gebruik is voor de ledring kun je de draad ook aan de `GND` van de ledring solderen.
+
 ![Potentiometer aansluiting op esp](../assets/images/hardware-potentiometer.jpg)
