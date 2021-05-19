@@ -1,5 +1,6 @@
 # Agenda
 
+
 ## Google script
 
 ### Volledig script
@@ -10,8 +11,7 @@ function doGet(e) {
     return ContentService.createTextOutput("no access to calendar");
   }
 
-  const now = new Date();
-  var start = new Date(); start.setHours(0, 0, 0);  // start at midnight
+  var start = new Date();
   const oneday = 24*3600000; // [msec]
   const stop = new Date(start.getTime() + 7 * oneday);
   Logger.log(start);
@@ -215,3 +215,6 @@ void loop() {
   delay(60000);
 }
 ```
+
+## Verbeter mogelijkheden
+Een optie is om meerdere agenda's uit te lezen en de kleur van die agenda mee te sturen. Dan kun je de kleur van de ledring aanpassen zodat je weet voor welke agenda de afspraak is. Verder zou je ook de kleur van groen naar rood kunnen laten verlopen hoe dichter je bij de tijd van de afspraak ben. Een andere optie is om de agenda afspraken, optioneel in kleuren, over een klok heen te leggen. Zodat je in een oogopslag kunt zien wanneer je bepaalde afspraken hebt. Stel dat je je collegerooster inlaad, dan zou je met rode strepen op de klok je collegetijden aan kunnen geven. Dan weet je 's ochtends meteen wat je te wachten staat die dag.
