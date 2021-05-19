@@ -56,8 +56,46 @@ variable = 10;
 
 #### Wiskundig
 
+| Operator              | Omschrijving                        | 
+|-----------------------|-------------------------------------|
+| +                     | getallen bij elkaar optellen        | 
+| -                     | getallen van elkaar aftrekken       |
+| *                     | getallen met elkaar vermenigvuldigen| 
+| /                     | Getallen door elkaar delen          |
+| %                     | Rest van een deling                 |         
 
 #### Toewijzingen
+| Operator              | Omschrijving                                     | 
+|-----------------------|--------------------------------------------------|
+| + =                   | Wijst het resultaat van een toevoeging toe       | 
+| - =                   | Wijst het resultaat va een aftrekking toe        |
+| * =                   | Wijst het resultaat van een vermenigvuldiging toe| 
+| %                     | Wijst de rest van een divisie toe                |
+| &                     | Wijst het resultaat van een logische AND toe*    |   
+| |                     | Wijst het resultaat van een logische OR toe*     |   
+| !                     | Geeft aan dat iets, niet, is                     |   
+
+##### AND operator
+Een AND operator is een boolean operator.  Een boolean heeft maar twee mogelijke resultaten: Waar(1) op niet waar(0). Een boolean heeft verschillende inputs. Bij een simpele boolean zijn er twee inputs.
+
+Een AND Operator is waar (1) wanneer alle inputs ook waar zijn. Even een voorbeeldje:
+Boolean: Ruben en Hilke hebben allebei blond haar
+Input 1: Ruben heeft bruin haar
+Input 2: Hilke heeft blond haar
+Wanneer we naar de input kijken kunnen we zien dat maar 1 van de twee inputs klopt. Ruben heeft helemaal geen blond haar. Dit houdt in dat de AND operator een onwaar of een 0 terug geeft. 
+
+We zouden de input ook anders op kunnen schrjiven:
+Input 1: Ruben !blond (Zie je wat hier gebeurd, er wordt nu aangegeven dat Ruben geen blond haar heeft. Wat hij wel heeft is onduidelijk maar dat doet er nu niet toe!)
+Input 2: Hilke heeft blond haar
+
+##### OR operator
+Een OR operator lijkt hele erg op de AND operator. Er is alleen een groot verschil: Om ervoor te zorgen dat de boolean waar (1) terug geeft hoeft er maar 1 van de inputs waar te zijn.
+
+Als we dan weer gaan kijken naar het eerdere voorbeeld:
+Boolean: Ruben en Hilke hebben allebei blond haar
+Input 1: Ruben heeft bruin haar
+Input 2: Hilke heeft blond haar
+Daar waar het resultaat van de AND operator niet waar (0) was is deze bij de OR operator wel waar (1). 1 van de inputs klopt, Hilke heeft namelijk blond haar.
 
 #### Vergelijkingen
 
