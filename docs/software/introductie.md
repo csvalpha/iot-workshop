@@ -3,7 +3,7 @@
 
 ## Basis programma
 
-
+Ieder Arduino script heeft altijd twee blokken: void setup() en de void loop().
 ```arduino
 #include <Arduino.h>
 
@@ -15,7 +15,18 @@ void loop() {
   // put your main code here, to run repeatedly:
 }
 ```
+###void setup()
+De void setup() staat aan het begin van het script. In de void setup() staat alles wat we nodig gaan hebben tijdens het runnen van het script. Je kan het zien als een soort van boodschappenlijst alleen vervangen we de meel en boter voor pins en variablen. Zoals je wellicht heb gezien staat er na de void setup() twee accolades {}. Tussen deze twee accolades wordt alles gezet wat we in de setup willen hebben.
 
+De void setup() wordt maar 1 keer gelezen door de Arduino en dat is na het opstarten van het programma.
+
+###void loop()
+In de void loop() vertel je de arduino wat het moet doen. Het is een beetje hetzelfde als het recept van een taart. We hebben tijdens de void setup() eerst boodchappen gedaan en nu gaan we met de void loop() het recept volgen. De instructies in de void loop() vorden oneindig lang herhaald, vandaar ook de naam!
+
+Net zoals bij de void setup() begint en eindigd de void loop() met accolades. Het grote verschil, naast de herhaling, is dat er in de void loop() meerdere blokjes code kunen staan. Deze blokjes code noem je methods en die hebben ook allemaal weer hun eigen accolades. Zo verdeel de code in stukje met ieder een eigen functie.
+
+###puntkomma
+Iets waar arduino sketches heel erg van houden zijn puntkommas. Achter iedere regel moet een puntkomma! Met een ; sluit je een regel af en zeg je als het ware tegen de arduino: 'goed gedaan jonge, nu aan het werk met de volgende regel'. Het vergeten van een ; is ook een van de meest voorkomende redenen waarom een script het niet doet. 
 ## Comments
 ```arduino
 // single line comment
@@ -104,7 +115,7 @@ Daar waar het resultaat van de AND operator niet waar (0) was is deze bij de OR 
 | <=                    | Waarde x is kleiner of gelijk aan waarde y|
 | >                     | Waarde x is groter dan waarde x           | 
 | >=                    | Waarde x is groter of gelijk aan waarde y |
-| =                     | Waarde x is waarde y                      |   
+| ==                    | Waarde x is waarde y                      |   
 
 ### Scope
 
