@@ -9,3 +9,6 @@ Wanneer zo’n knopje niet is ingedrukt zou er dus 0V naar een chip moeten gaan 
 Om dit soort dingen te voorkomen kunnen we een hele grote weerstand plaatsten tussen de digitale in pin en de ground. Dit zorgt ervoor dat de digitale in pin verbonden is met de grond en dus altijd 0V meet wanneer de knop niet is ingedrukt.
 
 Wanneer de knop wel wordt ingedrukt wordt de digitale IN pin verbonden met 5V en zal hij dus 5V meten.
+
+![circuit pull-down resistor](../assets/images/Pull_resistor.png )
+
