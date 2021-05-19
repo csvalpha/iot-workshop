@@ -27,7 +27,12 @@ Net zoals bij de void setup() begint en eindigd de void loop() met accolades. He
 
 ###puntkomma
 Iets waar arduino sketches heel erg van houden zijn puntkommas. Achter iedere regel moet een puntkomma! Met een ; sluit je een regel af en zeg je als het ware tegen de arduino: 'goed gedaan jonge, nu aan het werk met de volgende regel'. Het vergeten van een ; is ook een van de meest voorkomende redenen waarom een script het niet doet. 
+
 ## Comments
+Naast het feit dat je in een script tegen de Arduino vertelt wat het moet doen is het soms ook even heel fijn om tegen jezelf te praten of om even uit te leggen wat je aan het doen bent. Voor deze gevallen kan je een comment plaatsen. 
+
+Wanneer je een comment plaatst zeg je eigenlijk tegen de Arduino:'Wat ik hier opschrijf gaat jou helemaal niets aan en daar hoef jij dan ook niets mee te doen'. 
+
 ```arduino
 // single line comment
 ```
@@ -41,6 +46,11 @@ Iets waar arduino sketches heel erg van houden zijn puntkommas. Achter iedere re
 ```
 
 ## Variabelen
+Goed, het is tijd om een jeugdtraumaatje op te halen. Ik neme je mee terug naar de rekenles op de basisschool. Je zit voor in de klas, let goed op en opeens vraagt de juf of meester aan jou: 'Als Pietje 9 appels heeft en hij geeft 4 appels weg, hoeveel appels heeft Pietje dan nog?' Met de volste overtuiging zeg jij: '4 juf'. Wat heb je lekker opgelet en je kan niet wachten op het complimentje dat je van de juf gaat krijgen. Maar tot je grote schrik krijg je helemaal geen comlimentje maar de juf zegt: '4 wat? 4 koeien? 4 broden? 4 euro?' Oh ja! Dat wa ook zo: '4 appels juf!'
+
+Net zoals de 4 appels moet ook alles in een script een naam hebben. Dit noemen we variablem. Variablen vertegenvoordigen een getal of een tekst met een logische naam. Voorbeelden zijn bijvoorbeeld ledPin of onTime. Variablen kun je waardes geven.
+
+Even weer terug naar het jeugdtrauma. Appels is in dat geval het variable. Aan het begin (void setup()) had Pietje 9 appels en tijdens de eerste run van de void loop() heeft pietje er 4 weg gegeven. Hier kan je goed zien dat de waardes van variablen door het hele script heen kunnen veranderen en dus niet perse een vast waarde hebben!
 
 ### Declaratie en gebruik
 ```arduino
