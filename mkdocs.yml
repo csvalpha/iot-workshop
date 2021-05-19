@@ -87,7 +87,6 @@ nav:
     - Input & Output: 'software/digitale-io.md'
     - Ledring: 'software/ledring.md'
     - Datum en Tijd: 'software/datum-en-tijd.md'
-    - Webservices: 'software/webservices.md'
     - Meer informatie: 'software/meer-informatie.md'
   - Projecten:
     - Projectoverzicht: 'projecten/index.md'
