@@ -65,15 +65,15 @@ variable = 10;
 | %                     | Rest van een deling                 |         
 
 #### Toewijzingen
-| Operator              | Omschrijving                                     | 
-|-----------------------|--------------------------------------------------|
-| + =                   | Wijst het resultaat van een toevoeging toe       | 
-| - =                   | Wijst het resultaat va een aftrekking toe        |
-| * =                   | Wijst het resultaat van een vermenigvuldiging toe| 
-| %                     | Wijst de rest van een divisie toe                |
-| &                     | Wijst het resultaat van een logische AND toe*    |   
-| |                     | Wijst het resultaat van een logische OR toe      |   
-| !                     | Geeft aan dat iets, niet, is                     |   
+| Operator                | Omschrijving                                     | 
+|-------------------------|--------------------------------------------------|
+| + =                     | Wijst het resultaat van een toevoeging toe       | 
+| - =                     | Wijst het resultaat va een aftrekking toe        |
+| * =                     | Wijst het resultaat van een vermenigvuldiging toe| 
+| %                       | Wijst de rest van een divisie toe                |
+| &                       | Wijst het resultaat van een logische AND toe*    |   
+| rechte streep omhoog (|)| Wijst het resultaat van een logische OR toe      |   
+| !                       | Geeft aan dat iets, niet, is                     |   
 
 ##### AND operator
 Een AND operator is een boolean operator.  Een boolean heeft maar twee mogelijke resultaten: Waar(1) op niet waar(0). Een boolean heeft verschillende inputs. Bij een simpele boolean zijn er twee inputs.
