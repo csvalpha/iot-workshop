@@ -1,6 +1,34 @@
 # Klok
+Dit project bouwt voort op de code van het nachtlampje en de wakeuplight. Het verschil zit vooral in de loop functie waarin we de juiste pixels aan zetten om de tijd te laten zien. Het mooie is dat de ring precies 60 leds heeft, wat een toeval.
+
+## Loop
+We berekenen welke pixel er aan moet voor het uur, minuut en seconde.
+```arduino
+int minuutPixel = timeClient.getMinutes();
+int uurPixel = (timeClient.getHours() % 12) * 5;
+int secondePixel = timeClient.getSeconds();
+```
+
+Vervolgens loopen we door alle pixels heen. Op de 12, 3, 6 en 9 maken we een pixel wit. De minuten geven we aan met rood, het uur met groen en de seconde met blauw.
+```arduino
+for (int i = 0; i < strip.numPixels(); i++) {
+  int red = (i == minuutPixel) ? 255 : 0;
+  int green = (i == uurPixel) ? 255 : 0;
+  int blue = (i == secondePixel) ? 255 : 0;
+
+  if (i % 15 == 0 && !red && !green && !blue) {
+    red = 255;
+    green = 255;
+    blue = 255;
+  }
+
+  strip.setPixelColor(LED_COUNT - 1 - i, red, green, blue);
+}
+```
+Met wat creativiteit kun je ook hele andere animaties maken voor de klok. Bedenk wat leuks!
 
 ## Volledig script
+Het volledige klok script is als volgt.
 ```arduino
 #include <Arduino.h>
 // We voegen de Neopixel library toe waarmee we de ledring kunnen aansturen
