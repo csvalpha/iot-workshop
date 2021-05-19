@@ -6,7 +6,7 @@ De ESP8266 die wij voor dit project gebruiken is gemonteerd op een WEMOS D1 mini
 
 ![WEMOS D1 Mini](../assets/images/WEMOS-D1-mini.png)
 
-  - `D0 tm D8` De 9 digitale pinnen kunnen gebruikt worden als digitale input of output. Op `A0` na ondersteunen ze allemaal PWM.
+  - `D0 tm D8` De 9 digitale pinnen kunnen gebruikt worden als digitale input of output. Op `D0` na ondersteunen ze allemaal PWM.
   - `A0` Is een analoge input pin.
   - `RX & TX` Kunnen gebruikt worden voor Seriële communicatie.
   - `GND` Is een ground pin.
