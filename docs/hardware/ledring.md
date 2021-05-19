@@ -1,4 +1,5 @@
 # Ledring
+We beginnen met de leukste stap, het solderen van de ledring!
 
 ## Ring solderen
 We raden aan om de ledring op tafel vast te plakken voordat je begint met solderen. Je hebt als het goed is een strip met metalen pinnetjes gekregen. Die kun je uit de strip trekken en op de ring solderen. Verbind alle `GND` en `5V` vlakken met elkaar. Verbind ook de `DIN` en `DOUT` vlakken met elkaar voor de data verbinding **op één na**. Dit zal straks het begin en einde van de ledring zijn.
