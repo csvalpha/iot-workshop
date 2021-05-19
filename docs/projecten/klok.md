@@ -9,7 +9,7 @@ int uurPixel = (timeClient.getHours() % 12) * 5;
 int secondePixel = timeClient.getSeconds();
 ```
 
-Vervolgens loopen we door alle pixels heen. Op de 12, 3, 6 en 9 maken we een pixel wit. De minuten geven we aan met rood, het uur met groen en de seconde met blauw.
+Vervolgens loopen we door alle pixels heen. Op de 12, 3, 6 en 9 maken we een pixel wit tenzij een van de wijzers er staat. De minuten geven we aan met rood, het uur met groen en de seconde met blauw.
 ```arduino
 for (int i = 0; i < strip.numPixels(); i++) {
   int red = (i == minuutPixel) ? 255 : 0;
