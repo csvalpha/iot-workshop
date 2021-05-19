@@ -74,6 +74,7 @@ variable = 10;
 #### Casten
 
 ### Operators
+Operators zijn symbolen die aangeven dat er een bepaalde wiskundige of logische manipulatie gedaan moet worden. 
 
 #### Wiskundig
 
@@ -128,6 +129,13 @@ Daar waar het resultaat van de AND operator niet waar (0) was is deze bij de OR 
 | ==                    | Waarde x is waarde y                      |   
 
 ### Scope
+Wanneer je een script schrijft heb je zolas eerder vermeld variablen nodig (ja, ik tune toch nog een keertje in op het jeugdtrauma). Nu heb je keuze tussen twee smaakjes van dat trauma eehhhh keuze tussen twee soorten variablen: global variables en local variables
+
+#### Global variables
+Global variables zijn variables die gedeclared zijn buiten functies en die global variables kunnen dus gebruikt worden door iedere funcite. Ze zijn zeg maar niet in een hokje gestopt en iedere functie kan aanspraak maken op een global variable. Een global variable is een soort van Albert Heijn, iedereen heeft toegang tot een Albert Heijn en wij mogen naar harte lust appels, Grolsch en andere vernaperingen halen.
+
+#### Local variables
+Local variables zijn net wat anders. Een local variable wordt gedeclared in een specifieke functie en deze variable kan dan ook alleen maar worden gebruikt binnen die specifieke functie. Het is dus geen Albert Heijn maar de koelkast op Shine. Niet iedereen heeft toegang tot die koelkast maar iedereen op huize Shine mag wel alles in de koelkast gebruiken. 
 
 ```arduino hl_lines="4 5"
 int value = 10; // this is a global variable
