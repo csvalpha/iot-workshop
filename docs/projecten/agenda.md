@@ -1,12 +1,67 @@
 # Agenda
-
+In dit project gaan we de tijd van de eerstvolgende google agenda afspraak ophalen en een balk laten aftellen totdat de afspraak begint. Allereest zullen we een Google script schrijven dat je agenda uitleest en een lijstje met afspraken voor de komende 24 uur opstelt. De ESP kan vervolgens via een url dat lijstje opvragen en de balk weergeven. De enige hobbel in het opvragen van de data is dat er een redirect in zit met een tweede url voordat we de echte data kunnen opvragen.
 
 ## Google script
+Volg de volgende stappen om het google script aan te maken.
+
+### Script aanmaken
+Navigeer naar [https://script.google.com](https://script.google.com), log in met je google account waar ook je agenda aan verbonden is en maak een nieuw project aan door op de `Nieuw project` knop te drukken.
+
+### Script schrijven
+In de editor kunnen we vervolgens een script schrijven. Allereerst moeten we verbinding maken met de agenda. Hiervoor moet je de naam van de kalender invullen, vaak is dit je gmail email adres.
+```javascript
+var cal = CalendarApp.getCalendarById('calendar-name');
+if (cal == undefined) {
+  return ContentService.createTextOutput("no access to calendar");
+}
+```
+
+Vervolgens berekenen we de start en eindtijd waartussen we alle agenda afspraken willen ophalen. In dit geval een periode van 24 uur vanaf nu.
+```javascript
+var start = new Date();
+const oneday = 24*3600000; // [msec]
+const stop = new Date(start.getTime() + 7 * oneday);
+```
+
+We halen alle events in deze periode uit de agenda op.
+```javascript
+var events = cal.getEvents(start, stop);
+```
+
+Daarna maken we een string aan waaraan we alle agenda afspraken van onszelf of waarvan we aangegeven hebben dat we aanwezig zijn toevoegen. We voegen aan die string de startijd in miliseconden epoch, de starttijd in tekst, of het event de hele dag duurt en de titel toe van elkaar gescheiden met een tab. Is dat wat veel als we eigenlijk alleen de tijd in epoch van de eerstvolgende afspraak nodig hebben? Ja eigenlijk wel, maar dit is een demo, het werkt, en nu heb je meer kennis om het mooier te maken.
+```javascript
+var str = '';
+for (var ii = 0; ii < events.length; ii++) {
+
+  var event=events[ii];    
+  var myStatus = event.getMyStatus();
+
+  switch(myStatus) {
+    case CalendarApp.GuestStatus.OWNER:
+    case CalendarApp.GuestStatus.YES:
+    case CalendarApp.GuestStatus.MAYBE:
+      str += event.getStartTime().getTime() + '\t' +
+             event.getStartTime() + '\t' +
+             event.isAllDayEvent() + '\t' +
+             event.getTitle() +'\n';
+      break;
+    default:
+      break;
+  }
+}
+return ContentService.createTextOutput(str);
+```
+
+### Script implementeren
+Rechtsboven zie je als het goed is een blauwe "implementeren" knop. Die moeten we gebruiken om een link voor het script te genereren. Maak een nieuwe implementatie aan. Kies als type een `web-app`, voer hem uit als jezelf en kies bij toegang voor iedereen. Dit betekend technisch gezien dat iedereen met de url je agenda kan zien. Nu is de url heel erg moeilijk te gokken, maar denk er wel even over na. Als ik beveiliging moet gaan uitleggen gaan we allemaal huilen, iets voor een andere keer.
+
+Noteer van je implementatie de Implementatie-ID. Die hebben we straks nodig om de data op te halen.
 
 ### Volledig script
+Voor de volledigheid hier het hele script.
 ```javascript
 function doGet(e) {
-  var cal = CalendarApp.getCalendarById('your.email@gmail.com');
+  var cal = CalendarApp.getCalendarById('calendar-name');
   if (cal == undefined) {
     return ContentService.createTextOutput("no access to calendar");
   }
