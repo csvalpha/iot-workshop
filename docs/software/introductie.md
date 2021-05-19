@@ -72,7 +72,7 @@ variable = 10;
 | * =                     | Wijst het resultaat van een vermenigvuldiging toe| 
 | %                       | Wijst de rest van een divisie toe                |
 | &                       | Wijst het resultaat van een logische AND toe*    |   
-| rechte streep omhoog (|)| Wijst het resultaat van een logische OR toe      |   
+| \|                      | Wijst het resultaat van een logische OR toe      |   
 | !                       | Geeft aan dat iets, niet, is                     |   
 
 ##### AND operator
@@ -98,7 +98,13 @@ Input 2: Hilke heeft blond haar
 Daar waar het resultaat van de AND operator niet waar (0) was is deze bij de OR operator wel waar (1). 1 van de inputs klopt, Hilke heeft namelijk blond haar.
 
 #### Vergelijkingen
-
+| Operator              | Omschrijving                              | 
+|-----------------------|-------------------------------------------|
+| <                     | Waarde x is kleiner dan waarde y          | 
+| <=                    | Waarde x is kleiner of gelijk aan waarde y|
+| >                     | Waarde x is groter dan waarde x           | 
+| >=                    | Waarde x is groter of gelijk aan waarde y |
+| =                     | Waarde x is waarde y                      |   
 
 ### Scope
 
