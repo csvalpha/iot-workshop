@@ -40,3 +40,13 @@ Voor deze workshop zijn een aantal benodigdheden. Het gros hiervan wordt bij de 
 | Lijm                                                           |
 | Boor (of ander gereedschap om een gat in een frisbee te maken) |
 | Computer of laptop                                             |
+
+## Wat is IoT?
+Welkom in 2021! Toen in 1988 Pet Beertema als eerste Nederlanders toegang kreeg tot het NSFnet, later het internet genoemd, had niemand ooit kunnen bedenken dat ooit bijna alle apparaten verbonden zouden zijn met het internet. 
+
+In 2020 zijn er over de gehele wereld zo’n 26 miljard apparaten verbonden aan het internet. Denk hierbij aan mobieltjes, laptops, koelkasten, lampen, tandenborstels en zelfs vuilnisbakken! Al deze apparaten verzamelen informatie en versturen die naar het internet, naar elkaar of naar een cloud. Deze heuse ‘communicatie’ en het versturen van informatie wordt the Internet of Things genoemd. Alles is met elkaar verbonden en bijna alle apparaten kunnen input vanuit het internet of vanuit andere apparaten halen.
+
+Ik hoor je al denken: ‘Nou, spannend dit maar wat heb ik hier aan dan?’ Hartstikke veel! Alle informatie die binnen komt via apparaten kan worden verwerkt en dat kan weer gebruikt worden om smart cities aan te leggen of de landbouw te verbeteren. 
+
+![toepassingen IoT](./assets/images/IoT.png)
+
