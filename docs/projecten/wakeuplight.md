@@ -1,8 +1,78 @@
 # Wakeuplight
+De code voor een wakeuplight lijkt veel op die voor het nachtlampje met een paar aanpassingen. Allereerst zullen we met wifi verbinden en de huidige tijd ophalen. Vervolgens zullen we op een vooraf ingestelde tijd het lampje aanzetten.
+
+## Voorbereiding
+Allereerst voegen we de libraries toe om met wifi te verbinden en de NTPclient om de tijd op te halen. Vergeet deze niet te installeren.
+```arduino
+#include <ESP8266WiFi.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
+```
+
+We maken twee constante variabelen aan waarin we het uur en de minuut waarop de lamp aan moet gaan in opslaan. Daarna slaan we de de naam van het wifi netwerk en het wachtwoord in.
+```arduino
+// We stellen in hoe laat de lamp aan moet gaan
+const int wakeupHour = 8;
+const int wakeupMinute = 30;
+
+// We stellen het wifi netwerk en wachtwoord in
+const char *ssid     = "netwerknaam";
+const char *password = "wachtwoord";
+```
+
+Tot slot maken we een wifiverbinding object en een ntpclient object aan.
+```arduino
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP, "pool.ntp.org");
+```
+
+## Setup
+We moeten eerst een verbinding met wifi maken.
+```arduino
+// We maken verbinding met het wifi netwerk
+WiFi.begin(ssid, password);
+```
+
+Omdat het fijn is om te weten of dat lukt en of de ESP niet vastgelopen is kun je met de volgende code op de ledring laten zien dat we nog steeds bezig zijn met het maken van een verbinding.
+```arduino
+// Zolang we nog niet met het wifi verbonden zijn updaten we een pixel van de ring naar oranje
+int status = 0;
+while (WiFi.status() != WL_CONNECTED) {
+  delay(500);
+
+  if (status < LED_COUNT) {
+    strip.setPixelColor(status++, 255, 255, 0);
+    strip.show();
+  }
+}
+```
+
+Zodra we een wifi verbinding hebben maken we verbinding met een NTP server om de tijd op te halen. Ook stellen we de tijdszone in op europese zomertijd. Voor wintertijd kun je 3600 als offset gebruiken.
+```arduino
+// We starten de NTPclient op en stellen de tijdszone in op GMT+2 (europese zomertijd)
+timeClient.begin();
+timeClient.setTimeOffset(7200);
+```
+
+## Loop
+Elke loop vragen we de huidige tijd op.
+```arduino
+timeClient.update();
+```
+
+Als de huidige tijd overeen komt met de wekkertijd dan zetten we de lamp aan.
+```arduino
+if (timeClient.getHours() == wakeupHour && timeClient.getMinutes() == wakeupMinute) {
+  lightOn = true;
+}
+```
+
+## Verbeter mogelijkheden
+Er zijn nog wat mogelijkheden om de functionaliteit van de wakeuplight te verbeteren. Zo zou je een aantal minuten voor de wekkertijd de lamp langzaam aan laten gaan. Ook zou je een snooze modus in kunnen bouwen of een manier waarmee je met de draaiknop en het knopje de wekkertijd in kunt stellen.
 
 ## Volledig script
+Als je de stappen gevolgd hebt dan kom je op de volgende code uit.
 ```arduino
-#include <Arduino.h>
 // We voegen de Neopixel library toe waarmee we de ledring kunnen aansturen
 #include <Adafruit_NeoPixel.h>
 
