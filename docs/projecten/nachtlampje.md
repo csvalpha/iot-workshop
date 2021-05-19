@@ -1,4 +1,49 @@
 # Nachtlampje
+Welkom bij deze handleiding om een nachtlampje te maken. Alle achtergrondinformatie over de functies en methodes die we gaan gebruiken kun je in het software hoofdstuk vinden. We zullen stap voor stap door de code heen lopen en afsluiten met een voorbeeld van de volledige code. Maar nu eerst een overzicht van de werking.
+
+We zullen in het programma beginnen met alle instellingen die nodig zijn om de ledstrip aan te sturen en het knopje en de potentiometer uit te lezen. Vervolgens zullen we in de `loop()` bepalen of het knopje ingedrukt wordt en het lampje aan of uit zetten. Als het lampje aan moet staan dan zullen we de potentiometer uitlezen hoe fel dat moet zijn en de ledring met die felheid aanzetten.
+
+## Voorbereiding
+We beginnen met het importeren van de Neopixel library die we nodig hebben om de ledring mee aan te sturen.
+```arduino
+#include <Adafruit_NeoPixel.h>
+```
+
+Daarna definiëren we variabelen waarin we opslaan aan welke pinnen we het knopje, de potentiometer en ledring aangesloten hebben.
+```arduino
+#define POT_PIN A0
+#define BTN_PIN D8
+#define LED_PIN D4
+```
+
+Vervolgens maken we een strip object aan dat de communicatie met de ledring zal verzorgen.
+```arduino
+#define LED_COUNT 60
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+```
+
+Tot slot maken we een variabele aan waarin we opslaan of de ledring aan of uit moet staan.
+```arduino
+boolean lightOn = true;
+```
+
+## Setup
+Vervolgens in de `setup()` starten we de ledstrip op met de `begin()` functie en zetten hem aan met de `show()` functie. Als je nu niet de `show()` functie zou aanroepen zul je zien dat een of meerdere leds op de ring willekeurig aan zullen staan. Aansluitend zorgen we er voor dat de pin waaraan het knopje is verbonden als input uitgelezen moet worden door middel van de `pinMode()` functie.
+
+```arduino
+void setup() {
+  // We starten de ledstrip op en zetten hem aan
+  strip.begin();
+  strip.show();
+
+  // We definiëren dat het knopje als input gebruik moet worden
+  pinMode(BTN_PIN, INPUT);
+}
+```
+
+## Indrukken knopje
+
+## Weergeven ledring
 
 ## Volledig script
 ```arduino
