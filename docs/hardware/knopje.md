@@ -5,7 +5,7 @@
  Knoppies! Helemaal leuk! Eigenlijk is een knopje net zoals een ophaalbrug. Wanneer de ophaalbrug open is kan er geen verkeer door heen en wanneer deze weer dicht is kan je er weer over heen fietsen. Zo gaat het met een knopje ook. 
 Een knopje overbrugt een gat in een circuit. Als er een gat is het circuit zit betekent dit dat de stroom niet verder kan. Wanneer een knopje dan ingedrukt wordt, wordt er als het ware een brug gecreëerd waardoor de stroom weer verder.
     
-![Knopje aansluiting op esp](../assets/images/hardware-Button.jpg)
+![Knopje](../assets/images/Button.jpg)
     
 ![Knopje aansluiting op esp](../assets/images/hardware-potentiometer.jpg)
 
