@@ -72,7 +72,7 @@ variable = 10;
 | * =                   | Wijst het resultaat van een vermenigvuldiging toe| 
 | %                     | Wijst de rest van een divisie toe                |
 | &                     | Wijst het resultaat van een logische AND toe*    |   
-| |                     | Wijst het resultaat van een logische OR toe*     |   
+| |                     | Wijst het resultaat van een logische OR toe      |   
 | !                     | Geeft aan dat iets, niet, is                     |   
 
 ##### AND operator
