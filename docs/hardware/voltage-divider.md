@@ -7,3 +7,9 @@ Ha wat episch dat jij dit stukje door leest! Wellicht heb je al kennis van elekt
 Een voltage divider is een circuit die de spanning (V) die aan het begin binnen komt in kleinere deelspanningen aan het einde splitst. Dit komt door een serieschakeling van weerstanden waardoor de totale spanning over de weerstanden wordt verdeelt. Mocht je de deelspanningen bij elkaar optellen dan krijg je, ja je raad het al, de totale begin spanning. En dit is samen te vatten in de voor iedereen wel bekende formule: V=I*R
 
 De deelspanning die iedere weerstand krijgt hangt af van de grootte van de weerstanden en de spanning aan het einde hangt af van de verhouding tussen de twee weerstanden. Weerstanden van 9 Ohm + 10 Ohm geeft dus het zelfde resultaat als 9 kOhm + 10 kOhm.
+
+![Forule Voltage Divider](../assets/images/Formula_Divider.png)
+
+Helemaal leuk dit maar hoe werkt zo’n voltage divider dan nou precies. Zie het zo, als je begint 12V en je wil een output voltage (Vout) van 6V dan kan je een voltage divider gebruiken. Dit circuit splits de output voltage dan in bijvoorbeeld 2x 6V (6V naar ground en 6V als Vout). Belangrijk hier is dan een voltage divider de output voltage splitst in meerdere stukjes en dus niet verminderd. Als je de output voltage wilt verminderen dan moet je een transformator gebruiken :)
+
+![Circuit Voltage Divider](../assets/images/Vol_Divider.png)
