@@ -28,7 +28,7 @@ We halen alle events in deze periode uit de agenda op.
 var events = cal.getEvents(start, stop);
 ```
 
-Daarna maken we een string aan waaraan we alle agenda afspraken van onszelf of waarvan we aangegeven hebben dat we aanwezig zijn toevoegen. We voegen aan die string de startijd in miliseconden epoch, de starttijd in tekst, of het event de hele dag duurt en de titel toe van elkaar gescheiden met een tab. Is dat wat veel als we eigenlijk alleen de tijd in epoch van de eerstvolgende afspraak nodig hebben? Ja eigenlijk wel, maar dit is een demo, het werkt, en nu heb je meer kennis om het mooier te maken.
+Daarna maken we een string aan waaraan we alle agenda afspraken van onszelf of waarvan we aangegeven hebben dat we aanwezig zijn toevoegen. We voegen aan die string de startijd in miliseconden epoch, de starttijd in tekst, of het event de hele dag duurt en de titel toe van elkaar gescheiden met een tab. Is dat wat veel als we eigenlijk alleen de tijd in epoch van de eerstvolgende afspraak nodig hebben? Ja eigenlijk wel, maar dit is een demo, het werkt, en nu heb je meer kennis om er ook andere dingen mee te doen.
 ```javascript
 var str = '';
 for (var ii = 0; ii < events.length; ii++) {
