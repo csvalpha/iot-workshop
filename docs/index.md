@@ -16,13 +16,15 @@ Voor deze workshop zijn een aantal benodigdheden. Het gros hiervan wordt bij de 
 | 1M Ohm weerstand         | 1       |
 | WS2812 60 pixel led ring | 1       |
 | Strip header pins        | 1       |
-| Draad Rood               | 10 cm   |
-| Draad Zwart              | 10 cm   |
-| Draad Geel               | 10 cm   |
+| Draad Rood               | 15 cm   |
+| Draad Zwart              | 15 cm   |
+| Draad Geel/Paars         | 15 cm   |
 | Frisbee Wit              | 1       |
-| Plexiglas schijf         | 2       |
+| ~~Plexiglas schijf~~ (helaas niet leverbaar) | 1       |
 | Soldeertin               | 1 strip |
 
+In onderstaande afbeelding zijn alle onderdelen van de kit te zien.
+![Inhoud van de kit](./assets/images/inhoud-kit.jpg)
 
 ### Zelf aanleveren
 | Artikel                             | Aantal |
@@ -40,6 +42,7 @@ Voor deze workshop zijn een aantal benodigdheden. Het gros hiervan wordt bij de 
 | Lijm                                                           |
 | Boor (of ander gereedschap om een gat in een frisbee te maken) |
 | Computer of laptop                                             |
+| Kabel striptang of multitang                                   |
 
 ## Wat is IoT?
 Welkom in 2021! Toen in 1988 Pet Beertema als eerste Nederlanders toegang kreeg tot het NSFnet, later het internet genoemd, had niemand ooit kunnen bedenken dat ooit bijna alle apparaten verbonden zouden zijn met het internet. 
