@@ -20,10 +20,9 @@ Voor deze workshop zijn een aantal benodigdheden. Het gros hiervan wordt bij de 
 | Draad Zwart              | 15 cm   |
 | Draad Geel/Paars         | 15 cm   |
 | Frisbee Wit              | 1       |
-| ~~Plexiglas schijf~~ (helaas niet leverbaar) | 1       |
 | Soldeertin               | 1 strip |
 
-In onderstaande afbeelding zijn alle onderdelen van de kit te zien.
+In onderstaande afbeelding zijn alle onderdelen van de kit behalve het soldertin te zien.
 ![Inhoud van de kit](./assets/images/inhoud-kit.jpg)
 
 ### Zelf aanleveren
