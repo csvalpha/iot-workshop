@@ -98,15 +98,32 @@ function doGet(e) {
 ```
 
 ## ESP script
+Het ESP script zal uit een aantal onderdelen bestaan. Allereerst een functie waarmee we een HTTPS GET request naar een server kunnen doen en de reactie van de server terug krijgen. Deze functie zullen we gebruiken in een andere functie waarmee we de tijd van de eerstvolgende afspraak ophalen. Deze tijd zullen we vervolgens opslaan en gebruiken voor het weergeven van een aftel ring.
+
+### HTTPS GET request
+
+### Eerstvolgende afspraak ophalen
+We hebben een prachtige URL gegenereerd voor het ophalen van de agenda afspraken via een google script. De enige hindernis die we hebben is dat als we de url benaderen van het google script deze een redirect zal teruggeven. Je krijgt bij het opvragen van de url dus niet meteen de data die je wilt hebben maar een nieuwe url. Bij die nieuwe url kun je vervolgens wel de data ophalen. We moeten in het script dus inbouwen dat we eerst de redirect url verkrijgen en daarna de data opvragen.
+
+#### Redirect url ophalen
+
+#### Tijd ophalen
+
+### Ring animeren
 
 ### Volledig script
 ```arduino
 #include <Arduino.h>
+
+// We voegen de Wifi en de NTPclient libraries toe waarmee we met wifi kunnen verbinden en de tijd kunnen ophalen
 #include <ESP8266WiFi.h>
 #include <NTPClient.h>
 #include <WiFiUdp.h>
+
+// We voegen de Neopixel library toe waarmee we de ledring kunnen aansturen
 #include <Adafruit_NeoPixel.h>
 
+// We stellen het wifi netwerk en wachtwoord in
 const char* ssid     = "SSID";
 const char* password = "PASSWORD";
 
@@ -114,16 +131,24 @@ const char* host = "script.google.com";
 const char* redirectHost = "script.googleusercontent.com";
 const char* url = "/macros/s/YOUR_APP_ID/exec";
 
-// Define NTP Client to get time
+// We maken een Wifi en NTPclient object aan
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP, "pool.ntp.org");
 
+// We definiëren aan welke pinnen we de ledring aangesloten hebben en we maken een ledstrip object aan
 #define LED_PIN D4
 #define LED_COUNT 60
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
+// We maken een variabele aan waarin we de tijd van de volgende afspraak aanmaken.
 int nextAppointmentTime = 0;
 
+/**
+ * Functie om door middel van een HTTPS GET request van een host en url data op te vragen
+ * @param host Het domein dat benaderd moet worden
+ * @param url De url op het domein dat benaderd moet worden
+ * @return Een string met de volledige response
+ */
 String httpsGet(String host, String url) {
   // Use WiFiClient class to create TCP connections
   WiFiClientSecure client;
@@ -165,6 +190,10 @@ String httpsGet(String host, String url) {
   return response;
 }
 
+/**
+ * Functie om de tijd in epoch van de volgende afspraak op te halen
+ * @returns Een integer met de tijd in epoch van de volgende afspraak
+ */
 int getNextAppointmentTime() {
   Serial.print("connecting to ");
   Serial.println(host);
