@@ -248,7 +248,11 @@ if (condition1) {
 
 ## Loops
 
+Met een loop kun je code herhaald uitvoeren. Er zijn twee verschillende soorten loops, for loops en while loops.
+
 ### For loop
+
+De code in een for loop wordt zo vaak uitgevoerd als dat je vooraf insteld. In het voorbeeld hieronder is dat 10 keer. In de for loop kun je ook opvragen hoe vaak de loop al uitgevoerd is. In het voorbeeld hieronder kun je dat doen door de waarde van `i` op te vragen.
 
 ```arduino
 for (int i = 0; i < 10; i++) {
@@ -258,6 +262,8 @@ for (int i = 0; i < 10; i++) {
 
 ### While loop
 
+De while loop wordt net zo lang uitgevoerd totdat de conditie niet meer waar is. Het risico hierbij is dat als de waarde nooit false wordt de code dus tot in de eeuwigheid uitgevoerd wordt. Daar moet je dus rekening mee houden.
+
 ```arduino
 while (condition) {
     // execute this code until condition is false
@@ -265,6 +271,8 @@ while (condition) {
 ```
 
 ## Seriële communicatie
+
+Seriële communicatie kan gebruikt worden om berichten van de microcontroller naar de computer te sturen. Deze kun je dan in de seriële monitor uitlezen. Allereerst moet je de bitrate instellen, in het voorbeeld wordt deze ingesteld op 9600. Belangrijk is dat je seriële monitor en je microcontroller dezelfde bitrate gebruiken, anders zijn de berichten onleesbaar. Met de `Serial.begin(bautrate);` functie kun je in de `setup()` een seriële verbinding opzetten. Vervolgens kun je met de `Serial.println(message);` functie een bericht naar de monitor sturen.
 
 ```arduino
 #include <Arduino.h>
@@ -285,16 +293,23 @@ void loop() {
 
 ## Functies
 
+Functies kun je gebruiken om je code meer structuur te geven of om stukken code her te gebruiken. Je moet een functie eerst definiëren voordat je hem kunt gebruiken.
+
 ```arduino
 void function() {
     // execute code here
 }
 ```
 
+Een `void` functie geeft geen waarde terug maar je kunt een funtie ook een datatype geven en een waarde terug geven door middel van `return`. Verder is het mogelijk om parameters aan de functie toe te voegen aan de functie zodat je waarden aan de funtie mee kunt geven. In het voorbeeld hieronder wordt een optel functie getoond die de twee parameters bij elkaar opteld en terug geeft. Na het uitvoeren van deze code is de waarde van de variabele `result` dus 3.
+
 ```arduino
 int add(int param1, int param2) {
     return param1 + param2;
 }
+
+int result = add(1, 2);
 ```
 
 ## Conclusie
+Als je tot in detail informatie wilt over hoe programmeren met Arduino werkt kun je altijd een blik werpen in de [reference](https://www.arduino.cc/reference/en/). Maar er zijn ook veel handleidingen online te vinden. We hopen dat je dit een overzicht geeft waarmee je aan de slag kunt. Kijk ook eens op de meer informatie pagina over handige websites over hoe je kunt programmeren met Arduino en de ESP.

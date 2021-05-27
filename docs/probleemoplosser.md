@@ -12,6 +12,9 @@ Mogelijk zijn er twee apparaten met hetzelfde COM poort nummer. Dit is een uitzo
 
 Het kan gebeuren dat er wat mis gaat en de COM poort in Windows gereserveerd blijft maar dat het programma dat deze reservering plaatste al is afgesloten of is gechashed. In dat geval is de enige oplossing om je computer opnieuw op te starten.
 
+### Ik zie alleen maar rare tekens in mijn seriële monitor
+Als je seriële monitor alleen maar rare tekens laat zien is waarschijnlijk de bautrate van je monitor niet hetzelfde als dat van je microcontroller. Zoek in je code naar welke waarde dit is, bijvoorbeeld `Serial.begin(9600);` stelt de bautrate in op 9600. Zet je monitor dus op dezelfde waarde.
+
 ## Hardware
 ### Als ik mijn ledring felle kleuren of veel wit laat weergeven gaat hij uit
 Hoe feller en witter de kleuren, hoe meer stroom de ledring gebruikt. Als de ledring volledig wit is op volle helderheid gebruikt hij ongeveer 2A. Het kan zijn dat de voeding die je gebruikt dit niet aan kan, kijk of je de kleuren minder fel kunt maken of zet je brightness iets lager.
