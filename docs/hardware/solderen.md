@@ -76,6 +76,8 @@ Je soldeert als volgt een component aan een printplaat.
 
 Een goede soldeerverbinding is glad en glanzend en lijkt op een vulkaan of kegelvorm. Er is net genoeg soldeer om de hele verbinding te bedekken maar niet zoveel dat het een balletje vormt.
 
+Wil je dit graag in een mooie video uitgelegd krijgen, kijk dan deze youtube video: [https://www.youtube.com/watch?v=kTURB6QboNY](https://www.youtube.com/watch?v=kTURB6QboNY).
+
 ## Draden solderen
 
 Zo soldeer je twee draden aan elkaar.
