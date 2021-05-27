@@ -226,11 +226,15 @@ Handig om te weten is dat als je aan de string een enter toe wil voegen je daarv
 
 ## Besluiten maken
 
+We zijn nu aangekomen bij een van de belangrijkste pricipes van programmeren, if-statements. Hiermee kun je bepalen of bepaalde stukken wel of niet uitgevoerd moeten worden. Een if statement heeft een conditie, en als die conditie waar is dan wordt de code uitgevoerd. De conditie kan van alles zijn zoals een boolean variabele, een vergelijking of een combinatie daarvan met and of or statements er tussen.
+
 ```arduino
 if (condition) {
     // execute this code
 }
 ```
+
+Je kunt ook een alternatief geven voor als de conditie niet waar is door middel van een `else`. Met `else if` kun je code toevoegen die uitgevoerd wordt als de if en alle voorgaande else if condities niet waar zijn en de else if conditie wel.
 
 ```arduino
 if (condition1) {
