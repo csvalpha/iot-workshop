@@ -15,6 +15,19 @@ Het kan gebeuren dat er wat mis gaat en de COM poort in Windows gereserveerd bli
 ### Ik zie alleen maar rare tekens in mijn seriële monitor
 Als je seriële monitor alleen maar rare tekens laat zien is waarschijnlijk de bautrate van je monitor niet hetzelfde als dat van je microcontroller. Zoek in je code naar welke waarde dit is, bijvoorbeeld `Serial.begin(9600);` stelt de bautrate in op 9600. Zet je monitor dus op dezelfde waarde.
 
+### Er is geen COM poort beschikbaar van de ESP
+Wanneer er geen COM poort verschijnt voor de ESP als je deze met de USB kabel verbint, of het knopje voor COM poorten blijft grijs kan het zijn dat de driver niet goed geïnstalleerd is. Dit is alleen een probleem op Windows.
+
+#### Controleren of de driver niet goed geïnstalleerd is
+Om te controleren of de driver niet goed geïnstalleerd is moeten we de Device Manager (Apparaatbeheer) openen. Druk op ++windows+x++ en vervolgens op `Device Manager` of `Apparaatbeheer`. Kijk in de lijst met apparaten of je een apparaat genaamd `USB2.0-Ser!` ziet staan. Zo ja, dan zijn je drivers niet goed geïnstalleerd.
+
+![Verkeerd geïnstalleerde drivers](./assets/images/drivers.png)
+
+#### Correcte drivers installeren
+De seriële communicate op de ESP die we jullie geleverd hebben wordt verzorgt door een CH340 chip. Hiervoor moet een correcte driver worden geïnstalleerd. Deze kun je downloaden via [https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers#drivers-if-you-need-them](https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers#drivers-if-you-need-them). Download de Windows (EXE) Driver executable en voer hem uit. Druk eerst op de `Uninstall` knop en vervolgens op de `Install` knop. Als het goed is moet je ESP nu in de Device Manager herkent worden als een COM device en een poort nummer krijgen.
+
+![Installatie van de driver](./assets/images/installatie-driver.PNG)
+
 ## Hardware
 ### Als ik mijn ledring felle kleuren of veel wit laat weergeven gaat hij uit
 Hoe feller en witter de kleuren, hoe meer stroom de ledring gebruikt. Als de ledring volledig wit is op volle helderheid gebruikt hij ongeveer 2A. Het kan zijn dat de voeding die je gebruikt dit niet aan kan, kijk of je de kleuren minder fel kunt maken of zet je brightness iets lager.
