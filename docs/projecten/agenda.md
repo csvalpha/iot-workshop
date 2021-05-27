@@ -150,11 +150,16 @@ int nextAppointmentTime = 0;
  * @return Een string met de volledige response
  */
 String httpsGet(String host, String url) {
-  // Use WiFiClient class to create TCP connections
+  // We gebruiken de WiFiClientSecure klasse om een TCP verbinding op te zetten
   WiFiClientSecure client;
-  client.setInsecure(); // this is the magical line that makes everything work
 
-  const int httpPort = 443; // 80 is for HTTP / 443 is for HTTPS
+  // Dit is de magische regel waarmee we alle beveiliging negeren en waardoor alles werkt
+  // Als je een echt veilige verbinding op wilt zetten zou je nu dingen met certificaten moeten doen
+  // Dat is kei veel werk en voor een simpele agenda export laten we het achterwege
+  client.setInsecure();
+
+  // We maken verbinding met de server
+  const int httpPort = 443; // 80 is voor HTTP / 443 is voor HTTPS
   if (!client.connect(host, httpPort)) { //works!
     Serial.println("connection failed");
     return "";
@@ -163,11 +168,12 @@ String httpsGet(String host, String url) {
   Serial.print("Requesting URL: ");
   Serial.println(url);
 
-  // This will send the request to the server
+  // We sturen de GET request naar de server
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                "Host: " + host + "\r\n" + 
                "Connection: close\r\n\r\n");
 
+  // We wachten totdat we een header ontvangen
   while (client.connected()) {
     String line = client.readStringUntil('\n');
     if (line == "\r") {
@@ -175,8 +181,8 @@ String httpsGet(String host, String url) {
       break;
     }
   }
-  // if there are incoming bytes available
-  // from the server, read them and print them:
+
+  // Als er daarna een bericht terug komt slaan we het op in een string
   String response = "";
   while (client.available()) {
     char c = client.read();
@@ -187,6 +193,7 @@ String httpsGet(String host, String url) {
   Serial.println();
   Serial.println("closing connection");
 
+  // We geven de string met het bericht terug
   return response;
 }
 
@@ -198,31 +205,46 @@ int getNextAppointmentTime() {
   Serial.print("connecting to ");
   Serial.println(host);
   
+  // We halen de redirect url op van het google script
   String redirectMessage = httpsGet(host, url);
 
   Serial.println("Redirect message: ");
   Serial.println(redirectMessage);
 
+  // Er zit wat HTML in het redirect bericht en we hebben alleen de url nodig
+  // Daarom bepalen we hier waar deze precies staat
   int from = redirectMessage.indexOf("/macros");
   int to = redirectMessage.indexOf("\">here");
 
+  // Vervolgens slaan we de url op
   String redirectUrl = redirectMessage.substring(from, to);
+
+  // De & in een url wordt vervangen door &amp; in HTML dus die moeten we omzetten voordat we hem kunnen gebruiken
   redirectUrl.replace("&amp;", "&");
+  
   Serial.print("Redirect url: ");
   Serial.println(redirectUrl);
 
+  // We halen de kalender events op vanaf de redirect url
   String calenderItems = httpsGet(redirectHost, redirectUrl);
+
+  // Aangezien we alleen de tijd van de eerstvolgende event nodig hebben bepalen we waar die staat
   int start = calenderItems.indexOf("\n");
   int end = calenderItems.indexOf("\t");
+
+  // De tijd in epoch slaan we op als string, het script geeft de epoch in miliseconden maar wij 
+  // gebruiken seconden dus de laatste 3 getallen laten we achterwege
   String epoch = calenderItems.substring(start+1, end-3);
+
   Serial.print("Next item epoch: ");
   Serial.println(epoch);
 
+  // De string zetten we om in een integer en geven we terug
   return epoch.toInt();
 }
 
 void setup() {
-    // We starten de ledstrip op en zetten hem aan
+  // We starten de ledstrip op en zetten hem aan
   strip.begin();
 
   // We maken de ledstrip rood om aan te geven dat we nog niet met wifi verbonden zijn
@@ -232,6 +254,7 @@ void setup() {
   strip.setBrightness(25);
   strip.show();
 
+  // We starten seriële communciatie op voor debugging
   Serial.begin(9600);
   delay(10);
 
@@ -239,6 +262,7 @@ void setup() {
   Serial.print("Connecting to ");
   Serial.println(ssid);
 
+  // We maken verbinding met het wifi netwerk
   WiFi.begin(ssid, password);
 
   // Zolang we nog niet met het wifi verbonden zijn updaten we een pixel van de ring naar oranje
@@ -252,6 +276,8 @@ void setup() {
     }
   }
 
+  // We starten de tijd client op. Aangezien het google script al de correctie voor 
+  // tijdzone doet hoeven we geen offset in te stellen
   timeClient.begin();
   timeClient.setTimeOffset(0);
 
@@ -268,6 +294,8 @@ void setup() {
 
 void loop() {
   timeClient.update();
+
+  // We halen de volgende afspraak op als we nog niet weten wanneer het eerstvolgende event is of elke 10 minuten
   if (nextAppointmentTime == 0 || timeClient.getMinutes() % 10 == 0) {
     Serial.println("Updating next appointment time");
     nextAppointmentTime = getNextAppointmentTime();
@@ -278,10 +306,13 @@ void loop() {
   Serial.print("Current time: ");
   Serial.println(timeClient.getEpochTime());
 
+  // We berekenen hoe lang het duurt tot de volgende afspraak
   int minutesToAppointment = (nextAppointmentTime - timeClient.getEpochTime()) / 60;
   Serial.print("Minutes to appointment: ");
   Serial.println(minutesToAppointment);
 
+  // We zetten het aantal pixels aan dat overeen komt met hoeveel minuten het nog duurt
+  // mits de afspraak binnen minimaal 60 minuten is.
   for (int i = 0; i < strip.numPixels(); i++) {
     if (i < minutesToAppointment && minutesToAppointment < 60) {
       strip.setPixelColor(i, 0, 255, 0);
@@ -291,11 +322,13 @@ void loop() {
   }
   strip.show();
 
+  // Als de afspraak nu is moeten we de volgende afspraak inladen
   if (minutesToAppointment <= 0) {
     Serial.println("Appointment is now, updating next appointment time");
     nextAppointmentTime = getNextAppointmentTime();
   }
 
+  // We wachten 1 minuut
   delay(60000);
 }
 ```
