@@ -58,21 +58,10 @@ Voordat je begint met solderen en nadat je klaar bent met het solderen is het sl
 
 Je soldeert als volgt een component aan een printplaat.
 
-1. Steek de draad door het gat in de printplaat en buig hem ongeveer 45 graden. Op deze manier blijft de draad goed zitten en krijg je een betere verbinding bij het solderen.
-
-![Solderen stap 1](../assets/images/solderen1.jpg)
-
-2. Verhit de verbinding. Dit doe je door met de soldeerpunt zowel het koper op de printplaat en de draad aan te raken. Doe dit voor ongeveer 3 tot 4 seconden om de twee goed op te warmen.
-
-![Solderen stap 2](../assets/images/solderen2.jpg)
-
-3. Voeg soldeer toe aan de verbinding. Terwijl de de soldeerpunt op zijn plek houdt voeg je soldeer toe. `Let op` raak met de soldeer niet de soldeerpunt aan maar de verbinding zelf. De verbinding moet heet genoeg zijn om de soldeer te smelten, anders krijg je geen goede verbinding.
-
-![Solderen stap 3](../assets/images/solderen3.jpg)
-
-4. Knip de draden kort af. Laat de verbinding eerst rustig en natuurlijk afkoelen. Dit zorgt voor de meest stevige verbinding.
-
-![Solderen stap 4](../assets/images/solderen4.jpg)
+1. Steek de draad door het gat in de printplaat en buig hem ongeveer 45 graden. Op deze manier blijft de draad goed zitten en krijg je een betere verbinding bij het solderen. ![Solderen stap 1](../assets/images/solderen1.jpg)
+2. Verhit de verbinding. Dit doe je door met de soldeerpunt zowel het koper op de printplaat en de draad aan te raken. Doe dit voor ongeveer 3 tot 4 seconden om de twee goed op te warmen. ![Solderen stap 2](../assets/images/solderen2.jpg)
+3. Voeg soldeer toe aan de verbinding. Terwijl de de soldeerpunt op zijn plek houdt voeg je soldeer toe. `Let op` raak met de soldeer niet de soldeerpunt aan maar de verbinding zelf. De verbinding moet heet genoeg zijn om de soldeer te smelten, anders krijg je geen goede verbinding. ![Solderen stap 3](../assets/images/solderen3.jpg)
+4. Knip de draden kort af. Laat de verbinding eerst rustig en natuurlijk afkoelen. Dit zorgt voor de meest stevige verbinding. ![Solderen stap 4](../assets/images/solderen4.jpg)
 
 Een goede soldeerverbinding is glad en glanzend en lijkt op een vulkaan of kegelvorm. Er is net genoeg soldeer om de hele verbinding te bedekken maar niet zoveel dat het een balletje vormt.
 
@@ -82,21 +71,10 @@ Wil je dit graag in een mooie video uitgelegd krijgen, kijk dan deze youtube vid
 
 Zo soldeer je twee draden aan elkaar.
 
-1. Verwijder de isolatie van beide draadeinden. Als het een gevlochten draad is draai je de draden in elkaar in je vingers.
-
-![Solderen van draden stap 1](../assets/images/solderen-draden1.jpg)
-
-2. Met een hete soldeerbout raak je de punt van het draad aan zodat hij in 3 tot 4 seconden goed opwarmt.
-
-![Solderen van draden stap 2](../assets/images/solderen-draden2.jpg)
-
-3. Vervolgens raak je de draad aan met het soldeer. Hiermee leg je een dunne coating van soldeer aan om de draad. Doe dit ook voor de andere draad. Zorg ervoor dat je niet de punt van je soldeerbout aanraakt met de soldeer.
-
-![Solderen van draden stap 3](../assets/images/solderen-draden3.jpg)
-
-4. Houd de twee draden tegen elkaar en raak ze aan met de punt van je soldeerbout. Hiermee zouden de beide gecoate draden aan elkaar moeten smelten.
-
-![Solderen van draden stap 4](../assets/images/solderen-draden4.jpg)
+1. Verwijder de isolatie van beide draadeinden. Als het een gevlochten draad is draai je de draden in elkaar in je vingers. ![Solderen van draden stap 1](../assets/images/solderen-draden1.jpg)
+2. Met een hete soldeerbout raak je de punt van het draad aan zodat hij in 3 tot 4 seconden goed opwarmt. ![Solderen van draden stap 2](../assets/images/solderen-draden2.jpg)
+3. Vervolgens raak je de draad aan met het soldeer. Hiermee leg je een dunne coating van soldeer aan om de draad. Doe dit ook voor de andere draad. Zorg ervoor dat je niet de punt van je soldeerbout aanraakt met de soldeer. ![Solderen van draden stap 3](../assets/images/solderen-draden3.jpg)
+4. Houd de twee draden tegen elkaar en raak ze aan met de punt van je soldeerbout. Hiermee zouden de beide gecoate draden aan elkaar moeten smelten. ![Solderen van draden stap 4](../assets/images/solderen-draden4.jpg)
 
 ## Desolderen
 
