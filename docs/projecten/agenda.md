@@ -101,15 +101,147 @@ function doGet(e) {
 Het ESP script zal uit een aantal onderdelen bestaan. Allereerst een functie waarmee we een HTTPS GET request naar een server kunnen doen en de reactie van de server terug krijgen. Deze functie zullen we gebruiken in een andere functie waarmee we de tijd van de eerstvolgende afspraak ophalen. Deze tijd zullen we vervolgens opslaan en gebruiken voor het weergeven van een aftel ring.
 
 ### HTTPS GET request
+Voor een GET request hebben we twee dingen nodig, de host oftewel het domein van de server en de url die we willen opvragen. Het resultaat van een GET request is een string met het bericht. We maken dus een functie aan waar we de host en de url aan geven en deze zal het bericht als String teruggeven.
+
+```arduino
+String httpsGet(String host, String url) {
+  // Code komt hier
+}
+```
+
+In de functie maken we een `WiFiClientSecure` object aan waarmee we de request kunnen uitvoeren. Normaliter zou je nu ook een methode toevoegen waarmee je de identiteit van de server waarmee je verbint kunt controleren. Dat is onderdeel van een beveiligde verbinding. Voor deze keer laten we dat achterwege en zetten we een onbeveiligde verbinding op.
+
+```arduino
+WiFiClientSecure client;
+client.setInsecure();
+```
+
+We maken verbinding met de host op de https poort. Als dat niet lukt geven we een lege string terug.
+```arduino
+const int httpPort = 443; // 80 is voor HTTP / 443 is voor HTTPS
+if (!client.connect(host, httpPort)) { //works!
+  return "";
+}
+```
+
+Hierna sturen we de GET request naar de server.
+
+```arduino
+client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "Connection: close\r\n\r\n");
+```
+
+We wachten totdat we een header ontvangen.
+```arduino
+while (client.connected()) {
+  String line = client.readStringUntil('\n');
+  if (line == "\r") {
+    break;
+  }
+}
+```
+
+Als er daarna een bericht terug komt slaan we dat op in een string.
+
+```arduino
+String response = "";
+while (client.available()) {
+  char c = client.read();
+  response.concat(c);
+}
+```
+
+Deze string geven we terug.
+```arduino
+return response;
+```
 
 ### Eerstvolgende afspraak ophalen
 We hebben een prachtige URL gegenereerd voor het ophalen van de agenda afspraken via een google script. De enige hindernis die we hebben is dat als we de url benaderen van het google script deze een redirect zal teruggeven. Je krijgt bij het opvragen van de url dus niet meteen de data die je wilt hebben maar een nieuwe url. Bij die nieuwe url kun je vervolgens wel de data ophalen. We moeten in het script dus inbouwen dat we eerst de redirect url verkrijgen en daarna de data opvragen.
 
+Dit alles zal uitgevoerd worden door de `getNextAppointmentTime()` functie die een integer met de tijd in epoch van de volgende afspraak terug zal geven.
+
 #### Redirect url ophalen
+Allereerst halen we de redirect url op van het google script en die slaan we op in een string.
+
+```arduino
+String redirectMessage = httpsGet(host, url);
+```
+
+We hebben alleen de url nodig, dus die moeten we uit het bericht filteren. De url begint met `/macros` en eindigt voor `>here` dus we zoeken op waar dat in de string staat. Daarmee bepalen we de redirect url.
+
+```arduino
+int from = redirectMessage.indexOf("/macros");
+int to = redirectMessage.indexOf("\">here");
+String redirectUrl = redirectMessage.substring(from, to);
+```
+
+In een url wordt soms de `&` vervangen voor een `&amp;`. Dat geeft problemen als we de url later willen gaan gebruiken. Dus deze moeten we weer terug vervangen. Dat doen we als volgt.
+
+```arduino
+redirectUrl.replace("&amp;", "&");
+```
 
 #### Tijd ophalen
+Nu we de redirect url weten kunnen we de tijd van de eerstvolgende afspraak ophalen.
+
+```arduino
+String calenderItems = httpsGet(redirectHost, redirectUrl);
+```
+
+In de response staat veel meer informatie dan dat we nodig hebben. De tijd staat na de eerste enter (dat is een `\n` in ascii) en voor de eerste tab (dat is een `\t` in ascii). Dus de plek daarvan zoeken we op.
+
+```arduino
+int start = calenderItems.indexOf("\n");
+int end = calenderItems.indexOf("\t");
+```
+
+Vervolgens halen we het nummer uit de string. Het google script geeft de epoch tijd in milliseconden maar wij werken in dit script met seconden. Dus laten we de laatste 3 cijfers van het getal gewoon achterwege. De string zetten we vervolgens om in een nummer en geven we terug.
+
+```arduino
+String epoch = calenderItems.substring(start+1, end-3);
+return epoch.toInt();
+```
 
 ### Ring animeren
+
+Om de ring te animeren volgen we een aantal stappen. Eerst kijken we of we al weten wanneer de volgende afspraak is. Zo niet dan moeten we die ophalen. Ook willen we elke 10 minuten controleren of de agenda toevallig niet aangepast is. De tijd van de eerstvolgende afspraak slaan we op in een variabele.
+
+```arduino
+if (nextAppointmentTime == 0 || timeClient.getMinutes() % 10 == 0) {
+  nextAppointmentTime = getNextAppointmentTime();
+}
+```
+
+Hierna berekenen we hoe lang het nog duurt tot de volgende afspraak.
+
+```arduino
+int minutesToAppointment = (nextAppointmentTime - timeClient.getEpochTime()) / 60;
+```
+
+Als het minder dan 60 minuten is tot de volgende afspraak willen we het aantal pixels aan zetten overeenkomstig met het aantal minuten dat het nog duurt.
+
+```arduino
+for (int i = 0; i < strip.numPixels(); i++) {
+  if (i < minutesToAppointment && minutesToAppointment < 60) {
+    strip.setPixelColor(i, 0, 255, 0);
+  } else {
+    strip.setPixelColor(i, 0, 0, 0);
+  }
+}
+strip.show();
+```
+
+Als de tijd van de afspraak bereikt is dan moeten we de tijd van de eerstvolgende afspraak ophalen.
+
+```arduino
+if (minutesToAppointment <= 0) {
+  nextAppointmentTime = getNextAppointmentTime();
+}
+```
+
+Vervolgens wachten we een minuut om de ring weer te updaten.
 
 ### Volledig script
 ```arduino
