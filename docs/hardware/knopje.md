@@ -1,12 +1,15 @@
 # Knopje
-Knoppies! Helemaal leuk! Eigenlijk is een knopje net zoals een ophaalbrug. Wanneer de ophaalbrug open is kan er geen verkeer door heen en wanneer deze weer dicht is kan je er weer over heen fietsen. Zo gaat het met een knopje ook. 
+
+![Knopje](../assets/images/Button.png){ align=left }
+
+Knoppies! Helemaal leuk! Eigenlijk is een knopje net zoals een ophaalbrug. Wanneer de ophaalbrug open is kan er geen verkeer door heen en wanneer deze weer dicht is kan je er weer over heen fietsen. Zo gaat het met een knopje ook.
+
 Een knopje overbrugt een gat in een circuit. Als er een gat is het circuit zit betekent dit dat de stroom niet verder kan. Wanneer een knopje dan ingedrukt wordt, wordt er als het ware een brug gecreëerd waardoor de stroom weer verder.
-    
-![Knopje](../assets/images/Button.png)
 
 ## Solderen
+
 Soldeer een draad vanaf de `3V3` aansluiting aan een van de aansluitingen van het knopje. Op de afbeelding is dit een rode draad die aan de `3V3` aansluiting van de potentiometer gesoldeerd is. Soldeer vervolgens een draad van de andere aansluiding van het knopje naar de `D8` pin van de ESP.
-    
+
 ![Knopje aansluiting op esp](../assets/images/hardware-potentiometer.jpg)
 
 Vervolgens kun je de weerstand als pull-down resisor solderen. Daarvoor soldeer je de ene kant van de weerstand aan `D8` en de andere kant aan de `GND` pin. Let op dat de weerstand geen andere pinnen of elektronische componenten raakt. Je zou voor de zekerheid wat tape kunnen gebruiken.
