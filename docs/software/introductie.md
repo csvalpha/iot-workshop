@@ -170,7 +170,59 @@ void loop() {
 
 ### Arrays
 
+Een array is een lijst van waarden. Alle waarden in de array moeten hetzelfde datatype hebben en binnen Arduino is het verplicht om vooraf aan te geven hoe lang de array is, oftewel hoeveel waarden er in passen. Vervolgens kun je de verschillende waarden in de lijst opvragen en aanpassen.
+
+#### Een array aanmaken
+
+Je maakt een array aan door aan te geven welk datatype hij heeft en hoe lang de array moet zijn. Bijvoorbeeld een lijst van 6 integers.
+
+```arduino
+int integerArray[6];
+```
+
+Het is ook mogelijk om meteen waarden in de lijst te stoppen, bijvoorbeeld een lijst met alle weekdagen. Je hoeft dan niet persé de lengte nog op te geven, dat snap de compiler dan wel.
+
+```arduino
+String weekDays[]= {"Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"};
+```
+
+#### Waarden uit een array halen
+
+Je kunt een waarde uit een bepaalde plek in de array halen aan de hand van de index van de waarde. Als we bijvoorbeeld de 5e waarde uit de array willen halen doen we dat op de volgende manier.
+
+```arduino
+int waarde = integerArray[4];
+```
+
+Daarbij moet je er op letten dat het eerste element in de array op index positie 0 staat. Programmeurs beginnen met tellen bij 0, dus het eerste element heeft index 0 en in een array met 6 waarden is de index van het laatste element dus 5.
+
+Een ander aandachtspunt is dat je niet een waarde uit de array kunt opvragen die niet bestaat, bijvoorbeeld bij een array met lengte 6 geeft een poging om de waarde op index 6 op te halen een error, immers deze bestaat niet.
+
+#### Waarden in een array stoppen
+
+Je voegt een waarde aan een array toe op de volgende manier.
+
+```arduino
+integerArray[4] = 100;
+```
+
+#### Lengte van de array bepalen
+
+Mocht je willen weten hoe lang een array is dan kun je de `sizeof(array)` functie gebruiken.
+
 ### Strings
+
+Strings kun je gebruiken om woorden of zinnen in op te slaan. Eigenlijk zijn Stings een beetje bijzonder, in essentie is een woord of zin namelijk een lijst van letters. Een String bestaat dus eigenlijk uit een array van `char`s in volgorde. En dat maakt dat er wat speciale dingen gelden voor het werken met Strings. Meer informatie daarover vind je [in de reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/).
+
+#### Een string aanmaken
+
+Je maakt een string aan op de volgende manier.
+
+```arduino
+String zin = "Hello World!";
+```
+
+Handig om te weten is dat als je aan de string een enter toe wil voegen je daarvoor `\n` kunt gebruiken en een tab is `\t`.
 
 ## Besluiten maken
 
