@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Internet of Things Workshop voor C.S.V. Alpha" name="description"/>
+<meta content="Ruben Smit en Hilke van den Born" name="author"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.5" name="generator"/>
+<title>Nachtlampje - IoT Workshop</title>
+<link href="../../assets/stylesheets/main.bde7dde4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="preference" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#nachtlampje">
+          Ga naar inhoud
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="IoT Workshop" class="md-header__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            IoT Workshop
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Nachtlampje
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+      Voorbereiding
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../hardware/">
+        Hardware
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../behuizing/">
+      Behuizing
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../software/">
+        Software
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        Projecten
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../probleemoplosser/">
+      Probleemoplosser
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="IoT Workshop" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    IoT Workshop
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Voorbereiding
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Hardware
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hardware" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Hardware
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/">
+        Hardware overzicht
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/solderen/">
+        Solderen
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/voltage-divider/">
+        Voltage divider
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/potentiometer/">
+        Potentiometer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/pull-down-resistor/">
+        Pull-down resistor
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/knopje/">
+        Knopje
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../behuizing/">
+        Behuizing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Software
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Software" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/">
+        Arduino IDE
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/introductie/">
+        Introductie
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/digitale-io/">
+        Input &amp; Output
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/datum-en-tijd/">
+        Datum en Tijd
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/meer-informatie/">
+        Meer informatie
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+        Projecten
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Projecten" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Projecten
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Projectoverzicht
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Nachtlampje
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Nachtlampje
+      </a>
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#voorbereiding">
+    Voorbereiding
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup">
+    Setup
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#loop">
+    Loop
+  </a>
+<nav aria-label="Loop" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indrukken-knopje">
+    Indrukken knopje
+  </a>
+<nav aria-label="Indrukken knopje" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debouncen">
+    Debouncen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#weergeven-ledring">
+    Weergeven ledring
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#volledig-script">
+    Volledig script
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../wakeuplight/">
+        Wakeuplight
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../klok/">
+        Klok
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../agenda/">
+        Agenda
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../probleemoplosser/">
+        Probleemoplosser
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#voorbereiding">
+    Voorbereiding
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup">
+    Setup
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#loop">
+    Loop
+  </a>
+<nav aria-label="Loop" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#indrukken-knopje">
+    Indrukken knopje
+  </a>
+<nav aria-label="Indrukken knopje" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debouncen">
+    Debouncen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#weergeven-ledring">
+    Weergeven ledring
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#volledig-script">
+    Volledig script
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/csvalpha/iot-workshop/edit/master/docs/projecten/nachtlampje.md" title="Wijzig deze pagina">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="nachtlampje">Nachtlampje</h1>
+<p>Welkom bij deze handleiding om een nachtlampje te maken. Alle achtergrondinformatie over de functies en methodes die we gaan gebruiken kun je in het software hoofdstuk vinden. We zullen stap voor stap door de code heen lopen en afsluiten met een voorbeeld van de volledige code. Maar nu eerst een overzicht van de werking.</p>
+<p>We zullen in het programma beginnen met alle instellingen die nodig zijn om de ledstrip aan te sturen en het knopje en de potentiometer uit te lezen. Vervolgens zullen we in de <code>loop()</code> bepalen of het knopje ingedrukt wordt en het lampje aan of uit zetten. Als het lampje aan moet staan dan zullen we de potentiometer uitlezen hoe fel dat moet zijn en de ledring met die felheid aanzetten.</p>
+<h2 id="voorbereiding">Voorbereiding</h2>
+<p>We beginnen met het importeren van de Neopixel library die we nodig hebben om de ledring mee aan te sturen.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Adafruit_NeoPixel.h&gt;</span><span class="cp"></span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Daarna definiëren we variabelen waarin we opslaan aan welke pinnen we het knopje, de potentiometer en ledring aangesloten hebben.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#define POT_PIN A0</span>
+<span class="cp">#define BTN_PIN D8</span>
+<span class="cp">#define LED_PIN D4</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Vervolgens maken we een strip object aan dat de communicatie met de ledring zal verzorgen.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#define LED_COUNT 60</span>
+<span class="n">Adafruit_NeoPixel</span> <span class="nf">strip</span><span class="p">(</span><span class="n">LED_COUNT</span><span class="p">,</span> <span class="n">LED_PIN</span><span class="p">,</span> <span class="n">NEO_GRB</span> <span class="o">+</span> <span class="n">NEO_KHZ800</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Tot slot maken we een variabele aan waarin we opslaan of de ledring aan of uit moet staan.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">boolean</span> <span class="n">lightOn</span> <span class="o">=</span> <span class="kr">true</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></p>
+<h2 id="setup">Setup</h2>
+<p>Vervolgens in de <code>setup()</code> starten we de ledstrip op met de <code>begin()</code> functie en zetten hem aan met de <code>show()</code> functie. Als je nu niet de <code>show()</code> functie zou aanroepen zul je zien dat een of meerdere leds op de ring willekeurig aan zullen staan. Aansluitend zorgen we er voor dat de pin waaraan het knopje is verbonden als input uitgelezen moet worden door middel van de <code>pinMode()</code> functie.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// We starten de ledstrip op en zetten hem aan</span>
+  <span class="n">strip</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+
+  <span class="c1">// We definiëren dat het knopje als input gebruik moet worden</span>
+  <span class="nf">pinMode</span><span class="p">(</span><span class="n">BTN_PIN</span><span class="p">,</span> <span class="kr">INPUT</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="loop">Loop</h2>
+<p>In de <code>loop()</code> staat alle code die herhaald uitgevoerd moet worden. Hierin zullen we bepalen of het knopje ingedrukt wordt en of de ledring aan moet en hoe helder.</p>
+<h3 id="indrukken-knopje">Indrukken knopje</h3>
+<p>Met de <code>digitalRead()</code> functie kunnen we bepalen of het knopje ingedrukt wordt of niet. Vervolgens kunnen we in <code>lightOn</code> opslaan of de ring aan of uit moet staan. Als hij aan staat moet hij uit en vice-versa. Dus dan komen we tot de volgende code.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// Als het knopje ingedrukt wordt moet het lampje aan of uit gaan</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">digitalRead</span><span class="p">(</span><span class="n">BTN_PIN</span><span class="p">))</span> <span class="p">{</span>
+  <span class="c1">// We veranderen de waarde naar het tegenovergestelde van zijn vorige waarde, aan wordt dus uit en uit wordt aan</span>
+  <span class="n">lightOn</span> <span class="o">=</span> <span class="o">!</span><span class="n">lightOn</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="debouncen">Debouncen</h4>
+<p>Als je bovenstaande code zou gebruiken zul je merken dat de ledring willekeurig zal knipperen en zodra je het knopje loslaat hij ofwel aan ofwel uit staat. Dat komt doordat er twee problemen zijn. Allereerst bouncing, dat is dat wanneer je het knopje indrukt hij niet meteen volledig contact maakt maar een beetje "stuitert". Vanuit de code gezien heeft dat het effect alsof je heel snel achter elkaar het knopje indrukt. De makkelijkste oplossing is om even te wachten voordat we verder gaan om de bounce periode voorbij te gaan. Daarvoor kun je de <code>delay()</code> functie gebruiken. Persoonlijk gebruik ik vaak een delay van 300 miliseconden, dan weet je zeker dat het bouncen wel voorbij is.</p>
+<p>Het andere probleem is dat het zo kan zijn dat iemand het knopje ingedrukt houd. In dat geval zal de ring gaan knipperen, en dat is ook een beetje raar. Dus na het debouncen is het slim om te wachten totdat de gebruiker het knopje losgelaten heeft.</p>
+<p>Om deze twee punten op te lossen komen we tot de volgende code.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// Als het knopje ingedrukt wordt moet het lampje aan of uit gaan</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">digitalRead</span><span class="p">(</span><span class="n">BTN_PIN</span><span class="p">))</span> <span class="p">{</span>
+  <span class="c1">// We veranderen de waarde naar het tegenovergestelde van zijn vorige waarde, aan wordt dus uit en uit wordt aan</span>
+  <span class="n">lightOn</span> <span class="o">=</span> <span class="o">!</span><span class="n">lightOn</span><span class="p">;</span>
+
+  <span class="c1">// We wachten heel even om rekening te houden met bouncen</span>
+  <span class="nf">delay</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
+
+  <span class="c1">// Om te voorkomen dat de ledring gaat knipperen wachten we tot het knopje losgelaten is</span>
+  <span class="k">while</span><span class="p">(</span><span class="nf">digitalRead</span><span class="p">(</span><span class="n">BTN_PIN</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="weergeven-ledring">Weergeven ledring</h3>
+<p>Omdat het een nachtlampje is willen we hem een iets gelig licht geven. Dat kan door de waarde van het blauwe licht iets lager te maken dan de recht. Die kleur kunnen we voor elke pixel als volgt instellen.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">75</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Vervolgens willen we de helderheid van de ring aanpassen aan de stand van de potentiometer. Dus moeten we de waarde daarvan eerst uitlezen met de <code>analogRead()</code> funcie en opslaan. De helderheid van de ledring moet ingesteld worden met een waarde tussen de 0 en de 255 maar de maximale waarde die uit de <code>analogRead()</code> functie komt is 1023, dus delen we die door 4. Daarna stellen we de helderheid van de strip ermee in.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">brightness</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">POT_PIN</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">strip</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="n">brightness</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Dit alles moet natuurlijk alleen gebeuren als de ledring aan moet staan. Als hij uit moet staan dan moet de helderheid 0 zijn. Dit kan met een if statement als volgt.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">lightOn</span><span class="p">)</span> <span class="p">{</span>  
+  <span class="c1">// Alles om het lampje aan te zetten en de helderheid in te stellen</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// Als hij uit moet staan zetten we de felheid op 0</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Tot slot moeten we niet vergeten om de wijzingen aan de pixels naar de ledring te versturen.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table></p>
+<h2 id="volledig-script">Volledig script</h2>
+<p>Als je alle stappen gevolgd hebt moet je op de volgende code uitkomen.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// We voegen de Neopixel library toe waarmee we de ledring kunnen aansturen</span>
+<span class="cp">#include</span> <span class="cpf">&lt;Adafruit_NeoPixel.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// We definiëren aan welke pinnen we het knopje, de potentiometer en ledring aangesloten hebben</span>
+<span class="cp">#define POT_PIN A0</span>
+<span class="cp">#define BTN_PIN D8</span>
+<span class="cp">#define LED_PIN D4</span>
+
+<span class="c1">// Onze ledring heeft 60 ledjes, dit slaan we op en we maken een ledstrip object aan</span>
+<span class="cp">#define LED_COUNT 60</span>
+<span class="n">Adafruit_NeoPixel</span> <span class="nf">strip</span><span class="p">(</span><span class="n">LED_COUNT</span><span class="p">,</span> <span class="n">LED_PIN</span><span class="p">,</span> <span class="n">NEO_GRB</span> <span class="o">+</span> <span class="n">NEO_KHZ800</span><span class="p">);</span>
+
+<span class="c1">// We maken een globale variabele aan waarin we onthouden of het nachlampje aan of uit staat</span>
+<span class="kr">boolean</span> <span class="n">lightOn</span> <span class="o">=</span> <span class="kr">true</span><span class="p">;</span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// We starten de ledstrip op en zetten hem aan</span>
+  <span class="n">strip</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+
+  <span class="c1">// We definiëren dat het knopje als input gebruik moet worden</span>
+  <span class="nf">pinMode</span><span class="p">(</span><span class="n">BTN_PIN</span><span class="p">,</span> <span class="kr">INPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Als het knopje ingedrukt wordt moet het lampje aan of uit gaan</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nf">digitalRead</span><span class="p">(</span><span class="n">BTN_PIN</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// We veranderen de waarde naar het tegenovergestelde van zijn vorige waarde, aan wordt dus uit en uit wordt aan</span>
+    <span class="n">lightOn</span> <span class="o">=</span> <span class="o">!</span><span class="n">lightOn</span><span class="p">;</span>
+
+    <span class="c1">// We wachten heel even om rekening te houden met bouncen</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
+
+    <span class="c1">// Om te voorkomen dat de ledring gaat knipperen wachten we tot het knopje losgelaten is</span>
+    <span class="k">while</span><span class="p">(</span><span class="nf">digitalRead</span><span class="p">(</span><span class="n">BTN_PIN</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nf">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// We bepalen of het nachtlampje aan moet staan</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">lightOn</span><span class="p">)</span> <span class="p">{</span>  
+    <span class="c1">// Zo ja dan stellen we eerst de kleur in van elke pixel</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">75</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Vervolgens bepalen we hoe fel hij moet zijn door de waarde van de potmeter uit te lezen</span>
+    <span class="c1">// Dit is een waarde tussen de 0 en 1024, de brightness moet ingesteld worden tussen 0 en 255, dus delen he het door 4</span>
+    <span class="kr">int</span> <span class="n">brightness</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">POT_PIN</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>
+
+    <span class="c1">// We stellen de felheid van de ledring in</span>
+    <span class="n">strip</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="n">brightness</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Als hij uit moet staan zetten we de felheid op 0</span>
+    <span class="n">strip</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">// We sturen alle instellingen die we gedaan hebben naar de ledring om weergeven te worden</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Vorige
+              </span>
+              Projectoverzicht
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../wakeuplight/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Volgende
+              </span>
+              Wakeuplight
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 C.S.V. Alpha
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+ ... <a class="link--pdf-download" download href="../../pdf/IoT-Workshop-Handleiding.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+</body>
+</html>

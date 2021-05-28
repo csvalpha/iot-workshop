@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Internet of Things Workshop voor C.S.V. Alpha" name="description"/>
+<meta content="Ruben Smit en Hilke van den Born" name="author"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.5" name="generator"/>
+<title>Projectoverzicht - IoT Workshop</title>
+<link href="../assets/stylesheets/main.bde7dde4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="preference" dir="ltr">
+<script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#projectoverzicht">
+          Ga naar inhoud
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="IoT Workshop" class="md-header__button md-logo" data-md-component="logo" href=".." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            IoT Workshop
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Projectoverzicht
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
+      Voorbereiding
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../hardware/">
+        Hardware
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../behuizing/">
+      Behuizing
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../software/">
+        Software
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+        Projecten
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../probleemoplosser/">
+      Probleemoplosser
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="IoT Workshop" class="md-nav__button md-logo" data-md-component="logo" href=".." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    IoT Workshop
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Voorbereiding
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Hardware
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hardware" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Hardware
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hardware/">
+        Hardware overzicht
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hardware/solderen/">
+        Solderen
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hardware/ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hardware/voltage-divider/">
+        Voltage divider
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hardware/potentiometer/">
+        Potentiometer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hardware/pull-down-resistor/">
+        Pull-down resistor
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hardware/knopje/">
+        Knopje
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../behuizing/">
+        Behuizing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Software
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Software" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../software/">
+        Arduino IDE
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../software/introductie/">
+        Introductie
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../software/digitale-io/">
+        Input &amp; Output
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../software/ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../software/datum-en-tijd/">
+        Datum en Tijd
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../software/meer-informatie/">
+        Meer informatie
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+        Projecten
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Projecten" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Projecten
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Projectoverzicht
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Projectoverzicht
+      </a>
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#projecthandleidingen">
+    Projecthandleidingen
+  </a>
+<nav aria-label="Projecthandleidingen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#beginners-nachtlampje">
+    Beginners: Nachtlampje
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gemiddeld-wakeuplight">
+    Gemiddeld: Wakeuplight
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gevorderd-klok">
+    Gevorderd: Klok
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#expert-agenda">
+    Expert: Agenda
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#doe-je-eigen-project">
+    Doe je eigen project
+  </a>
+<nav aria-label="Doe je eigen project" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pixel-chaser">
+    Pixel chaser
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aansturen-met-app">
+    Aansturen met app
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#koppelen-met-google-home">
+    Koppelen met Google Home
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#weerbericht">
+    Weerbericht
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spotify-discolicht">
+    Spotify discolicht
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="nachtlampje/">
+        Nachtlampje
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="wakeuplight/">
+        Wakeuplight
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="klok/">
+        Klok
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="agenda/">
+        Agenda
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../probleemoplosser/">
+        Probleemoplosser
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#projecthandleidingen">
+    Projecthandleidingen
+  </a>
+<nav aria-label="Projecthandleidingen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#beginners-nachtlampje">
+    Beginners: Nachtlampje
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gemiddeld-wakeuplight">
+    Gemiddeld: Wakeuplight
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gevorderd-klok">
+    Gevorderd: Klok
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#expert-agenda">
+    Expert: Agenda
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#doe-je-eigen-project">
+    Doe je eigen project
+  </a>
+<nav aria-label="Doe je eigen project" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pixel-chaser">
+    Pixel chaser
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aansturen-met-app">
+    Aansturen met app
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#koppelen-met-google-home">
+    Koppelen met Google Home
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#weerbericht">
+    Weerbericht
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spotify-discolicht">
+    Spotify discolicht
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/csvalpha/iot-workshop/edit/master/docs/projecten/index.md" title="Wijzig deze pagina">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="projectoverzicht">Projectoverzicht</h1>
+<p>Nu je de ledring in elkaar gezet hebt en weet hoe je hem moet programmeren is het tijd er wat leuks mee te maken. We hebben een paar handleidingen en wat ideeën op een rij gezet.</p>
+<h2 id="projecthandleidingen">Projecthandleidingen</h2>
+<p>We hebben een aantal projecten die je met de ledring kunt maken. Deze zijn in oplopende mate van complexiteit, beginnend met een nachtlampje en eindigend met een koppeling met je agenda. We zullen stap voor stap door de code heen lopen en aan het eind zullen we de volledige code weergeven van het project. Heb je dus geen zin om zelf te programmeren dan kun je dus altijd onze code gebruiken.</p>
+<h3 id="beginners-nachtlampje">Beginners: Nachtlampje</h3>
+<p>Voor wie geen ervaring heeft met Arduino en programmeren is dit een mooi startproject. Door middel van het knopje kun je de ledring aan en uit zetten. De potentiometer bepaalt hoe fel de ledring is.</p>
+<h3 id="gemiddeld-wakeuplight">Gemiddeld: Wakeuplight</h3>
+<p>We breiden het nachtlampje uit zodat het vanaf een vooraf ingestelde tijd langzaam aan gaat tot de maximale helderheid die met de potentiometer is ingesteld. Om de tijd te bepalen verbinden we met een wifi netwerk.</p>
+<h3 id="gevorderd-klok">Gevorderd: Klok</h3>
+<p>De ledring heeft exact 60 ledjes, en in het project met de wakeuplight hebben we geleerd hoe we de tijd van het internet kunnen ophalen. Logischerwijs is het dus ook mogelijk om een klok te maken. Dat is wat we in dit project zullen doen.</p>
+<h3 id="expert-agenda">Expert: Agenda</h3>
+<p>Via de internetverbinding is het ook mogelijk om contact te leggen met andere webservers. In dit project zullen we de tijd van de eerstvolgende afspraak in een online agenda ophalen. En daar kunnen we leuke dingen mee doen. We zullen een teller maken die aftelt naar je eerstvolgende afspraak. Maar met een kleine aanpassing kun je een wakeuplight maken dat automatisch de goede tijd kiest op basis van je agenda, of de teller combineren met een klok.</p>
+<h2 id="doe-je-eigen-project">Doe je eigen project</h2>
+<p>We zijn uiteraard heel benieuwd welke leuke andere ideeën je hebt met deze ledring. Misschien maak je wel een statusbalk waarmee je kunt zien hoelang het nog duurt totdat de frituur klaar is. Of koop je een luchtkwaliteitssensor en weergeef je de luchtkwaliteit in je studeerkamer. Laat het ons vooral weten en dan zullen we je project aan deze pagina toevoegen. De volgende ideeën en voorbeelden zijn al ingestuurd.</p>
+<h3 id="pixel-chaser">Pixel chaser</h3>
+<p>Probeer op het juiste moment op het knopje te drukken in dit spel waarmee je je reactietijd kunt meten. Is optioneel ook als drankspel te spelen. Een beschrijving hoe je dit doet vind je in deze video: <a href="https://www.youtube.com/watch?v=hjqtJA7gVQ0">https://www.youtube.com/watch?v=hjqtJA7gVQ0</a>. De aangepaste code voor de ESP8266 vind je in <a href="https://github.com/csvalpha/iot-workshop/blob/master/src/pixelchaser/pixelchaser.ino">de repository van deze workshop</a>. Om deze code uit te voeren zul je de <a href="https://github.com/mathertel/OneButton">OneButton</a> library moeten installeren, dit kan op dezelfde manier als beschreven voor de Neopixel library in het Software hoofdstuk.</p>
+<h3 id="aansturen-met-app">Aansturen met app</h3>
+<p>Het is mogelijk om de ledring aan te sturen door middel van een app. Hiervoor kun je de WLED library installeren op de microcontroller. Hoe je dat doet vind je hier <a href="https://github.com/Aircoookie/WLED/wiki">https://github.com/Aircoookie/WLED/wiki</a>. Vervolgens kun je de <a href="https://play.google.com/store/apps/details?id=com.aircoookie.WLED">Android</a> of <a href="https://apps.apple.com/us/app/wled/id1475695033">iOS</a> app gebruiken om de kleur van de ledring aan te passen en animaties op de ring te weergeven. Via WLED is het mogelijk om de ledring aan veel andere diensten te koppelen zoals Philips Hue en Amazon Alexa.</p>
+<h3 id="koppelen-met-google-home">Koppelen met Google Home</h3>
+<p>Met wat extra stappen is het mogelijk om de ledring aan te sturen via Google Home. Door de beperkingen in Google Home is de functionaliteit wat minimaal en is het redelijk wat werk om op te zetten. Hoe je dit precies doet lees je in de handleiding <a href="https://www.instructables.com/WLED-on-ESP8266-IFTTT-Google-Assistant/">WLED met IFTTT en Google Home</a>.</p>
+<h3 id="weerbericht">Weerbericht</h3>
+<p>Door een koppeling met buienradar wordt weergeven wat de weersverwachting van vandaag is. Voor dit project is helaas nog geen voorbeeldcode beschikbaar.</p>
+<h3 id="spotify-discolicht">Spotify discolicht</h3>
+<p>Hoe vet is het als je een discolamp hebt die automatisch mee knippert op het tempo van je huidige Spotify liedje. Via de spotify api kun je het tempo, de dansbaarheid en het energielevel van het huidige liedje ophalen en daar de ledring op aanpassen. Voor dit project is helaas nog geen voorbeeldcode beschikbaar.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../software/meer-informatie/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Vorige
+              </span>
+              Meer informatie
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="nachtlampje/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Volgende
+              </span>
+              Nachtlampje
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 C.S.V. Alpha
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+ ... <a class="link--pdf-download" download href="../pdf/IoT-Workshop-Handleiding.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+<script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Internet of Things Workshop voor C.S.V. Alpha" name="description"/>
+<meta content="Ruben Smit en Hilke van den Born" name="author"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.5" name="generator"/>
+<title>Ledring - IoT Workshop</title>
+<link href="../../assets/stylesheets/main.bde7dde4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="preference" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#ledring">
+          Ga naar inhoud
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="IoT Workshop" class="md-header__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            IoT Workshop
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Ledring
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+      Voorbereiding
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../hardware/">
+        Hardware
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../behuizing/">
+      Behuizing
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        Software
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../projecten/">
+        Projecten
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../probleemoplosser/">
+      Probleemoplosser
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="IoT Workshop" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    IoT Workshop
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Voorbereiding
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Hardware
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hardware" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Hardware
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/">
+        Hardware overzicht
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/solderen/">
+        Solderen
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/voltage-divider/">
+        Voltage divider
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/potentiometer/">
+        Potentiometer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/pull-down-resistor/">
+        Pull-down resistor
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/knopje/">
+        Knopje
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../behuizing/">
+        Behuizing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Software
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Software" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Arduino IDE
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introductie/">
+        Introductie
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../digitale-io/">
+        Input &amp; Output
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Ledring
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Ledring
+      </a>
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functies">
+    Functies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#voorbeeld">
+    Voorbeeld
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#werking">
+    Werking
+  </a>
+<nav aria-label="Werking" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup">
+    setup()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pixels-een-kleur-geven">
+    Pixels een kleur geven
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#meerdere-pixels-een-kleur-geven">
+    Meerdere pixels een kleur geven
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#helderheid">
+    Helderheid
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hsv-kleuren">
+    HSV kleuren
+  </a>
+<nav aria-label="HSV kleuren" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gamma-correctie">
+    Gamma correctie
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#een-regenboog-maken">
+    Een regenboog maken
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#meer-informatie">
+    Meer informatie
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../datum-en-tijd/">
+        Datum en Tijd
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../meer-informatie/">
+        Meer informatie
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+        Projecten
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Projecten" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Projecten
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/">
+        Projectoverzicht
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/nachtlampje/">
+        Nachtlampje
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/wakeuplight/">
+        Wakeuplight
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/klok/">
+        Klok
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/agenda/">
+        Agenda
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../probleemoplosser/">
+        Probleemoplosser
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functies">
+    Functies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#voorbeeld">
+    Voorbeeld
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#werking">
+    Werking
+  </a>
+<nav aria-label="Werking" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup">
+    setup()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pixels-een-kleur-geven">
+    Pixels een kleur geven
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#meerdere-pixels-een-kleur-geven">
+    Meerdere pixels een kleur geven
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#helderheid">
+    Helderheid
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hsv-kleuren">
+    HSV kleuren
+  </a>
+<nav aria-label="HSV kleuren" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gamma-correctie">
+    Gamma correctie
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#een-regenboog-maken">
+    Een regenboog maken
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#meer-informatie">
+    Meer informatie
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/csvalpha/iot-workshop/edit/master/docs/software/ledring.md" title="Wijzig deze pagina">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="ledring">Ledring</h1>
+<p>Om de kleuren en helderheid van de leds op de ledring aan te passen kun je gebruik maken van de Adafruit Neopixel library. Om deze te installeren ga je naar <strong>Sketch &gt; Library &gt; Manage Libraries</strong> en zoek je naar Adafruit Neopixel. Deze library geeft handige functies waarmee de leds aangestuurd kunnen worden op led ringen maar ook ledstrips.</p>
+<h2 id="functies">Functies</h2>
+<p>De library heeft de volgende functies.</p>
+<ul>
+<li><code>begin()</code> initialiseert het ledring object waarna het gebruikt kan worden.</li>
+<li><code>show()</code> schrijft de wijzigingen aan de pixel kleuren naar de ledring voor weergave.</li>
+<li><code>setPixelColor(n, red, green, blue)</code> zet de kleur van de pixel.</li>
+<li><code>fill(color, first, count)</code> zet de kleur van meerdere achtereenvolgende pixels.</li>
+<li><code>Color(red, green, blue)</code> converteerd losse waarden voor rood, groen en blauw naar een enkele kleurwaarde.</li>
+<li><code>ColorHSV(hue, saturation, value)</code> converteerd losse waarden voor hue, saturation en value naar een enkele kleurwaarde.</li>
+<li><code>getPixelColor(n)</code> geeft de kleur van een pixel.</li>
+<li><code>setBrightness(brightness)</code> zet de helderheid van de ledring met een waarde tussen de 0 en de 255.</li>
+<li><code>getBrightness()</code> geeft de helderheid van de ledring.</li>
+<li><code>clear()</code> verwijdert alle ingestelde kleuren van elke pixel.</li>
+<li><code>numPixels()</code> geeft het aantal pixels in de ledring.</li>
+<li><code>gamma32(color)</code> geeft een gamma gecorigeerde kleurwaarde terug.</li>
+</ul>
+<h2 id="voorbeeld">Voorbeeld</h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Adafruit_NeoPixel.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// Which pin on the ESP is connected to the NeoPixels?</span>
+<span class="cp">#define LED_PIN D4</span>
+
+<span class="c1">// How many leds are there on the ring?</span>
+<span class="cp">#define LED_COUNT 60</span>
+
+<span class="c1">// Declare our NeoPixel strip object:</span>
+<span class="n">Adafruit_NeoPixel</span> <span class="nf">strip</span><span class="p">(</span><span class="n">LED_COUNT</span><span class="p">,</span> <span class="n">LED_PIN</span><span class="p">,</span> <span class="n">NEO_GRB</span> <span class="o">+</span> <span class="n">NEO_KHZ800</span><span class="p">);</span>
+<span class="c1">// Argument 1 = Number of pixels in NeoPixel strip</span>
+<span class="c1">// Argument 2 = Pin number (most are valid)</span>
+<span class="c1">// Argument 3 = Pixel type flags, add together as needed:</span>
+<span class="c1">//   NEO_KHZ800  800 KHz bitstream (most NeoPixel products w/WS2812 LEDs)</span>
+<span class="c1">//   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)</span>
+<span class="c1">//   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)</span>
+<span class="c1">//   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)</span>
+<span class="c1">//   NEO_RGBW    Pixels are wired for RGBW bitstream (NeoPixel RGBW products)</span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">strip</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>           <span class="c1">// INITIALIZE NeoPixel strip object (REQUIRED)</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>            <span class="c1">// Turn OFF all pixels ASAP</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span> <span class="c1">// Set BRIGHTNESS to about 1/5 (max = 255)</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Fill along the length of the strip in various colors...</span>
+  <span class="n">colorWipe</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">),</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// Red</span>
+  <span class="n">colorWipe</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span>  <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span>   <span class="mi">0</span><span class="p">),</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// Green</span>
+  <span class="n">colorWipe</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span>  <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// Blue</span>
+
+  <span class="c1">// Do a theater marquee effect in various colors...</span>
+  <span class="n">theaterChase</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">127</span><span class="p">),</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// White, half brightness</span>
+  <span class="n">theaterChase</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">127</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">),</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// Red, half brightness</span>
+  <span class="n">theaterChase</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span>  <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span> <span class="mi">127</span><span class="p">),</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// Blue, half brightness</span>
+
+  <span class="n">rainbow</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>             <span class="c1">// Flowing rainbow cycle along the whole strip</span>
+  <span class="n">theaterChaseRainbow</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span> <span class="c1">// Rainbow-enhanced theaterChase variant</span>
+<span class="p">}</span>
+
+<span class="c1">// Fill strip pixels one after another with a color. Strip is NOT cleared</span>
+<span class="c1">// first; anything there will be covered pixel by pixel. Pass in color</span>
+<span class="c1">// (as a single 'packed' 32-bit value, which you can get by calling</span>
+<span class="c1">// strip.Color(red, green, blue) as shown in the loop() function above),</span>
+<span class="c1">// and a delay time (in milliseconds) between pixels.</span>
+<span class="kr">void</span> <span class="nf">colorWipe</span><span class="p">(</span><span class="kr">uint32_t</span> <span class="n">color</span><span class="p">,</span> <span class="kr">int</span> <span class="n">wait</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kr">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// For each pixel in strip...</span>
+    <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">color</span><span class="p">);</span>         <span class="c1">//  Set pixel's color (in RAM)</span>
+    <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>                          <span class="c1">//  Update strip to match</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="n">wait</span><span class="p">);</span>                           <span class="c1">//  Pause for a moment</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Theater-marquee-style chasing lights. Pass in a color (32-bit value,</span>
+<span class="c1">// a la strip.Color(r,g,b) as mentioned above), and a delay time (in ms)</span>
+<span class="c1">// between frames.</span>
+<span class="kr">void</span> <span class="nf">theaterChase</span><span class="p">(</span><span class="kr">uint32_t</span> <span class="n">color</span><span class="p">,</span> <span class="kr">int</span> <span class="n">wait</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kr">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">a</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Repeat 10 times...</span>
+    <span class="k">for</span><span class="p">(</span><span class="kr">int</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">b</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">b</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//  'b' counts from 0 to 2...</span>
+      <span class="n">strip</span><span class="p">.</span><span class="nf">clear</span><span class="p">();</span>         <span class="c1">//   Set all pixels in RAM to 0 (off)</span>
+      <span class="c1">// 'c' counts up from 'b' to end of strip in steps of 3...</span>
+      <span class="k">for</span><span class="p">(</span><span class="kr">int</span> <span class="n">c</span><span class="o">=</span><span class="n">b</span><span class="p">;</span> <span class="n">c</span><span class="o">&lt;</span><span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">c</span> <span class="o">+=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">color</span><span class="p">);</span> <span class="c1">// Set pixel 'c' to value 'color'</span>
+      <span class="p">}</span>
+      <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span> <span class="c1">// Update strip with new contents</span>
+      <span class="nf">delay</span><span class="p">(</span><span class="n">wait</span><span class="p">);</span>  <span class="c1">// Pause for a moment</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Rainbow cycle along whole strip. Pass delay time (in ms) between frames.</span>
+<span class="kr">void</span> <span class="nf">rainbow</span><span class="p">(</span><span class="kr">int</span> <span class="n">wait</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Hue of first pixel runs 5 complete loops through the color wheel.</span>
+  <span class="c1">// Color wheel has a range of 65536 but it's OK if we roll over, so</span>
+  <span class="c1">// just count from 0 to 5*65536. Adding 256 to firstPixelHue each time</span>
+  <span class="c1">// means we'll make 5*65536/256 = 1280 passes through this outer loop:</span>
+  <span class="k">for</span><span class="p">(</span><span class="kr">long</span> <span class="n">firstPixelHue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">firstPixelHue</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="o">*</span><span class="mi">65536</span><span class="p">;</span> <span class="n">firstPixelHue</span> <span class="o">+=</span> <span class="mi">256</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kr">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// For each pixel in strip...</span>
+      <span class="c1">// Offset pixel hue by an amount to make one full revolution of the</span>
+      <span class="c1">// color wheel (range of 65536) along the length of the strip</span>
+      <span class="c1">// (strip.numPixels() steps):</span>
+      <span class="kr">int</span> <span class="n">pixelHue</span> <span class="o">=</span> <span class="n">firstPixelHue</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mf">65536L</span> <span class="o">/</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">());</span>
+      <span class="c1">// strip.ColorHSV() can take 1 or 3 arguments: a hue (0 to 65535) or</span>
+      <span class="c1">// optionally add saturation and value (brightness) (each 0 to 255).</span>
+      <span class="c1">// Here we're using just the single-argument hue variant. The result</span>
+      <span class="c1">// is passed through strip.gamma32() to provide 'truer' colors</span>
+      <span class="c1">// before assigning to each pixel:</span>
+      <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">strip</span><span class="p">.</span><span class="n">gamma32</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">ColorHSV</span><span class="p">(</span><span class="n">pixelHue</span><span class="p">)));</span>
+    <span class="p">}</span>
+    <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span> <span class="c1">// Update strip with new contents</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="n">wait</span><span class="p">);</span>  <span class="c1">// Pause for a moment</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Rainbow-enhanced theater marquee. Pass delay time (in ms) between frames.</span>
+<span class="kr">void</span> <span class="nf">theaterChaseRainbow</span><span class="p">(</span><span class="kr">int</span> <span class="n">wait</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">int</span> <span class="n">firstPixelHue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>     <span class="c1">// First pixel starts at red (hue 0)</span>
+  <span class="k">for</span><span class="p">(</span><span class="kr">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">a</span><span class="o">&lt;</span><span class="mi">30</span><span class="p">;</span> <span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Repeat 30 times...</span>
+    <span class="k">for</span><span class="p">(</span><span class="kr">int</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">b</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">;</span> <span class="n">b</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//  'b' counts from 0 to 2...</span>
+      <span class="n">strip</span><span class="p">.</span><span class="nf">clear</span><span class="p">();</span>         <span class="c1">//   Set all pixels in RAM to 0 (off)</span>
+      <span class="c1">// 'c' counts up from 'b' to end of strip in increments of 3...</span>
+      <span class="k">for</span><span class="p">(</span><span class="kr">int</span> <span class="n">c</span><span class="o">=</span><span class="n">b</span><span class="p">;</span> <span class="n">c</span><span class="o">&lt;</span><span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">c</span> <span class="o">+=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// hue of pixel 'c' is offset by an amount to make one full</span>
+        <span class="c1">// revolution of the color wheel (range 65536) along the length</span>
+        <span class="c1">// of the strip (strip.numPixels() steps):</span>
+        <span class="kr">int</span>      <span class="n">hue</span>   <span class="o">=</span> <span class="n">firstPixelHue</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="mf">65536L</span> <span class="o">/</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span>
+        <span class="kr">uint32_t</span> <span class="n">color</span> <span class="o">=</span> <span class="n">strip</span><span class="p">.</span><span class="n">gamma32</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">ColorHSV</span><span class="p">(</span><span class="n">hue</span><span class="p">));</span> <span class="c1">// hue -&gt; RGB</span>
+        <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">color</span><span class="p">);</span> <span class="c1">// Set pixel 'c' to value 'color'</span>
+      <span class="p">}</span>
+      <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>                <span class="c1">// Update strip with new contents</span>
+      <span class="nf">delay</span><span class="p">(</span><span class="n">wait</span><span class="p">);</span>                 <span class="c1">// Pause for a moment</span>
+      <span class="n">firstPixelHue</span> <span class="o">+=</span> <span class="mi">65536</span> <span class="o">/</span> <span class="mi">90</span><span class="p">;</span> <span class="c1">// One cycle of color wheel over 90 frames</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="werking">Werking</h2>
+<p>Allereerst moet de library toegevoegd worden aan de applicatie.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Adafruit_NeoPixel.h&gt;</span><span class="cp"></span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Vervolgens slaan we op aan welke pin de ledring verbonden is en hoeveel pixels er op de ring zitten, in ons geval pin <code>D4</code> en 60 pixels. Daarna maken we een Neopixel strip object aan.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#define LED_PIN D4</span>
+<span class="cp">#define LED_COUNT 60</span>
+<span class="n">Adafruit_NeoPixel</span> <span class="nf">strip</span><span class="p">(</span><span class="n">LED_COUNT</span><span class="p">,</span> <span class="n">LED_PIN</span><span class="p">,</span> <span class="n">NEO_GRB</span> <span class="o">+</span> <span class="n">NEO_KHZ800</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="setup">setup()</h3>
+<p>In de <code>setup()</code> initializeren we het strip object door de <code>begin()</code> functie aan te roepen en zetten we alle pixels uit door de <code>show()</code> functie aan te roepen.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">strip</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="pixels-een-kleur-geven">Pixels een kleur geven</h3>
+<p>De kleur van een pixel kan ingesteld worden door middel van de <code>setPixelColor(n, red, green, blue)</code>. Daar bij is n het nummer van de pixel in de ring en zijn de kleuren gegeven als een getal tussen de 0 en 255. Het volgende voorbeeld zet de kleur van de 12e pixel naar magenta.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Een alternatief is om de kleur van de pixel in te stellen met een kleurwaarde met de <code>setPixelColor(n, color)</code> functie. Daarvoor kun je de waarde van een kleur in een 32 bit getal opslaan zodat je hem later kunt hergebruiken. Hiervoor kun je de <code>Color(red, green, blue)</code> functie gebruiken. Het volgende voorbeeld slaat de kleur magenta op in een variabele en zet vervolgens de kleur van de 12e pixel naar magenta.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">uint32_t</span> <span class="n">magenta</span> <span class="o">=</span> <span class="n">strip</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">magenta</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<div class="admonition caution">
+<p class="admonition-title">Let op! <code>setPixelColor()</code> heeft niet meteen effect op de leds</p>
+<p>De ingestelde kleuren moeten eerst naar de ledring verstuurd worden. Daarvoor kun je de <code>show()</code> functie gebruiken.</p>
+</div>
+<p>De <code>show()</code> functie zorgt ervoor dat de voor de pixels ingestelde kleuren weergeven op de ledring.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="meerdere-pixels-een-kleur-geven">Meerdere pixels een kleur geven</h3>
+<p>Je kunt meerdere pixels dezelfde kleur geven met de <code>fill(color, first, count)</code> functie. Daarbij is <code>color</code> een 32-bit kleur waarde, is <code>first</code> de eerste pixel die de kleur moet krijgen en is <code>count</code> het aantal pixels dat de kleur moeten krijgen. In het volgende voorbeeld worden de pixels 4 tot en met 8 de kleur magenta gegeven.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">uint32_t</span> <span class="n">magenta</span> <span class="o">=</span> <span class="n">strip</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+<span class="n">strip</span><span class="p">.</span><span class="nf">fill</span><span class="p">(</span><span class="n">magenta</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>De <code>clear()</code> functie kan gebruikt worden om alle pixels uit te zetten.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">strip</span><span class="p">.</span><span class="nf">clear</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Met <code>numPixels()</code> kun je het aantal pixels in de ring opvragen. Dit kun je gebruiken in een for loop om alle pixels een kleur te geven. Het volgende voorbeeld maakt een kleurverloop van rood naar blauw over de hele ring.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="kr">int</span><span class="p">)</span> <span class="p">(</span><span class="mi">255</span> <span class="o">/</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">())</span> <span class="o">*</span> <span class="n">i</span><span class="p">;</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">255</span> <span class="o">-</span> <span class="n">offset</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">offset</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="helderheid">Helderheid</h3>
+<p>De helderheid van de hele ledring kan met <code>setBrightness(value)</code> ingesteld worden. Daarbij is <code>value</code> een waarde tussen de 0 voor uit en 255 voor maximale helderheid. Om de ledring op een kwart helderheid te zetten kun je dus de volgende code gebruiken:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">strip</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="mi">64</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<div class="admonition caution">
+<p class="admonition-title">Let op! <code>setBrightness()</code> heeft niet meteen effect op de leds</p>
+<p>De ingestelde helderheid moeten eerst naar de ledring verstuurd worden. Daarvoor kun je de <code>show()</code> functie gebruiken.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title"><code>setBrightness()</code> is eigenlijk bedoeld om maar één keer aangeroepen te worden in de <code>setup()</code></p>
+<p>Het is dus eigenlijk niet de bedoeling om hem voor animaties te gebruiken. Het is beter om met eigen logica de helderheid van je pixels aan te passen als je hier animaties mee wilt maken. Dit komt omdat de functie de waarden van je pixel data in het RAM aanpast en daarmee informatie verloren gaat, het is een "lossy" operatie.</p>
+</div>
+<h3 id="hsv-kleuren">HSV kleuren</h3>
+<p>De Neopixel library ondersteunt ook het gebruik van kleuren in de "HSV" (hue-saturation-value) kleurruimte als alternatief voor de gebruikelijke RGB (red-green-blue). Voor sommige effecten is dit veel gebruiksvriendelijker, bijvoorbeeld voor het regenboog effect (zeer populair onder creaters). Een HSV kleur kan met de <code>ColorHSV()</code> opgeslagen worden als RGB waarde.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">uint32_t</span> <span class="n">rgbcolor</span> <span class="o">=</span> <span class="n">strip</span><span class="p">.</span><span class="n">ColorHSV</span><span class="p">(</span><span class="n">hue</span><span class="p">,</span> <span class="n">saturation</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<p><img align="left" alt="het HSV kleurenwiel" src="../../assets/images/hue-saturation-value.png"/></p>
+<p>Daarbij zijn de volgende parameters van belang:</p>
+<ul>
+<li><code>hue</code> is een 16-bit nummer dat start bij 0 voor rood en de kleurcirkel via geel (65536/6), groen (65536/3), cyaan (65536/2), blauw (65536<em>2/3) en magenta (65536</em>5/6) weer bij rood aan komt (65536).</li>
+<li><code>saturation</code> is een 8-bit nummer dat de verzadiging van de kleur aangeeft waarbij 0 onverzadigd is en 255 maximale verzadiging.</li>
+<li><code>value</code> is een 8-bit nummer dat de helderheid van de kleur aangeeft waarbij 0 zwart is en 255 maximale helderheid.</li>
+</ul>
+<p>Als je alleen een pure kleur wilt met maximale verzadiging en helderheid dan kun je de functie ook aanroepen met alleen de hue:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">uint32_t</span> <span class="n">rgbcolor</span> <span class="o">=</span> <span class="n">strip</span><span class="p">.</span><span class="n">ColorHSV</span><span class="p">(</span><span class="n">hue</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<h4 id="gamma-correctie">Gamma correctie</h4>
+<p>Als je veel met kleuren werkt zul je merken dat wanneer je faded tussen kleuren het soms lijkt alsof ze overmatig helder of flets er uit zien. Dit komt omdat nummeriek de kleurwaarden goed zijn maar de perceptie van onze ogen iets anders is. Daarvoor kun je zogenaamde gamma correctie gebruiken, hoe dat precies werkt wordt <a href="https://learn.adafruit.com/led-tricks-gamma-correction">hier uitgelegd</a>. De <code>gamma32(color)</code> functie neemt een RGB waarde en corrigeert deze zodat hij optisch correct is.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">uint32_t</span> <span class="n">rgbcolor</span> <span class="o">=</span> <span class="n">strip</span><span class="p">.</span><span class="n">gamma32</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">ColorHSV</span><span class="p">(</span><span class="n">hue</span><span class="p">,</span> <span class="n">sat</span><span class="p">,</span> <span class="n">val</span><span class="p">));</span>
+</code></pre></div>
+</td></tr></table></p>
+<h4 id="een-regenboog-maken">Een regenboog maken</h4>
+<p>Stel je wilt je ledstrip voorzien van een regenboogeffect (zeer belangrijk, dit wil je weten) dan doe je dat als volgt:
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">int</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mf">65536L</span> <span class="o">/</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span>
+  <span class="kr">uint32_t</span> <span class="n">color</span> <span class="o">=</span> <span class="n">strip</span><span class="p">.</span><span class="n">gamma32</span><span class="p">(</span><span class="n">strip</span><span class="p">.</span><span class="n">ColorHSV</span><span class="p">(</span><span class="n">hue</span><span class="p">));</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">color</span><span class="p">);</span> <span class="c1">// Set pixel 'c' to value 'color'</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<h2 id="meer-informatie">Meer informatie</h2>
+<p>Voor meer informatie kun je naar de <a href="https://github.com/adafruit/Adafruit_NeoPixel">github repo</a> van de library of vind je in de <a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/arduino-library-use">Neopixel Uberguide</a>.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../digitale-io/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Vorige
+              </span>
+              Input &amp; Output
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../datum-en-tijd/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Volgende
+              </span>
+              Datum en Tijd
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 C.S.V. Alpha
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+ ... <a class="link--pdf-download" download href="../../pdf/IoT-Workshop-Handleiding.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+</body>
+</html>

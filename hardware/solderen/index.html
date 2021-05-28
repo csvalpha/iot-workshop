@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Internet of Things Workshop voor C.S.V. Alpha" name="description"/>
+<meta content="Ruben Smit en Hilke van den Born" name="author"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.5" name="generator"/>
+<title>Solderen - IoT Workshop</title>
+<link href="../../assets/stylesheets/main.bde7dde4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="preference" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#solderen">
+          Ga naar inhoud
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="IoT Workshop" class="md-header__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            IoT Workshop
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Solderen
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+      Voorbereiding
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        Hardware
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../behuizing/">
+      Behuizing
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../software/">
+        Software
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../projecten/">
+        Projecten
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../probleemoplosser/">
+      Probleemoplosser
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="IoT Workshop" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    IoT Workshop
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Voorbereiding
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Hardware
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hardware" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Hardware
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Hardware overzicht
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Solderen
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Solderen
+      </a>
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soldeergereedschap">
+    Soldeergereedschap
+  </a>
+<nav aria-label="Soldeergereedschap" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soldeerbout">
+    Soldeerbout
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spons">
+    Spons
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soldeer">
+    Soldeer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overig">
+    Overig
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#veiligheid">
+    Veiligheid
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soldeerpunt-vertinnen">
+    Soldeerpunt vertinnen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componenten-solderen">
+    Componenten solderen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#draden-solderen">
+    Draden solderen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desolderen">
+    Desolderen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../voltage-divider/">
+        Voltage divider
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../potentiometer/">
+        Potentiometer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../pull-down-resistor/">
+        Pull-down resistor
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../knopje/">
+        Knopje
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../behuizing/">
+        Behuizing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Software
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Software" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/">
+        Arduino IDE
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/introductie/">
+        Introductie
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/digitale-io/">
+        Input &amp; Output
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/datum-en-tijd/">
+        Datum en Tijd
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/meer-informatie/">
+        Meer informatie
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+        Projecten
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Projecten" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Projecten
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/">
+        Projectoverzicht
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/nachtlampje/">
+        Nachtlampje
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/wakeuplight/">
+        Wakeuplight
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/klok/">
+        Klok
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/agenda/">
+        Agenda
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../probleemoplosser/">
+        Probleemoplosser
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soldeergereedschap">
+    Soldeergereedschap
+  </a>
+<nav aria-label="Soldeergereedschap" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soldeerbout">
+    Soldeerbout
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spons">
+    Spons
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soldeer">
+    Soldeer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overig">
+    Overig
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#veiligheid">
+    Veiligheid
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#soldeerpunt-vertinnen">
+    Soldeerpunt vertinnen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#componenten-solderen">
+    Componenten solderen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#draden-solderen">
+    Draden solderen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desolderen">
+    Desolderen
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/csvalpha/iot-workshop/edit/master/docs/hardware/solderen.md" title="Wijzig deze pagina">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="solderen">Solderen</h1>
+<div class="admonition info">
+<p class="admonition-title">Je kunt dit hoofdstuk overslaan als je alleen maar wilt bouwen</p>
+</div>
+<p>Solderen is een techniek die iedereen die wat met elektronica doet zou moeten beheersen. Door middel van solderen kun je twee elektronische onderdelen met elkaar verbinden en ontstaat er een stevige (elektronische) verbinding. We zullen kort uitleggen welk gereedschap hiervoor nodig is en hoe je verschillende onderdele soldeert. Ook zullen we uitleggen hoe je fouten kunt corrigeren door middel van desolderen.</p>
+<h2 id="soldeergereedschap">Soldeergereedschap</h2>
+<p>Je hebt niet heel veel gereedschap nodig om te solderen. Hieronder beschrijven we de basis benodigdheden.</p>
+<h3 id="soldeerbout">Soldeerbout</h3>
+<p><img align="left" alt="Een soldeerbout" src="../../assets/images/soldeerbout.jpg"/></p>
+<p>De soldeerbout gebruik je om het soldeer mee te verhitten zodat het aan de elektische componenten gesmolten kan worden. Ze komen in twee varianten, pen en pistool vorm. Voor beginners is de pen vorm het handigst. Probeer er een te kopen waarvan de temperatuur instelbaar is en met een wattage tussen de 15W en 30W. De meeste soldeerbouten hebben een verwisselbare punt. Er zijn twee gangbare vormen hierin, de conische en de platte punt. Conische punten worden vooral gebruikt voor het precies solderen van kleine componenten, platte punten voor grotere componenten en draden. Voor beginners is een conische punt aan te raden.</p>
+<div class="admonition danger">
+<p class="admonition-title">Een soldeerbout kan extreem heet worden!</p>
+<p>Ja duh! Maar goed, we willen toch even waarschuwen want als je niet oppast kun je je akelig verbranden of brand veroorzaken. Doe voorzichtig. Tot zover ons verantwoordelijkheidsgevoel.</p>
+</div>
+<h3 id="spons">Spons</h3>
+<p><img alt="Sponsen" src="../../assets/images/sponsen.jpg"/></p>
+<p>Het is belangrijk om de punt van je soldeerbout schoon en vrij van oxidatie te houden. Daarvoor kan een spons gebruikt worden. Punten met oxidatie worden zwart en accepteren geen soldeer meer. Je kunt hiervoor een vochtige conventionele spons gebruiken, maar dit verkort wel de levensduur van je punt. Een alternatief is gebruik te maken van een messing spons.</p>
+<div class="admonition warning">
+<p class="admonition-title">Gebruik geen schuurspons maar een cellulose spons</p>
+<p>Schuursponzen zijn gemaakt van plastic en dat smelt bij de hoge temperaturen van de soldeerbout. Gebruik in plaats daarvan een natuurspons of een speciale cellulose soldeerbout spons.</p>
+</div>
+<h3 id="soldeer">Soldeer</h3>
+<p>Soldeer is een metaallegering met een laag smeldpunt. Het bestaat in zowel loodhoudende als loodvrije variaties in draadvorm. In de kern van de draad zit een materiaal genaamd flux, dit zorgt voor een betere soldeerverbinding. De meest gebruikte variant soldeer is loodvrijde soldeer met harskern. De loodhoudende variant is minder populair vanwege gezondheidsrisico's.</p>
+<p>De optimale soldeertemperatuur bij loodhoudende soldeer is rond de 330°C. Voor loodvrije soldeer is dit 350°C.</p>
+<div class="admonition danger">
+<p class="admonition-title">Let op bij het gebruik van loodhoudende soldeer</p>
+<p>Zorg voor goede ventilatie en was je handen naderhand. De dampen kunnen schadelijk zijn voor je gezondheid.</p>
+</div>
+<h3 id="overig">Overig</h3>
+<p>Een houder voor je soldeerbout is aan te raden als je vaker soldeert, daarmee voorkom je dat je brandt aan de punt of iets in de fik zet. Een ander handig hulpmiddel bij het solderen is een "helpend handje". Met de klemmetjes kun je twee componenten bij elkaar houden zodat je je handen vrij hebt om te solderen. Een goedkoop alternatief hiervoor is houten knijpers en ijzerdraad. </p>
+<h2 id="veiligheid">Veiligheid</h2>
+<p>Zorg er voor dat je soldeert in een goed geventileerde ruimte. Bij het solderen komen schadelijke dampen vrij die slecht zijn voor je ogen en je longen. Was achteraf altijd je handen. Zorg voor een ondergrond die hittebestendig is en gebruik hulpmiddelen zoals tangetjes om de materialen die je aan elkaar soldeert vast te houden.</p>
+<h2 id="soldeerpunt-vertinnen">Soldeerpunt vertinnen</h2>
+<p>Voordat je begint met solderen en nadat je klaar bent met het solderen is het slim om de punt van je soldeerbout te vertinnen. Hiermee verbeter je de hitteoverdracht van je soldeerbout en gaat het solderen een stuk makkelijker. Daarnaast voorkomt het slijtage aan de punt en ontstaat er minder oxidatie.</p>
+<ol>
+<li>Controleer of de punt goed vastgeschroeft zit voor een optimale hitteoverdracht.</li>
+<li>Zet je soldeerbout aan en stel hem, indien mogelijk in de juiste temperatuur in voor je soldeer.</li>
+<li>Maak, wanneer de soldeerbout heet is, de punt van je soldeerbout schoon met een vochtige spons of een messing spons.</li>
+<li>Coat de punt van je soldeerbout in een dun laagje soldeer.</li>
+</ol>
+<p><img alt="Het vertinnen van de soldeerpunt" src="../../assets/images/soldeerbout-vertinnen.jpg"/></p>
+<h2 id="componenten-solderen">Componenten solderen</h2>
+<p>Je soldeert als volgt een component aan een printplaat.</p>
+<ol>
+<li>Steek de draad door het gat in de printplaat en buig hem ongeveer 45 graden. Op deze manier blijft de draad goed zitten en krijg je een betere verbinding bij het solderen.<br/>
+<img alt="Solderen stap 1" src="../../assets/images/solderen1.jpg"/></li>
+<li>Verhit de verbinding. Dit doe je door met de soldeerpunt zowel het koper op de printplaat en de draad aan te raken. Doe dit voor ongeveer 3 tot 4 seconden om de twee goed op te warmen.<br/>
+<img alt="Solderen stap 2" src="../../assets/images/solderen2.jpg"/></li>
+<li>Voeg soldeer toe aan de verbinding. Terwijl de de soldeerpunt op zijn plek houdt voeg je soldeer toe. <code>Let op</code> raak met de soldeer niet de soldeerpunt aan maar de verbinding zelf. De verbinding moet heet genoeg zijn om de soldeer te smelten, anders krijg je geen goede verbinding.<br/>
+<img alt="Solderen stap 3" src="../../assets/images/solderen3.jpg"/></li>
+<li>Knip de draden kort af. Laat de verbinding eerst rustig en natuurlijk afkoelen. Dit zorgt voor de meest stevige verbinding.<br/>
+<img alt="Solderen stap 4" src="../../assets/images/solderen4.jpg"/></li>
+</ol>
+<p>Een goede soldeerverbinding is glad en glanzend en lijkt op een vulkaan of kegelvorm. Er is net genoeg soldeer om de hele verbinding te bedekken maar niet zoveel dat het een balletje vormt.</p>
+<p>Wil je dit graag in een mooie video uitgelegd krijgen, kijk dan deze youtube video: <a href="https://www.youtube.com/watch?v=kTURB6QboNY">https://www.youtube.com/watch?v=kTURB6QboNY</a>.</p>
+<h2 id="draden-solderen">Draden solderen</h2>
+<p>Zo soldeer je twee draden aan elkaar.</p>
+<ol>
+<li>Verwijder de isolatie van beide draadeinden. Als het een gevlochten draad is draai je de draden in elkaar in je vingers.<br/>
+<img alt="Solderen van draden stap 1" src="../../assets/images/solderen-draden1.jpg"/></li>
+<li>Met een hete soldeerbout raak je de punt van het draad aan zodat hij in 3 tot 4 seconden goed opwarmt.<br/>
+<img alt="Solderen van draden stap 2" src="../../assets/images/solderen-draden2.jpg"/></li>
+<li>Vervolgens raak je de draad aan met het soldeer. Hiermee leg je een dunne coating van soldeer aan om de draad. Doe dit ook voor de andere draad. Zorg ervoor dat je niet de punt van je soldeerbout aanraakt met de soldeer.<br/>
+<img alt="Solderen van draden stap 3" src="../../assets/images/solderen-draden3.jpg"/></li>
+<li>Houd de twee draden tegen elkaar en raak ze aan met de punt van je soldeerbout. Hiermee zouden de beide gecoate draden aan elkaar moeten smelten.<br/>
+<img alt="Solderen van draden stap 4" src="../../assets/images/solderen-draden4.jpg"/></li>
+</ol>
+<h2 id="desolderen">Desolderen</h2>
+<p>Het mooie aan solderen is dat je fouten kunt herstellen. Daarvoor kun je een verbinding desolderen met een desoldeerlont (ookwel desolderbraid of desolderwick). Deze kan overtollig soldeer "opzuigen".</p>
+<p><img alt="Desolderen" src="../../assets/images/desolderen.jpg"/></p>
+<p>Plaats de lont op de verbinding die je wilt desolderen. Vervolgens verhit je de lont met je soldeerbout. Als het goed is wordt de soldeer in de lont opgenomen.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Vorige
+              </span>
+              Hardware overzicht
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../ledring/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Volgende
+              </span>
+              Ledring
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 C.S.V. Alpha
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+ ... <a class="link--pdf-download" download href="../../pdf/IoT-Workshop-Handleiding.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+</body>
+</html>

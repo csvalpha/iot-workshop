@@ -1,0 +1,1280 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Internet of Things Workshop voor C.S.V. Alpha" name="description"/>
+<meta content="Ruben Smit en Hilke van den Born" name="author"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.5" name="generator"/>
+<title>Agenda - IoT Workshop</title>
+<link href="../../assets/stylesheets/main.bde7dde4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="preference" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#agenda">
+          Ga naar inhoud
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="IoT Workshop" class="md-header__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            IoT Workshop
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Agenda
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+      Voorbereiding
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../hardware/">
+        Hardware
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../behuizing/">
+      Behuizing
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../software/">
+        Software
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        Projecten
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../probleemoplosser/">
+      Probleemoplosser
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="IoT Workshop" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    IoT Workshop
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Voorbereiding
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Hardware
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hardware" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Hardware
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/">
+        Hardware overzicht
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/solderen/">
+        Solderen
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/voltage-divider/">
+        Voltage divider
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/potentiometer/">
+        Potentiometer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/pull-down-resistor/">
+        Pull-down resistor
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/knopje/">
+        Knopje
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../behuizing/">
+        Behuizing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Software
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Software" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/">
+        Arduino IDE
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/introductie/">
+        Introductie
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/digitale-io/">
+        Input &amp; Output
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/datum-en-tijd/">
+        Datum en Tijd
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../software/meer-informatie/">
+        Meer informatie
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+        Projecten
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Projecten" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Projecten
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Projectoverzicht
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../nachtlampje/">
+        Nachtlampje
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../wakeuplight/">
+        Wakeuplight
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../klok/">
+        Klok
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Agenda
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Agenda
+      </a>
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#google-script">
+    Google script
+  </a>
+<nav aria-label="Google script" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script-aanmaken">
+    Script aanmaken
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script-schrijven">
+    Script schrijven
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script-implementeren">
+    Script implementeren
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#volledig-script">
+    Volledig script
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#esp-script">
+    ESP script
+  </a>
+<nav aria-label="ESP script" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#https-get-request">
+    HTTPS GET request
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eerstvolgende-afspraak-ophalen">
+    Eerstvolgende afspraak ophalen
+  </a>
+<nav aria-label="Eerstvolgende afspraak ophalen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#redirect-url-ophalen">
+    Redirect url ophalen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tijd-ophalen">
+    Tijd ophalen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ring-animeren">
+    Ring animeren
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#volledig-script_1">
+    Volledig script
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#verbeter-mogelijkheden">
+    Verbeter mogelijkheden
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../probleemoplosser/">
+        Probleemoplosser
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#google-script">
+    Google script
+  </a>
+<nav aria-label="Google script" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script-aanmaken">
+    Script aanmaken
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script-schrijven">
+    Script schrijven
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#script-implementeren">
+    Script implementeren
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#volledig-script">
+    Volledig script
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#esp-script">
+    ESP script
+  </a>
+<nav aria-label="ESP script" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#https-get-request">
+    HTTPS GET request
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#eerstvolgende-afspraak-ophalen">
+    Eerstvolgende afspraak ophalen
+  </a>
+<nav aria-label="Eerstvolgende afspraak ophalen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#redirect-url-ophalen">
+    Redirect url ophalen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tijd-ophalen">
+    Tijd ophalen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ring-animeren">
+    Ring animeren
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#volledig-script_1">
+    Volledig script
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#verbeter-mogelijkheden">
+    Verbeter mogelijkheden
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/csvalpha/iot-workshop/edit/master/docs/projecten/agenda.md" title="Wijzig deze pagina">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="agenda">Agenda</h1>
+<p>In dit project gaan we de tijd van de eerstvolgende google agenda afspraak ophalen en een balk laten aftellen totdat de afspraak begint. Allereest zullen we een Google script schrijven dat je agenda uitleest en een lijstje met afspraken voor de komende 24 uur opstelt. De ESP kan vervolgens via een url dat lijstje opvragen en de balk weergeven. De enige hobbel in het opvragen van de data is dat er een redirect in zit met een tweede url voordat we de echte data kunnen opvragen.</p>
+<h2 id="google-script">Google script</h2>
+<p>Volg de volgende stappen om het google script aan te maken.</p>
+<h3 id="script-aanmaken">Script aanmaken</h3>
+<p>Navigeer naar <a href="https://script.google.com">https://script.google.com</a>, log in met je google account waar ook je agenda aan verbonden is en maak een nieuw project aan door op de <code>Nieuw project</code> knop te drukken.</p>
+<h3 id="script-schrijven">Script schrijven</h3>
+<p>In de editor kunnen we vervolgens een script schrijven. Allereerst moeten we verbinding maken met de agenda. Hiervoor moet je de naam van de kalender invullen, vaak is dit je gmail email adres.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">cal</span> <span class="o">=</span> <span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">getCalendarById</span><span class="p">(</span><span class="s1">'calendar-name'</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">cal</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">ContentService</span><span class="p">.</span><span class="nx">createTextOutput</span><span class="p">(</span><span class="s2">"no access to calendar"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Vervolgens berekenen we de start en eindtijd waartussen we alle agenda afspraken willen ophalen. In dit geval een periode van 24 uur vanaf nu.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">oneday</span> <span class="o">=</span> <span class="mf">24</span><span class="o">*</span><span class="mf">3600000</span><span class="p">;</span> <span class="c1">// [msec]</span>
+<span class="kd">const</span> <span class="nx">stop</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">start</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">+</span> <span class="mf">7</span> <span class="o">*</span> <span class="nx">oneday</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>We halen alle events in deze periode uit de agenda op.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">events</span> <span class="o">=</span> <span class="nx">cal</span><span class="p">.</span><span class="nx">getEvents</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">stop</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Daarna maken we een string aan waaraan we alle agenda afspraken van onszelf of waarvan we aangegeven hebben dat we aanwezig zijn toevoegen. We voegen aan die string de startijd in miliseconden epoch, de starttijd in tekst, of het event de hele dag duurt en de titel toe van elkaar gescheiden met een tab. Is dat wat veel als we eigenlijk alleen de tijd in epoch van de eerstvolgende afspraak nodig hebben? Ja eigenlijk wel, maar dit is een demo, het werkt, en nu heb je meer kennis om er ook andere dingen mee te doen.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">ii</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">ii</span> <span class="o">&lt;</span> <span class="nx">events</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">ii</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="kd">var</span> <span class="nx">event</span><span class="o">=</span><span class="nx">events</span><span class="p">[</span><span class="nx">ii</span><span class="p">];</span>    
+  <span class="kd">var</span> <span class="nx">myStatus</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">getMyStatus</span><span class="p">();</span>
+
+  <span class="k">switch</span><span class="p">(</span><span class="nx">myStatus</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">GuestStatus</span><span class="p">.</span><span class="nx">OWNER</span><span class="o">:</span>
+    <span class="k">case</span> <span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">GuestStatus</span><span class="p">.</span><span class="nx">YES</span><span class="o">:</span>
+    <span class="k">case</span> <span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">GuestStatus</span><span class="p">.</span><span class="nx">MAYBE</span><span class="o">:</span>
+      <span class="nx">str</span> <span class="o">+=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'\t'</span> <span class="o">+</span>
+             <span class="nx">event</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'\t'</span> <span class="o">+</span>
+             <span class="nx">event</span><span class="p">.</span><span class="nx">isAllDayEvent</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'\t'</span> <span class="o">+</span>
+             <span class="nx">event</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">()</span> <span class="o">+</span><span class="s1">'\n'</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nx">ContentService</span><span class="p">.</span><span class="nx">createTextOutput</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="script-implementeren">Script implementeren</h3>
+<p>Rechtsboven zie je als het goed is een blauwe "implementeren" knop. Die moeten we gebruiken om een link voor het script te genereren. Maak een nieuwe implementatie aan. Kies als type een <code>web-app</code>, voer hem uit als jezelf en kies bij toegang voor iedereen. Dit betekend technisch gezien dat iedereen met de url je agenda kan zien. Nu is de url heel erg moeilijk te gokken, maar denk er wel even over na. Als ik beveiliging moet gaan uitleggen gaan we allemaal huilen, iets voor een andere keer.</p>
+<p>Noteer van je implementatie de Implementatie-ID. Die hebben we straks nodig om de data op te halen.</p>
+<h3 id="volledig-script">Volledig script</h3>
+<p>Voor de volledigheid hier het hele script.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">doGet</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">cal</span> <span class="o">=</span> <span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">getCalendarById</span><span class="p">(</span><span class="s1">'calendar-name'</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">cal</span> <span class="o">==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">ContentService</span><span class="p">.</span><span class="nx">createTextOutput</span><span class="p">(</span><span class="s2">"no access to calendar"</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">var</span> <span class="nx">start</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">oneday</span> <span class="o">=</span> <span class="mf">24</span><span class="o">*</span><span class="mf">3600000</span><span class="p">;</span> <span class="c1">// [msec]</span>
+  <span class="kd">const</span> <span class="nx">stop</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">start</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">+</span> <span class="mf">7</span> <span class="o">*</span> <span class="nx">oneday</span><span class="p">);</span>
+  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">start</span><span class="p">);</span>
+  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stop</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">events</span> <span class="o">=</span> <span class="nx">cal</span><span class="p">.</span><span class="nx">getEvents</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">stop</span><span class="p">);</span>
+
+  <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">ii</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">ii</span> <span class="o">&lt;</span> <span class="nx">events</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">ii</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">event</span><span class="o">=</span><span class="nx">events</span><span class="p">[</span><span class="nx">ii</span><span class="p">];</span>    
+    <span class="kd">var</span> <span class="nx">myStatus</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">getMyStatus</span><span class="p">();</span>
+
+    <span class="k">switch</span><span class="p">(</span><span class="nx">myStatus</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">GuestStatus</span><span class="p">.</span><span class="nx">OWNER</span><span class="o">:</span>
+      <span class="k">case</span> <span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">GuestStatus</span><span class="p">.</span><span class="nx">YES</span><span class="o">:</span>
+      <span class="k">case</span> <span class="nx">CalendarApp</span><span class="p">.</span><span class="nx">GuestStatus</span><span class="p">.</span><span class="nx">MAYBE</span><span class="o">:</span>
+        <span class="nx">str</span> <span class="o">+=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'\t'</span> <span class="o">+</span>
+               <span class="nx">event</span><span class="p">.</span><span class="nx">getStartTime</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'\t'</span> <span class="o">+</span>
+               <span class="nx">event</span><span class="p">.</span><span class="nx">isAllDayEvent</span><span class="p">()</span> <span class="o">+</span> <span class="s1">'\t'</span> <span class="o">+</span>
+               <span class="nx">event</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">()</span> <span class="o">+</span><span class="s1">'\n'</span><span class="p">;</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">default</span><span class="o">:</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">ContentService</span><span class="p">.</span><span class="nx">createTextOutput</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<h2 id="esp-script">ESP script</h2>
+<p>Het ESP script zal uit een aantal onderdelen bestaan. Allereerst een functie waarmee we een HTTPS GET request naar een server kunnen doen en de reactie van de server terug krijgen. Deze functie zullen we gebruiken in een andere functie waarmee we de tijd van de eerstvolgende afspraak ophalen. Deze tijd zullen we vervolgens opslaan en gebruiken voor het weergeven van een aftel ring.</p>
+<h3 id="https-get-request">HTTPS GET request</h3>
+<p>Voor een GET request hebben we twee dingen nodig, de host oftewel het domein van de server en de url die we willen opvragen. Het resultaat van een GET request is een string met het bericht. We maken dus een functie aan waar we de host en de url aan geven en deze zal het bericht als String teruggeven.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">String</span> <span class="nf">httpsGet</span><span class="p">(</span><span class="kr">String</span> <span class="n">host</span><span class="p">,</span> <span class="kr">String</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Code komt hier</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>In de functie maken we een <code>WiFiClientSecure</code> object aan waarmee we de request kunnen uitvoeren. Normaliter zou je nu ook een methode toevoegen waarmee je de identiteit van de server waarmee je verbint kunt controleren. Dat is onderdeel van een beveiligde verbinding. Voor deze keer laten we dat achterwege en zetten we een onbeveiligde verbinding op.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">WiFiClientSecure</span> <span class="n">client</span><span class="p">;</span>
+<span class="n">client</span><span class="p">.</span><span class="n">setInsecure</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
+<p>We maken verbinding met de host op de https poort. Als dat niet lukt geven we een lege string terug.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">const</span> <span class="kr">int</span> <span class="n">httpPort</span> <span class="o">=</span> <span class="mi">443</span><span class="p">;</span> <span class="c1">// 80 is voor HTTP / 443 is voor HTTPS</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">client</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">httpPort</span><span class="p">))</span> <span class="p">{</span> <span class="c1">//works!</span>
+  <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Hierna sturen we de GET request naar de server.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">client</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="kr">String</span><span class="p">(</span><span class="s">"GET "</span><span class="p">)</span> <span class="o">+</span> <span class="n">url</span> <span class="o">+</span> <span class="s">" HTTP/1.1</span><span class="se">\r\n</span><span class="s">"</span> <span class="o">+</span>
+               <span class="s">"Host: "</span> <span class="o">+</span> <span class="n">host</span> <span class="o">+</span> <span class="s">"</span><span class="se">\r\n</span><span class="s">"</span> <span class="o">+</span> 
+               <span class="s">"Connection: close</span><span class="se">\r\n\r\n</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>We wachten totdat we een header ontvangen.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">connected</span><span class="p">())</span> <span class="p">{</span>
+  <span class="kr">String</span> <span class="nf">line</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">readStringUntil</span><span class="p">(</span><span class="sc">'\n'</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nf">line</span> <span class="o">==</span> <span class="s">"</span><span class="se">\r</span><span class="s">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table></p>
+<p>Als er daarna een bericht terug komt slaan we dat op in een string.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">String</span> <span class="n">response</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">available</span><span class="p">())</span> <span class="p">{</span>
+  <span class="kr">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">read</span><span class="p">();</span>
+  <span class="n">response</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Deze string geven we terug.
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">return</span> <span class="n">response</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table></p>
+<h3 id="eerstvolgende-afspraak-ophalen">Eerstvolgende afspraak ophalen</h3>
+<p>We hebben een prachtige URL gegenereerd voor het ophalen van de agenda afspraken via een google script. De enige hindernis die we hebben is dat als we de url benaderen van het google script deze een redirect zal teruggeven. Je krijgt bij het opvragen van de url dus niet meteen de data die je wilt hebben maar een nieuwe url. Bij die nieuwe url kun je vervolgens wel de data ophalen. We moeten in het script dus inbouwen dat we eerst de redirect url verkrijgen en daarna de data opvragen.</p>
+<p>Dit alles zal uitgevoerd worden door de <code>getNextAppointmentTime()</code> functie die een integer met de tijd in epoch van de volgende afspraak terug zal geven.</p>
+<h4 id="redirect-url-ophalen">Redirect url ophalen</h4>
+<p>Allereerst halen we de redirect url op van het google script en die slaan we op in een string.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">String</span> <span class="n">redirectMessage</span> <span class="o">=</span> <span class="n">httpsGet</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">url</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>We hebben alleen de url nodig, dus die moeten we uit het bericht filteren. De url begint met <code>/macros</code> en eindigt voor <code>&gt;here</code> dus we zoeken op waar dat in de string staat. Daarmee bepalen we de redirect url.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">from</span> <span class="o">=</span> <span class="n">redirectMessage</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"/macros"</span><span class="p">);</span>
+<span class="kr">int</span> <span class="n">to</span> <span class="o">=</span> <span class="n">redirectMessage</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"</span><span class="se">\"</span><span class="s">&gt;here"</span><span class="p">);</span>
+<span class="kr">String</span> <span class="n">redirectUrl</span> <span class="o">=</span> <span class="n">redirectMessage</span><span class="p">.</span><span class="n">substring</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>In een url wordt soms de <code>&amp;</code> vervangen voor een <code>&amp;amp;</code>. Dat geeft problemen als we de url later willen gaan gebruiken. Dus deze moeten we weer terug vervangen. Dat doen we als volgt.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">redirectUrl</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"&amp;amp;"</span><span class="p">,</span> <span class="s">"&amp;"</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="tijd-ophalen">Tijd ophalen</h4>
+<p>Nu we de redirect url weten kunnen we de tijd van de eerstvolgende afspraak ophalen.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">String</span> <span class="n">calenderItems</span> <span class="o">=</span> <span class="n">httpsGet</span><span class="p">(</span><span class="n">redirectHost</span><span class="p">,</span> <span class="n">redirectUrl</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>In de response staat veel meer informatie dan dat we nodig hebben. De tijd staat na de eerste enter (dat is een <code>\n</code> in ascii) en voor de eerste tab (dat is een <code>\t</code> in ascii). Dus de plek daarvan zoeken we op.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">start</span> <span class="o">=</span> <span class="n">calenderItems</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="kr">int</span> <span class="nf">end</span> <span class="o">=</span> <span class="n">calenderItems</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>Vervolgens halen we het nummer uit de string. Het google script geeft de epoch tijd in milliseconden maar wij werken in dit script met seconden. Dus laten we de laatste 3 cijfers van het getal gewoon achterwege. De string zetten we vervolgens om in een nummer en geven we terug.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">String</span> <span class="n">epoch</span> <span class="o">=</span> <span class="n">calenderItems</span><span class="p">.</span><span class="n">substring</span><span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nf">end</span><span class="mi">-3</span><span class="p">);</span>
+<span class="k">return</span> <span class="n">epoch</span><span class="p">.</span><span class="n">toInt</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="ring-animeren">Ring animeren</h3>
+<p>Om de ring te animeren volgen we een aantal stappen. Eerst kijken we of we al weten wanneer de volgende afspraak is. Zo niet dan moeten we die ophalen. Ook willen we elke 10 minuten controleren of de agenda toevallig niet aangepast is. De tijd van de eerstvolgende afspraak slaan we op in een variabele.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">nextAppointmentTime</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">timeClient</span><span class="p">.</span><span class="n">getMinutes</span><span class="p">()</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">nextAppointmentTime</span> <span class="o">=</span> <span class="n">getNextAppointmentTime</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Hierna berekenen we hoe lang het nog duurt tot de volgende afspraak.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">minutesToAppointment</span> <span class="o">=</span> <span class="p">(</span><span class="n">nextAppointmentTime</span> <span class="o">-</span> <span class="n">timeClient</span><span class="p">.</span><span class="n">getEpochTime</span><span class="p">())</span> <span class="o">/</span> <span class="mi">60</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Als het minder dan 60 minuten is tot de volgende afspraak willen we het aantal pixels aan zetten overeenkomstig met het aantal minuten dat het nog duurt.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">minutesToAppointment</span> <span class="o">&amp;&amp;</span> <span class="n">minutesToAppointment</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
+<p>Als de tijd van de afspraak bereikt is dan moeten we de tijd van de eerstvolgende afspraak ophalen.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">minutesToAppointment</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">nextAppointmentTime</span> <span class="o">=</span> <span class="n">getNextAppointmentTime</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Vervolgens wachten we een minuut om de ring weer te updaten.</p>
+<h3 id="volledig-script_1">Volledig script</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// We voegen de Wifi en de NTPclient libraries toe waarmee we met wifi kunnen verbinden en de tijd kunnen ophalen</span>
+<span class="cp">#include</span> <span class="cpf">&lt;ESP8266WiFi.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;NTPClient.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;WiFiUdp.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// We voegen de Neopixel library toe waarmee we de ledring kunnen aansturen</span>
+<span class="cp">#include</span> <span class="cpf">&lt;Adafruit_NeoPixel.h&gt;</span><span class="cp"></span>
+
+<span class="c1">// We stellen het wifi netwerk en wachtwoord in</span>
+<span class="kr">const</span> <span class="kr">char</span><span class="o">*</span> <span class="n">ssid</span>     <span class="o">=</span> <span class="s">"</span><span class="nf">SSID</span><span class="s">"</span><span class="p">;</span>
+<span class="kr">const</span> <span class="kr">char</span><span class="o">*</span> <span class="n">password</span> <span class="o">=</span> <span class="s">"PASSWORD"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="kr">char</span><span class="o">*</span> <span class="n">host</span> <span class="o">=</span> <span class="s">"script.google.com"</span><span class="p">;</span>
+<span class="kr">const</span> <span class="kr">char</span><span class="o">*</span> <span class="n">redirectHost</span> <span class="o">=</span> <span class="s">"script.googleusercontent.com"</span><span class="p">;</span>
+<span class="kr">const</span> <span class="kr">char</span><span class="o">*</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"/macros/s/YOUR_APP_ID/exec"</span><span class="p">;</span>
+
+<span class="c1">// We maken een Wifi en NTPclient object aan</span>
+<span class="nf">WiFiUDP</span> <span class="n">ntpUDP</span><span class="p">;</span>
+<span class="n">NTPClient</span> <span class="nf">timeClient</span><span class="p">(</span><span class="n">ntpUDP</span><span class="p">,</span> <span class="s">"pool.ntp.org"</span><span class="p">);</span>
+
+<span class="c1">// We definiëren aan welke pinnen we de ledring aangesloten hebben en we maken een ledstrip object aan</span>
+<span class="cp">#define LED_PIN D4</span>
+<span class="cp">#define LED_COUNT 60</span>
+<span class="n">Adafruit_NeoPixel</span> <span class="nf">strip</span><span class="p">(</span><span class="n">LED_COUNT</span><span class="p">,</span> <span class="n">LED_PIN</span><span class="p">,</span> <span class="n">NEO_GRB</span> <span class="o">+</span> <span class="n">NEO_KHZ800</span><span class="p">);</span>
+
+<span class="c1">// We maken een variabele aan waarin we de tijd van de volgende afspraak aanmaken.</span>
+<span class="kr">int</span> <span class="n">nextAppointmentTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Functie om door middel van een HTTPS GET request van een host en url data op te vragen</span>
+<span class="cm"> * @param host Het domein dat benaderd moet worden</span>
+<span class="cm"> * @param url De url op het domein dat benaderd moet worden</span>
+<span class="cm"> * @return Een string met de volledige response</span>
+<span class="cm"> */</span>
+<span class="kr">String</span> <span class="nf">httpsGet</span><span class="p">(</span><span class="kr">String</span> <span class="n">host</span><span class="p">,</span> <span class="kr">String</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// We gebruiken de WiFiClientSecure klasse om een TCP verbinding op te zetten</span>
+  <span class="n">WiFiClientSecure</span> <span class="n">client</span><span class="p">;</span>
+
+  <span class="c1">// Dit is de magische regel waarmee we alle beveiliging negeren en waardoor alles werkt</span>
+  <span class="c1">// Als je een echt veilige verbinding op wilt zetten zou je nu dingen met certificaten moeten doen</span>
+  <span class="c1">// Dat is kei veel werk en voor een simpele agenda export laten we het achterwege</span>
+  <span class="n">client</span><span class="p">.</span><span class="n">setInsecure</span><span class="p">();</span>
+
+  <span class="c1">// We maken verbinding met de server</span>
+  <span class="kr">const</span> <span class="kr">int</span> <span class="n">httpPort</span> <span class="o">=</span> <span class="mi">443</span><span class="p">;</span> <span class="c1">// 80 is voor HTTP / 443 is voor HTTPS</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">client</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">httpPort</span><span class="p">))</span> <span class="p">{</span> <span class="c1">//works!</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">"connection failed"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="s">""</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">"Requesting URL: "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+
+  <span class="c1">// We sturen de GET request naar de server</span>
+  <span class="n">client</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="kr">String</span><span class="p">(</span><span class="s">"GET "</span><span class="p">)</span> <span class="o">+</span> <span class="n">url</span> <span class="o">+</span> <span class="s">" HTTP/1.1</span><span class="se">\r\n</span><span class="s">"</span> <span class="o">+</span>
+               <span class="s">"Host: "</span> <span class="o">+</span> <span class="n">host</span> <span class="o">+</span> <span class="s">"</span><span class="se">\r\n</span><span class="s">"</span> <span class="o">+</span> 
+               <span class="s">"Connection: close</span><span class="se">\r\n\r\n</span><span class="s">"</span><span class="p">);</span>
+
+  <span class="c1">// We wachten totdat we een header ontvangen</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">connected</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kr">String</span> <span class="nf">line</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">readStringUntil</span><span class="p">(</span><span class="sc">'\n'</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nf">line</span> <span class="o">==</span> <span class="s">"</span><span class="se">\r</span><span class="s">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">"headers received"</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Als er daarna een bericht terug komt slaan we het op in een string</span>
+  <span class="kr">String</span> <span class="n">response</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">client</span><span class="p">.</span><span class="nf">available</span><span class="p">())</span> <span class="p">{</span>
+    <span class="kr">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">read</span><span class="p">();</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+    <span class="n">response</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">"closing connection"</span><span class="p">);</span>
+
+  <span class="c1">// We geven de string met het bericht terug</span>
+  <span class="k">return</span> <span class="n">response</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Functie om de tijd in epoch van de volgende afspraak op te halen</span>
+<span class="cm"> * @returns Een integer met de tijd in epoch van de volgende afspraak</span>
+<span class="cm"> */</span>
+<span class="kr">int</span> <span class="nf">getNextAppointmentTime</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">"connecting to "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">host</span><span class="p">);</span>
+
+  <span class="c1">// We halen de redirect url op van het google script</span>
+  <span class="kr">String</span> <span class="n">redirectMessage</span> <span class="o">=</span> <span class="n">httpsGet</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">url</span><span class="p">);</span>
+
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">"Redirect message: "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">redirectMessage</span><span class="p">);</span>
+
+  <span class="c1">// Er zit wat HTML in het redirect bericht en we hebben alleen de url nodig</span>
+  <span class="c1">// Daarom bepalen we hier waar deze precies staat</span>
+  <span class="kr">int</span> <span class="n">from</span> <span class="o">=</span> <span class="n">redirectMessage</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"/macros"</span><span class="p">);</span>
+  <span class="kr">int</span> <span class="n">to</span> <span class="o">=</span> <span class="n">redirectMessage</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"</span><span class="se">\"</span><span class="s">&gt;here"</span><span class="p">);</span>
+
+  <span class="c1">// Vervolgens slaan we de url op</span>
+  <span class="kr">String</span> <span class="n">redirectUrl</span> <span class="o">=</span> <span class="n">redirectMessage</span><span class="p">.</span><span class="n">substring</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">);</span>
+
+  <span class="c1">// De &amp; in een url wordt vervangen door &amp;amp; in HTML dus die moeten we omzetten voordat we hem kunnen gebruiken</span>
+  <span class="n">redirectUrl</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"&amp;amp;"</span><span class="p">,</span> <span class="s">"&amp;"</span><span class="p">);</span>
+
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">"Redirect url: "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">redirectUrl</span><span class="p">);</span>
+
+  <span class="c1">// We halen de kalender events op vanaf de redirect url</span>
+  <span class="kr">String</span> <span class="n">calenderItems</span> <span class="o">=</span> <span class="n">httpsGet</span><span class="p">(</span><span class="n">redirectHost</span><span class="p">,</span> <span class="n">redirectUrl</span><span class="p">);</span>
+
+  <span class="c1">// Aangezien we alleen de tijd van de eerstvolgende event nodig hebben bepalen we waar die staat</span>
+  <span class="kr">int</span> <span class="n">start</span> <span class="o">=</span> <span class="n">calenderItems</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+  <span class="kr">int</span> <span class="nf">end</span> <span class="o">=</span> <span class="n">calenderItems</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">);</span>
+
+  <span class="c1">// De tijd in epoch slaan we op als string, het script geeft de epoch in miliseconden maar wij </span>
+  <span class="c1">// gebruiken seconden dus de laatste 3 getallen laten we achterwege</span>
+  <span class="kr">String</span> <span class="n">epoch</span> <span class="o">=</span> <span class="n">calenderItems</span><span class="p">.</span><span class="n">substring</span><span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nf">end</span><span class="mi">-3</span><span class="p">);</span>
+
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">"Next item epoch: "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">epoch</span><span class="p">);</span>
+
+  <span class="c1">// De string zetten we om in een integer en geven we terug</span>
+  <span class="k">return</span> <span class="n">epoch</span><span class="p">.</span><span class="n">toInt</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// We starten de ledstrip op en zetten hem aan</span>
+  <span class="n">strip</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+
+  <span class="c1">// We maken de ledstrip rood om aan te geven dat we nog niet met wifi verbonden zijn</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">setBrightness</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+
+  <span class="c1">// We starten seriële communciatie op voor debugging</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+  <span class="nf">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">"Connecting to "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">ssid</span><span class="p">);</span>
+
+  <span class="c1">// We maken verbinding met het wifi netwerk</span>
+  <span class="nf">WiFi</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">ssid</span><span class="p">,</span> <span class="n">password</span><span class="p">);</span>
+
+  <span class="c1">// Zolang we nog niet met het wifi verbonden zijn updaten we een pixel van de ring naar oranje</span>
+  <span class="kr">int</span> <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="n">status</span><span class="p">()</span> <span class="o">!=</span> <span class="n">WL_CONNECTED</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">status</span> <span class="o">&lt;</span> <span class="n">LED_COUNT</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">status</span><span class="o">++</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">// We starten de tijd client op. Aangezien het google script al de correctie voor </span>
+  <span class="c1">// tijdzone doet hoeven we geen offset in te stellen</span>
+  <span class="n">timeClient</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+  <span class="n">timeClient</span><span class="p">.</span><span class="n">setTimeOffset</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">"WiFi connected"</span><span class="p">);</span>  
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">"IP address: "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="nf">WiFi</span><span class="p">.</span><span class="nf">localIP</span><span class="p">());</span>
+
+  <span class="c1">// We maken de ledstrip leeg om aan te geven dat we succesvol opgestart zijn</span>
+  <span class="n">strip</span><span class="p">.</span><span class="nf">clear</span><span class="p">();</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+  <span class="nf">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">timeClient</span><span class="p">.</span><span class="n">update</span><span class="p">();</span>
+
+  <span class="c1">// We halen de volgende afspraak op als we nog niet weten wanneer het eerstvolgende event is of elke 10 minuten</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">nextAppointmentTime</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">timeClient</span><span class="p">.</span><span class="n">getMinutes</span><span class="p">()</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">"Updating next appointment time"</span><span class="p">);</span>
+    <span class="n">nextAppointmentTime</span> <span class="o">=</span> <span class="n">getNextAppointmentTime</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">"Next appointment time: "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">nextAppointmentTime</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">"Current time: "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">timeClient</span><span class="p">.</span><span class="n">getEpochTime</span><span class="p">());</span>
+
+  <span class="c1">// We berekenen hoe lang het duurt tot de volgende afspraak</span>
+  <span class="kr">int</span> <span class="n">minutesToAppointment</span> <span class="o">=</span> <span class="p">(</span><span class="n">nextAppointmentTime</span> <span class="o">-</span> <span class="n">timeClient</span><span class="p">.</span><span class="n">getEpochTime</span><span class="p">())</span> <span class="o">/</span> <span class="mi">60</span><span class="p">;</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">"Minutes to appointment: "</span><span class="p">);</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">minutesToAppointment</span><span class="p">);</span>
+
+  <span class="c1">// We zetten het aantal pixels aan dat overeen komt met hoeveel minuten het nog duurt</span>
+  <span class="c1">// mits de afspraak binnen minimaal 60 minuten is.</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strip</span><span class="p">.</span><span class="n">numPixels</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">minutesToAppointment</span> <span class="o">&amp;&amp;</span> <span class="n">minutesToAppointment</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">strip</span><span class="p">.</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">strip</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+
+  <span class="c1">// Als de afspraak nu is moeten we de volgende afspraak inladen</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">minutesToAppointment</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">"Appointment is now, updating next appointment time"</span><span class="p">);</span>
+    <span class="n">nextAppointmentTime</span> <span class="o">=</span> <span class="n">getNextAppointmentTime</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="c1">// We wachten 1 minuut</span>
+  <span class="nf">delay</span><span class="p">(</span><span class="mi">60000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="verbeter-mogelijkheden">Verbeter mogelijkheden</h2>
+<p>Een optie is om meerdere agenda's uit te lezen en de kleur van die agenda mee te sturen. Dan kun je de kleur van de ledring aanpassen zodat je weet voor welke agenda de afspraak is. Verder zou je ook de kleur van groen naar rood kunnen laten verlopen hoe dichter je bij de tijd van de afspraak ben. Een andere optie is om de agenda afspraken, optioneel in kleuren, over een klok heen te leggen. Zodat je in een oogopslag kunt zien wanneer je bepaalde afspraken hebt. Stel dat je je collegerooster inlaad, dan zou je met rode strepen op de klok je collegetijden aan kunnen geven. Dan weet je 's ochtends meteen wat je te wachten staat die dag.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../klok/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Vorige
+              </span>
+              Klok
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../../probleemoplosser/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Volgende
+              </span>
+              Probleemoplosser
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 C.S.V. Alpha
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+ ... <a class="link--pdf-download" download href="../../pdf/IoT-Workshop-Handleiding.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+</body>
+</html>

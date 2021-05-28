@@ -1,0 +1,1179 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Internet of Things Workshop voor C.S.V. Alpha" name="description"/>
+<meta content="Ruben Smit en Hilke van den Born" name="author"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.5" name="generator"/>
+<title>Introductie - IoT Workshop</title>
+<link href="../../assets/stylesheets/main.bde7dde4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+</head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="preference" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#introductie">
+          Ga naar inhoud
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="IoT Workshop" class="md-header__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            IoT Workshop
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Introductie
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+      Voorbereiding
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../hardware/">
+        Hardware
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../behuizing/">
+      Behuizing
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        Software
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../projecten/">
+        Projecten
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../probleemoplosser/">
+      Probleemoplosser
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="IoT Workshop" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="IoT Workshop">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    IoT Workshop
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/csvalpha/iot-workshop/" title="Ga naar repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    csvalpha/iot-workshop
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Voorbereiding
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        Hardware
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hardware" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Hardware
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/">
+        Hardware overzicht
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/solderen/">
+        Solderen
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/voltage-divider/">
+        Voltage divider
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/potentiometer/">
+        Potentiometer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/pull-down-resistor/">
+        Pull-down resistor
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../hardware/knopje/">
+        Knopje
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../behuizing/">
+        Behuizing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        Software
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Software" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+        Arduino IDE
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Introductie
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Introductie
+      </a>
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basis-programma">
+    Basis programma
+  </a>
+<nav aria-label="Basis programma" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#void-setup">
+    void setup()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#void-loop">
+    void loop()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#puntkomma">
+    Puntkomma
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#variabelen">
+    Variabelen
+  </a>
+<nav aria-label="Variabelen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#declaratie-en-gebruik">
+    Declaratie en gebruik
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#datatypes">
+    Datatypes
+  </a>
+<nav aria-label="Datatypes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#casten">
+    Casten
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operators">
+    Operators
+  </a>
+<nav aria-label="Operators" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wiskundig">
+    Wiskundig
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#toewijzingen">
+    Toewijzingen
+  </a>
+<nav aria-label="Toewijzingen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#and-operator">
+    AND operator
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#or-operator">
+    OR operator
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vergelijkingen">
+    Vergelijkingen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scope">
+    Scope
+  </a>
+<nav aria-label="Scope" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#global-variables">
+    Global variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#local-variables">
+    Local variables
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arrays">
+    Arrays
+  </a>
+<nav aria-label="Arrays" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#een-array-aanmaken">
+    Een array aanmaken
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#waarden-uit-een-array-halen">
+    Waarden uit een array halen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#waarden-in-een-array-stoppen">
+    Waarden in een array stoppen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lengte-van-de-array-bepalen">
+    Lengte van de array bepalen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strings">
+    Strings
+  </a>
+<nav aria-label="Strings" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#een-string-aanmaken">
+    Een string aanmaken
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#besluiten-maken">
+    Besluiten maken
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#loops">
+    Loops
+  </a>
+<nav aria-label="Loops" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#for-loop">
+    For loop
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#while-loop">
+    While loop
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#seriele-communicatie">
+    Seriële communicatie
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functies">
+    Functies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusie">
+    Conclusie
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../digitale-io/">
+        Input &amp; Output
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ledring/">
+        Ledring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../datum-en-tijd/">
+        Datum en Tijd
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../meer-informatie/">
+        Meer informatie
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+        Projecten
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Projecten" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Projecten
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/">
+        Projectoverzicht
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/nachtlampje/">
+        Nachtlampje
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/wakeuplight/">
+        Wakeuplight
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/klok/">
+        Klok
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../projecten/agenda/">
+        Agenda
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../probleemoplosser/">
+        Probleemoplosser
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basis-programma">
+    Basis programma
+  </a>
+<nav aria-label="Basis programma" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#void-setup">
+    void setup()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#void-loop">
+    void loop()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#puntkomma">
+    Puntkomma
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#variabelen">
+    Variabelen
+  </a>
+<nav aria-label="Variabelen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#declaratie-en-gebruik">
+    Declaratie en gebruik
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#datatypes">
+    Datatypes
+  </a>
+<nav aria-label="Datatypes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#casten">
+    Casten
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#operators">
+    Operators
+  </a>
+<nav aria-label="Operators" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#wiskundig">
+    Wiskundig
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#toewijzingen">
+    Toewijzingen
+  </a>
+<nav aria-label="Toewijzingen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#and-operator">
+    AND operator
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#or-operator">
+    OR operator
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vergelijkingen">
+    Vergelijkingen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scope">
+    Scope
+  </a>
+<nav aria-label="Scope" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#global-variables">
+    Global variables
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#local-variables">
+    Local variables
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arrays">
+    Arrays
+  </a>
+<nav aria-label="Arrays" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#een-array-aanmaken">
+    Een array aanmaken
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#waarden-uit-een-array-halen">
+    Waarden uit een array halen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#waarden-in-een-array-stoppen">
+    Waarden in een array stoppen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#lengte-van-de-array-bepalen">
+    Lengte van de array bepalen
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strings">
+    Strings
+  </a>
+<nav aria-label="Strings" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#een-string-aanmaken">
+    Een string aanmaken
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#besluiten-maken">
+    Besluiten maken
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#loops">
+    Loops
+  </a>
+<nav aria-label="Loops" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#for-loop">
+    For loop
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#while-loop">
+    While loop
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#seriele-communicatie">
+    Seriële communicatie
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functies">
+    Functies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conclusie">
+    Conclusie
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/csvalpha/iot-workshop/edit/master/docs/software/introductie.md" title="Wijzig deze pagina">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+</a>
+<h1 id="introductie">Introductie</h1>
+<p>In dit hoofdstuk hopen we je een basis uitleg van programmeren in C++ te geven met de Arduino library. We zullen alle belangrijke punten en concepten kort aanstippen. Hopelijk is dit voldoende om mee aan de slag te gaan of heb je hiermee voldoende aanknopingspunten om verdere informatie op te zoeken.</p>
+<h2 id="basis-programma">Basis programma</h2>
+<p>Ieder Arduino script heeft altijd twee blokken: void setup() en de void loop().</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// put your setup code here, to run once:</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// put your main code here, to run repeatedly:</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="void-setup">void setup()</h3>
+<p>De void setup() staat aan het begin van het script. In de void setup() staat alles wat we nodig gaan hebben tijdens het runnen van het script. Je kan het zien als een soort van boodschappenlijst alleen vervangen we de meel en boter voor pins en variablen. Zoals je wellicht heb gezien staat er na de void setup() twee accolades {}. Tussen deze twee accolades wordt alles gezet wat we in de setup willen hebben.</p>
+<p>De void setup() wordt maar 1 keer gelezen door de Arduino en dat is na het opstarten van het programma.</p>
+<h3 id="void-loop">void loop()</h3>
+<p>In de void loop() vertel je de arduino wat het moet doen. Het is een beetje hetzelfde als het recept van een taart. We hebben tijdens de void setup() eerst boodchappen gedaan en nu gaan we met de void loop() het recept volgen. De instructies in de void loop() vorden oneindig lang herhaald, vandaar ook de naam!</p>
+<p>Net zoals bij de void setup() begint en eindigd de void loop() met accolades. Het grote verschil, naast de herhaling, is dat er in de void loop() meerdere blokjes code kunen staan. Deze blokjes code noem je methods en die hebben ook allemaal weer hun eigen accolades. Zo verdeel de code in stukje met ieder een eigen functie.</p>
+<h3 id="puntkomma">Puntkomma</h3>
+<p>Iets waar arduino sketches heel erg van houden zijn puntkommas. Achter iedere regel moet een puntkomma! Met een ; sluit je een regel af en zeg je als het ware tegen de arduino: 'goed gedaan jonge, nu aan het werk met de volgende regel'. Het vergeten van een ; is ook een van de meest voorkomende redenen waarom een script het niet doet.</p>
+<h2 id="comments">Comments</h2>
+<p>Naast het feit dat je in een script tegen de Arduino vertelt wat het moet doen is het soms ook even heel fijn om tegen jezelf te praten of om even uit te leggen wat je aan het doen bent. Voor deze gevallen kan je een comment plaatsen.</p>
+<p>Wanneer je een comment plaatst zeg je eigenlijk tegen de Arduino:'Wat ik hier opschrijf gaat jou helemaal niets aan en daar hoef jij dan ook niets mee te doen'.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1">// single line comment</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> Multi</span>
+<span class="cm"> line </span>
+<span class="cm"> comment</span>
+<span class="cm">*/</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="variabelen">Variabelen</h2>
+<p>Goed, het is tijd om een jeugdtraumaatje op te halen. Ik neme je mee terug naar de rekenles op de basisschool. Je zit voor in de klas, let goed op en opeens vraagt de juf of meester aan jou: 'Als Pietje 9 appels heeft en hij geeft 4 appels weg, hoeveel appels heeft Pietje dan nog?' Met de volste overtuiging zeg jij: '4 juf'. Wat heb je lekker opgelet en je kan niet wachten op het complimentje dat je van de juf gaat krijgen. Maar tot je grote schrik krijg je helemaal geen comlimentje maar de juf zegt: '4 wat? 4 koeien? 4 broden? 4 euro?' Oh ja! Dat wa ook zo: '4 appels juf!'</p>
+<p>Net zoals de 4 appels moet ook alles in een script een naam hebben. Dit noemen we variablem. Variablen vertegenvoordigen een getal of een tekst met een logische naam. Voorbeelden zijn bijvoorbeeld ledPin of onTime. Variablen kun je waardes geven.</p>
+<p>Even weer terug naar het jeugdtrauma. Appels is in dat geval het variable. Aan het begin (void setup()) had Pietje 9 appels en tijdens de eerste run van de void loop() heeft pietje er 4 weg gegeven. Hier kan je goed zien dat de waardes van variablen door het hele script heen kunnen veranderen en dus niet perse een vast waarde hebben!</p>
+<h3 id="declaratie-en-gebruik">Declaratie en gebruik</h3>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">variable</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">variable</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="datatypes">Datatypes</h3>
+<table>
+<thead>
+<tr>
+<th>Naam</th>
+<th>Keyword</th>
+<th>Omschrijving</th>
+<th>Minimum</th>
+<th>Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integer</td>
+<td><code>int</code></td>
+<td>Gehele getallen</td>
+<td>-2147483648</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>Character</td>
+<td><code>char</code></td>
+<td>Letters</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td><code>bool</code></td>
+<td>Waar of niet waar</td>
+<td>0 (<code>False</code>)</td>
+<td>1 (<code>True</code>)</td>
+</tr>
+<tr>
+<td>Floating point</td>
+<td><code>float</code></td>
+<td>Kommagetallen</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Double floating point</td>
+<td><code>double</code></td>
+<td>Kommagetallen met dubbele precisie</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="casten">Casten</h4>
+<h3 id="operators">Operators</h3>
+<p>Operators zijn symbolen die aangeven dat er een bepaalde wiskundige of logische manipulatie gedaan moet worden.</p>
+<h4 id="wiskundig">Wiskundig</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>getallen bij elkaar optellen</td>
+</tr>
+<tr>
+<td>-</td>
+<td>getallen van elkaar aftrekken</td>
+</tr>
+<tr>
+<td>*</td>
+<td>getallen met elkaar vermenigvuldigen</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Getallen door elkaar delen</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Rest van een deling</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toewijzingen">Toewijzingen</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ =</td>
+<td>Wijst het resultaat van een toevoeging toe</td>
+</tr>
+<tr>
+<td>- =</td>
+<td>Wijst het resultaat va een aftrekking toe</td>
+</tr>
+<tr>
+<td>* =</td>
+<td>Wijst het resultaat van een vermenigvuldiging toe</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Wijst de rest van een divisie toe</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>Wijst het resultaat van een logische AND toe*</td>
+</tr>
+<tr>
+<td>|</td>
+<td>Wijst het resultaat van een logische OR toe</td>
+</tr>
+<tr>
+<td>!</td>
+<td>Geeft aan dat iets, niet, is</td>
+</tr>
+</tbody>
+</table>
+<h5 id="and-operator">AND operator</h5>
+<p>Een AND operator is een boolean operator.  Een boolean heeft maar twee mogelijke resultaten: Waar(1) op niet waar(0). Een boolean heeft verschillende inputs. Bij een simpele boolean zijn er twee inputs.</p>
+<p>Een AND Operator is waar (1) wanneer alle inputs ook waar zijn. Even een voorbeeldje:
+Boolean: Ruben en Hilke hebben allebei blond haar
+Input 1: Ruben heeft bruin haar
+Input 2: Hilke heeft blond haar
+Wanneer we naar de input kijken kunnen we zien dat maar 1 van de twee inputs klopt. Ruben heeft helemaal geen blond haar. Dit houdt in dat de AND operator een onwaar of een 0 terug geeft.</p>
+<p>We zouden de input ook anders op kunnen schrjiven:
+Input 1: Ruben !blond (Zie je wat hier gebeurd, er wordt nu aangegeven dat Ruben geen blond haar heeft. Wat hij wel heeft is onduidelijk maar dat doet er nu niet toe!)
+Input 2: Hilke heeft blond haar</p>
+<h5 id="or-operator">OR operator</h5>
+<p>Een OR operator lijkt hele erg op de AND operator. Er is alleen een groot verschil: Om ervoor te zorgen dat de boolean waar (1) terug geeft hoeft er maar 1 van de inputs waar te zijn.</p>
+<p>Als we dan weer gaan kijken naar het eerdere voorbeeld:
+Boolean: Ruben en Hilke hebben allebei blond haar
+Input 1: Ruben heeft bruin haar
+Input 2: Hilke heeft blond haar
+Daar waar het resultaat van de AND operator niet waar (0) was is deze bij de OR operator wel waar (1). 1 van de inputs klopt, Hilke heeft namelijk blond haar.</p>
+<h4 id="vergelijkingen">Vergelijkingen</h4>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Omschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td>Waarde x is kleiner dan waarde y</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Waarde x is kleiner of gelijk aan waarde y</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Waarde x is groter dan waarde x</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Waarde x is groter of gelijk aan waarde y</td>
+</tr>
+<tr>
+<td>==</td>
+<td>Waarde x is waarde y</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scope">Scope</h3>
+<p>Wanneer je een script schrijft heb je zolas eerder vermeld variablen nodig (ja, ik tune toch nog een keertje in op het jeugdtrauma). Nu heb je keuze tussen twee smaakjes van dat trauma eehhhh keuze tussen twee soorten variablen: global variables en local variables</p>
+<h4 id="global-variables">Global variables</h4>
+<p>Global variables zijn variables die gedeclared zijn buiten functies en die global variables kunnen dus gebruikt worden door iedere funcite. Ze zijn zeg maar niet in een hokje gestopt en iedere functie kan aanspraak maken op een global variable. Een global variable is een soort van Albert Heijn, iedereen heeft toegang tot een Albert Heijn en wij mogen naar harte lust appels, Grolsch en andere vernaperingen halen.</p>
+<h4 id="local-variables">Local variables</h4>
+<p>Local variables zijn net wat anders. Een local variable wordt gedeclared in een specifieke functie en deze variable kan dan ook alleen maar worden gebruikt binnen die specifieke functie. Het is dus geen Albert Heijn maar de koelkast op Shine. Niet iedereen heeft toegang tot die koelkast maar iedereen op huize Shine mag wel alles in de koelkast gebruiken.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// this is a global variable</span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">  <span class="kr">int</span> <span class="n">scopedValue</span><span class="p">;</span> <span class="c1">// this variable exists only in this scope</span>
+</span><span class="hll">  <span class="n">scopedValue</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+</span><span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// value is accessible here, scopedValue not</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="arrays">Arrays</h3>
+<p>Een array is een lijst van waarden. Alle waarden in de array moeten hetzelfde datatype hebben en binnen Arduino is het verplicht om vooraf aan te geven hoe lang de array is, oftewel hoeveel waarden er in passen. Vervolgens kun je de verschillende waarden in de lijst opvragen en aanpassen.</p>
+<h4 id="een-array-aanmaken">Een array aanmaken</h4>
+<p>Je maakt een array aan door aan te geven welk datatype hij heeft en hoe lang de array moet zijn. Bijvoorbeeld een lijst van 6 integers.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">integerArray</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+</code></pre></div>
+</td></tr></table>
+<p>Het is ook mogelijk om meteen waarden in de lijst te stoppen, bijvoorbeeld een lijst met alle weekdagen. Je hoeft dan niet persé de lengte nog op te geven, dat snap de compiler dan wel.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">String</span> <span class="n">weekDays</span><span class="p">[]</span><span class="o">=</span> <span class="p">{</span><span class="s">"Zondag"</span><span class="p">,</span> <span class="s">"Maandag"</span><span class="p">,</span> <span class="s">"Dinsdag"</span><span class="p">,</span> <span class="s">"Woensdag"</span><span class="p">,</span> <span class="s">"Donderdag"</span><span class="p">,</span> <span class="s">"Vrijdag"</span><span class="p">,</span> <span class="s">"Zaterdag"</span><span class="p">};</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="waarden-uit-een-array-halen">Waarden uit een array halen</h4>
+<p>Je kunt een waarde uit een bepaalde plek in de array halen aan de hand van de index van de waarde. Als we bijvoorbeeld de 5e waarde uit de array willen halen doen we dat op de volgende manier.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">waarde</span> <span class="o">=</span> <span class="n">integerArray</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+</code></pre></div>
+</td></tr></table>
+<p>Daarbij moet je er op letten dat het eerste element in de array op index positie 0 staat. Programmeurs beginnen met tellen bij 0, dus het eerste element heeft index 0 en in een array met 6 waarden is de index van het laatste element dus 5.</p>
+<p>Een ander aandachtspunt is dat je niet een waarde uit de array kunt opvragen die niet bestaat, bijvoorbeeld bij een array met lengte 6 geeft een poging om de waarde op index 6 op te halen een error, immers deze bestaat niet.</p>
+<h4 id="waarden-in-een-array-stoppen">Waarden in een array stoppen</h4>
+<p>Je voegt een waarde aan een array toe op de volgende manier.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">integerArray</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="lengte-van-de-array-bepalen">Lengte van de array bepalen</h4>
+<p>Mocht je willen weten hoe lang een array is dan kun je de <code>sizeof(array)</code> functie gebruiken.</p>
+<h3 id="strings">Strings</h3>
+<p>Strings kun je gebruiken om woorden of zinnen in op te slaan. Eigenlijk zijn Stings een beetje bijzonder, in essentie is een woord of zin namelijk een lijst van letters. Een String bestaat dus eigenlijk uit een array van <code>char</code>s in volgorde. En dat maakt dat er wat speciale dingen gelden voor het werken met Strings. Meer informatie daarover vind je <a href="https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/">in de reference</a>.</p>
+<h4 id="een-string-aanmaken">Een string aanmaken</h4>
+<p>Je maakt een string aan op de volgende manier.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">String</span> <span class="n">zin</span> <span class="o">=</span> <span class="s">"Hello World!"</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<p>Handig om te weten is dat als je aan de string een enter toe wil voegen je daarvoor <code>\n</code> kunt gebruiken en een tab is <code>\t</code>.</p>
+<h2 id="besluiten-maken">Besluiten maken</h2>
+<p>We zijn nu aangekomen bij een van de belangrijkste pricipes van programmeren, if-statements. Hiermee kun je bepalen of bepaalde stukken wel of niet uitgevoerd moeten worden. Een if statement heeft een conditie, en als die conditie waar is dan wordt de code uitgevoerd. De conditie kan van alles zijn zoals een boolean variabele, een vergelijking of een combinatie daarvan met and of or statements er tussen.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// execute this code</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Je kunt ook een alternatief geven voor als de conditie niet waar is door middel van een <code>else</code>. Met <code>else if</code> kun je code toevoegen die uitgevoerd wordt als de if en alle voorgaande else if condities niet waar zijn en de else if conditie wel.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="n">condition1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// execute this code if condition 1</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">condition2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// execute this code if not condition 1 but condition2</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// execute this code if neither condition 1 nor condition2</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="loops">Loops</h2>
+<p>Met een loop kun je code herhaald uitvoeren. Er zijn twee verschillende soorten loops, for loops en while loops.</p>
+<h3 id="for-loop">For loop</h3>
+<p>De code in een for loop wordt zo vaak uitgevoerd als dat je vooraf insteld. In het voorbeeld hieronder is dat 10 keer. In de for loop kun je ook opvragen hoe vaak de loop al uitgevoerd is. In het voorbeeld hieronder kun je dat doen door de waarde van <code>i</code> op te vragen.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kr">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// execute this code 10 times</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="while-loop">While loop</h3>
+<p>De while loop wordt net zo lang uitgevoerd totdat de conditie niet meer waar is. Het risico hierbij is dat als de waarde nooit false wordt de code dus tot in de eeuwigheid uitgevoerd wordt. Daar moet je dus rekening mee houden.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">while</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// execute this code until condition is false</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="seriele-communicatie">Seriële communicatie</h2>
+<p>Seriële communicatie kan gebruikt worden om berichten van de microcontroller naar de computer te sturen. Deze kun je dan in de seriële monitor uitlezen. Allereerst moet je de bitrate instellen, in het voorbeeld wordt deze ingesteld op 9600. Belangrijk is dat je seriële monitor en je microcontroller dezelfde bitrate gebruiken, anders zijn de berichten onleesbaar. Met de <code>Serial.begin(bautrate);</code> functie kun je in de <code>setup()</code> een seriële verbinding opzetten. Vervolgens kun je met de <code>Serial.println(message);</code> functie een bericht naar de monitor sturen.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp"></span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// initialize serial communication at 9600 bits per second:</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Print the line "Hello World!"</span>
+  <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>
+
+  <span class="c1">// wait for 1 second before printing again</span>
+  <span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span> 
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="functies">Functies</h2>
+<p>Functies kun je gebruiken om je code meer structuur te geven of om stukken code her te gebruiken. Je moet een functie eerst definiëren voordat je hem kunt gebruiken.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">void</span> <span class="nf">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// execute code here</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>Een <code>void</code> functie geeft geen waarde terug maar je kunt een funtie ook een datatype geven en een waarde terug geven door middel van <code>return</code>. Verder is het mogelijk om parameters aan de functie toe te voegen aan de functie zodat je waarden aan de funtie mee kunt geven. In het voorbeeld hieronder wordt een optel functie getoond die de twee parameters bij elkaar opteld en terug geeft. Na het uitvoeren van deze code is de waarde van de variabele <code>result</code> dus 3.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="nf">add</span><span class="p">(</span><span class="kr">int</span> <span class="n">param1</span><span class="p">,</span> <span class="kr">int</span> <span class="n">param2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="conclusie">Conclusie</h2>
+<p>Als je tot in detail informatie wilt over hoe programmeren met Arduino werkt kun je altijd een blik werpen in de <a href="https://www.arduino.cc/reference/en/">reference</a>. Maar er zijn ook veel handleidingen online te vinden. We hopen dat je dit een overzicht geeft waarmee je aan de slag kunt. Kijk ook eens op de meer informatie pagina over handige websites over hoe je kunt programmeren met Arduino en de ESP.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Vorige
+              </span>
+              Arduino IDE
+            </div>
+</div>
+</a>
+<a class="md-footer__link md-footer__link--next" href="../digitale-io/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Volgende
+              </span>
+              Input &amp; Output
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2021 C.S.V. Alpha
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+ ... <a class="link--pdf-download" download href="../../pdf/IoT-Workshop-Handleiding.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+</body>
+</html>
